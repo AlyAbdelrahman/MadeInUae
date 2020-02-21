@@ -1,0 +1,40 @@
+﻿/****This is a global file to be imported each coomponent*/
+@import 'src/sass/base/_paths.scss';
+@import 'src/sass/icons/_icon-styles.scss';
+
+html {
+    text-align: $default-float;
+    direction: $default-direction;
+    font-size: 20px;
+    height: 100%;
+    overflow: -moz-scrollbars-none;
+ 
+
+    @media (max-width: 1640px) {
+        font-size: 16px;
+    }
+
+    // @media (max-width: 1200px) {
+    //     font-size: 14px;
+    // }
+
+    // @media (max-width: 1024px) {
+    //     font-size: 13px;
+    //     overflow: visible !important;
+    // }
+
+    // @media (max-width: 768px) {
+    //     overflow-x: hidden;
+    // }
+}
+
+body {
+    text-align: $default-float;
+    font-family: $font-family-base;
+    background-color: #ad5757;
+    overflow-x: hidden;
+}
+.rotate-down{
+    display: inline-block;
+    transform: rotate(90deg);
+}

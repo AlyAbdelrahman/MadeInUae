@@ -1,0 +1,13 @@
+$root-path: "src";
+$fonts-root-path:$root-path +"/fonts";
+/*Fonts*/
+$arabic-font-base: $fonts-root-path + "/NeoSansArabic";
+$arabic-font-regular: $fonts-root-path + "/Neo-Sans-Arabic-Regular";
+$arabic-font-black: $fonts-root-path + "/NeoSansArabicBlack";
+$arabic-font-ultra: $fonts-root-path + "/NeoSansArabicUltra";
+$arabic-font-medium: $fonts-root-path + "/NeoSansMedium";
+$arabic-font-semi-bold: $fonts-root-path + "/OpenSans-Semibold";
+$arabic-font-bold: $fonts-root-path + "/NeoSansArabicBold";
+$arabic-font-light: $fonts-root-path + "/NeoSansArabicLight";
+
+

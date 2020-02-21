@@ -1,0 +1,109 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?kp53a7');
+  src:  url('fonts/icomoon.eot?kp53a7#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?kp53a7') format('truetype'),
+    url('fonts/icomoon.woff?kp53a7') format('woff'),
+    url('fonts/icomoon.svg?kp53a7#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-Icon-fax:before {
+  content: "\e900";
+  color: #5f5f60;
+}
+.icon-Icon-globe:before {
+  content: "\e901";
+}
+.icon-Icon-phone-alt:before {
+  content: "\e902";
+}
+.icon-Icon-snapchat:before {
+  content: "\e903";
+  color: #7f7f7f;
+}
+.icon-Icon-arrow:before {
+  content: "\e905";
+}
+.icon-Icon-ionic-ios-arrow-dropdown .path1:before {
+  content: "\e906";
+  color: rgb(33, 33, 33);
+}
+.icon-Icon-ionic-ios-arrow-dropdown .path2:before {
+  content: "\e907";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-Icon-long-arrow:before {
+  content: "\e908";
+}
+.icon-Icon-heart:before {
+  content: "\e909";
+}
+.icon-Icon-whatsapp:before {
+  content: "\e90a";
+  color: #5f5f60;
+}
+.icon-Icon-email:before {
+  content: "\e90b";
+}
+.icon-Icon-print:before {
+  content: "\e90c";
+}
+.icon-Icon-linkedin:before {
+  content: "\e90d";
+  color: #7f7f7f;
+}
+.icon-Icon-instagram:before {
+  content: "\e90e";
+  color: #5f5f60;
+}
+.icon-Icon-shadow-instagram:before {
+  content: "\e90f";
+  color: #7f7f7f;
+}
+.icon-Icon-facebook:before {
+  content: "\e910";
+  color: #7f7f7f;
+}
+.icon-Icon-twitter:before {
+  content: "\e911";
+  color: #7f7f7f;
+}
+.icon-Icon-Gmail:before {
+  content: "\e912";
+  color: #7f7f7f;
+}
+.icon-Icon-telephone:before {
+  content: "\e913";
+  color: #5f5f60;
+}
+.icon-Icon-env:before {
+  content: "\e914";
+  color: #5f5f60;
+}
+.icon-Icon-Search:before {
+  content: "\e915";
+  color: #0e930e;
+}
+.icon-Icon-youtube:before {
+  content: "\e916";
+  color: #7f7f7f;
+}

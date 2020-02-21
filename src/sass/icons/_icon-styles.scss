@@ -1,0 +1,156 @@
+@import "variables";
+$base-url:'src/sass/icons/';
+@font-face {
+  font-family: '#{$icomoon-font-family}';
+  src:  url('#{$base-url}/#{$icomoon-font-path}/#{$icomoon-font-family}.eot?kp53a7');
+  src:  url('#{$base-url}/#{$icomoon-font-path}/#{$icomoon-font-family}.eot?kp53a7#iefix') format('embedded-opentype'),
+    url('#{$base-url}/#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?kp53a7') format('truetype'),
+    url('#{$base-url}/#{$icomoon-font-path}/#{$icomoon-font-family}.woff?kp53a7') format('woff'),
+    url('#{$base-url}/#{$icomoon-font-path}/#{$icomoon-font-family}.svg?kp53a7##{$icomoon-font-family}') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: '#{$icomoon-font-family}' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-Icon-fax {
+  &:before {
+    content: $icon-Icon-fax;     
+    color: #5f5f60;
+  }
+}
+.icon-Icon-globe {
+  &:before {
+    content: $icon-Icon-globe; 
+  }
+}
+.icon-Icon-phone-alt {
+  &:before {
+    content: $icon-Icon-phone-alt; 
+  }
+}
+.icon-Icon-snapchat {
+  &:before {
+    content: $icon-Icon-snapchat;     
+    color: #7f7f7f;
+  }
+}
+.icon-Icon-arrow {
+  &:before {
+    content: $icon-Icon-arrow; 
+  }
+}
+.icon-Icon-ionic-ios-arrow-dropdown .path1 {
+  &:before {
+    content: $icon-Icon-ionic-ios-arrow-dropdown-path1;  
+    color: rgb(33, 33, 33);
+  }
+}
+.icon-Icon-ionic-ios-arrow-dropdown .path2 {
+  &:before {
+    content: $icon-Icon-ionic-ios-arrow-dropdown-path2;  
+    margin-left: -1em;  
+    color: rgb(255, 255, 255);
+  }
+}
+.icon-Icon-long-arrow {
+  &:before {
+    content: $icon-Icon-long-arrow; 
+  }
+}
+.icon-Icon-heart {
+  &:before {
+    content: $icon-Icon-heart; 
+  }
+}
+.icon-Icon-whatsapp {
+  &:before {
+    content: $icon-Icon-whatsapp;     
+    color: #5f5f60;
+  }
+}
+.icon-Icon-email {
+  &:before {
+    content: $icon-Icon-email; 
+  }
+}
+.icon-Icon-print {
+  &:before {
+    content: $icon-Icon-print; 
+  }
+}
+.icon-Icon-linkedin {
+  &:before {
+    content: $icon-Icon-linkedin;     
+    color: #7f7f7f;
+  }
+}
+.icon-Icon-instagram {
+  &:before {
+    content: $icon-Icon-instagram;     
+    color: #5f5f60;
+  }
+}
+.icon-Icon-shadow-instagram {
+  &:before {
+    content: $icon-Icon-shadow-instagram;     
+    color: #7f7f7f;
+  }
+}
+.icon-Icon-facebook {
+  &:before {
+    content: $icon-Icon-facebook;     
+    color: #7f7f7f;
+  }
+}
+.icon-Icon-twitter {
+  &:before {
+    content: $icon-Icon-twitter;     
+    color: #7f7f7f;
+  }
+}
+.icon-Icon-Gmail {
+  &:before {
+    content: $icon-Icon-Gmail;     
+    color: #7f7f7f;
+  }
+}
+.icon-Icon-telephone {
+  &:before {
+    content: $icon-Icon-telephone;     
+    color: #5f5f60;
+  }
+}
+.icon-Icon-env {
+  &:before {
+    content: $icon-Icon-env;     
+    color: #5f5f60;
+  }
+}
+.icon-Icon-Search {
+  &:before {
+    content: $icon-Icon-Search;     
+    color: #0e930e;
+  }
+}
+.icon-Icon-youtube {
+  &:before {
+    content: $icon-Icon-youtube;     
+    color: #7f7f7f;
+  }
+}
+

@@ -1,0 +1,17 @@
+.btn{
+    &--rounded{
+        border-radius: 2rem;
+    }
+    &-fill{
+        &--white{
+            background-color: white;
+        }
+    }
+    &-txt{
+        &--black{
+            color: black;
+        }
+    }
+
+
+}

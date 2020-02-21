@@ -1,0 +1,16 @@
+// @import 'base/_global'; 
+@import 'base/_media-query';
+ @import'base/typography';
+
+/*Import Components*/
+ @import 'components/btns.scss';
+/*Import pages*/
+  
+/*Import Layouts*/
+ @import 'layout/nav';
+ @import 'layout/footer';
+ 
+
+
+
+
