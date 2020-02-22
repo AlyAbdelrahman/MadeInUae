@@ -1,5 +1,4 @@
 @charset "UTF-8";
-/* identity */
 /*Fonts*/
 @font-face {
   font-family: 'NeoSansArabic';
@@ -6476,7 +6475,7 @@ html {
 body {
   text-align: right;
   font-family: "NeoSansArabic";
-  background-color: #ad5757;
+  background-color: #ffffff;
   overflow-x: hidden; }
 
 .rotate-down {
@@ -6502,17 +6501,130 @@ body {
 .white-colored-txt {
   color: #fff; }
 
+.headers-txt {
+  font-size: 2rem;
+  line-height: 2.438rem;
+  font-family: "NeoSansArabicBold"; }
+  .headers-txt--black {
+    color: #292929; }
+  .headers-txt--green {
+    color: #0E930E; }
+
+.sub-header-txt {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-family: "NeoSansArabic";
+  font-weight: bold; }
+  .sub-header-txt--black {
+    color: #292929; }
+
+.section-details {
+  font-size: 1.25rem;
+  line-height: 2.5rem;
+  font-family: "NeoSansArabic"; }
+  .section-details--grey {
+    color: #4D4D4D; }
+
 /*Import Components*/
 .btn--rounded {
   border-radius: 2rem; }
 
+.btn--lit-rounded {
+  border-radius: .5rem; }
+
 .btn-fill--white {
-  background-color: white; }
+  background-color: #fff; }
 
 .btn-txt--black {
-  color: black; }
+  color: #000; }
+
+.btn-txt--green {
+  color: #0E930E; }
+
+.btn--trasnparent {
+  background-color: transparent;
+  border: 3px solid #0E930E; }
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0); }
+  100% {
+    transform: translateX(calc(-100vw)); } }
+
+.slider {
+  background: transparent;
+  height: 100px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  width: 100%; }
+  .slider .slide-track {
+    display: flex;
+    width: 100%; }
+  .slider .slide {
+    animation: scroll 10s linear infinite;
+    height: 100px;
+    width: 250px; }
 
 /*Import pages*/
+.section-header-container {
+  display: flex;
+  justify-content: center; }
+
+.about-portal {
+  width: 100%;
+  height: 56.5vw;
+  padding-top: 4.375rem;
+  position: relative; }
+  .about-portal::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 103%;
+    background: url("../src/assets/images/section-bg.svg") bottom center;
+    background-size: 100%;
+    background-repeat: no-repeat !important;
+    background-image: -.5rem;
+    background-position-x: -1rem; }
+  .about-portal-image-container {
+    width: 35.5rem;
+    height: 33.438rem;
+    border-radius: 2%; }
+    .about-portal-image-container .about-portal-image {
+      border-radius: 2%;
+      width: 100%;
+      height: 100%; }
+  .about-portal .section-header-container {
+    margin-bottom: 2rem; }
+  .about-portal .section-sub-header-container {
+    padding-top: 2.75rem;
+    padding-bottom: 1.813rem; }
+  .about-portal .info-section {
+    padding-right: 2.188rem; }
+  .about-portal .read-more-container {
+    display: flex;
+    justify-content: center; }
+    .about-portal .read-more-container .read-more {
+      padding-left: 5.75rem;
+      padding-right: 5.75rem;
+      padding-top: 0.938rem;
+      padding-bottom: 0.938rem;
+      font-size: 1.25rem;
+      font-family: "NeoSansArabic";
+      font-weight: bold;
+      text-decoration: none;
+      transition: .5s; }
+      .about-portal .read-more-container .read-more:hover {
+        border: 3px solid rgba(17, 88, 17, 0.986);
+        color: rgba(17, 88, 17, 0.986); }
+
+.custom-line {
+  width: 71rem;
+  border-top: 2px solid #d6d3d3; }
+
 /*Import Layouts*/
 .nav-bar {
   height: 4.375rem;
@@ -6574,7 +6686,8 @@ footer {
   footer .footer--bg {
     display: block;
     width: 100%;
-    height: 20rem;
+    top: 0;
+    bottom: -10%;
     background-repeat: no-repeat !important;
     background: url("../src/assets/images/footer.svg");
     position: absolute;
@@ -6592,12 +6705,48 @@ footer {
   footer .site-map-list {
     display: flex;
     justify-content: center;
-    list-style-type: none; }
+    list-style-type: none;
+    padding-top: 1.688rem; }
     footer .site-map-list .site-map-tab {
       margin-left: 2.5rem; }
       footer .site-map-list .site-map-tab a {
         font-size: 1.25rem;
         line-height: 1.5rem;
         font-family: "NeoSansArabicLight";
-        color: #fff;
+        color: #5F5F60;
         text-decoration: none; }
+  footer .contacts-list {
+    display: flex;
+    justify-content: center;
+    list-style-type: none; }
+    footer .contacts-list .contact-link {
+      margin-left: 4.125rem;
+      font-size: 1.25rem;
+      line-height: 1.5rem;
+      font-family: "NeoSansArabicLight";
+      color: #5F5F60;
+      text-decoration: none; }
+      footer .contacts-list .contact-link .contact-icon {
+        margin-left: 0.625rem;
+        font-size: 1rem; }
+  footer .socialMedia-list {
+    display: flex;
+    justify-content: center;
+    list-style-type: none; }
+    footer .socialMedia-list .socialMedia-icon {
+      margin-left: 3.906rem;
+      font-size: 1.25rem;
+      line-height: 1.5rem;
+      font-family: "NeoSansArabicLight";
+      color: #5F5F60;
+      text-decoration: none; }
+      footer .socialMedia-list .socialMedia-icon span:before {
+        color: #5f5f60; }
+  footer .copy-rights-container {
+    display: flex;
+    justify-content: center; }
+    footer .copy-rights-container .copy-rihts-txt {
+      font-size: 1rem;
+      font-family: "NeoSansArabicLight";
+      color: #5F5F60;
+      font-weight: bold; }

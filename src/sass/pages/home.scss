@@ -1,0 +1,72 @@
+.section-header-container{
+    display: flex;
+    justify-content: center;
+}
+
+.about-portal{
+    width: 100%;
+    height: 56.5vw;
+    padding-top: 4.375rem;
+    position: relative;
+    &::after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 103%;
+        background:  url('../src/assets/images/section-bg.svg') bottom center;
+        background-size: 100%;
+        background-repeat: no-repeat !important;
+        background-image: -.5rem;
+        background-position-x: -1rem;
+    }
+    &-image-container{
+        width: 35.5rem;
+        height: 33.438rem;
+        border-radius: 2%;
+        .about-portal-image{
+            border-radius: 2%;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .section-header-container{
+        margin-bottom:2rem ;
+    }
+    .section-sub-header-container{
+        padding-top:2.75rem ;
+        padding-bottom: 1.813rem;
+    }
+    .info-section{
+        padding-#{$default-float}:2.188rem;
+    }
+    .read-more-container{
+        display: flex;
+        justify-content: center;
+        .read-more{
+            padding-left:5.75rem;
+            padding-right: 5.75rem;
+            padding-top:0.938rem;
+            padding-bottom: 0.938rem;
+            font-size: 1.25rem;
+            font-family: $font-family-base;
+            font-weight: bold;
+            text-decoration: none;
+            transition: .5s;
+            line-height: 1;
+            &:hover{
+                border: 3px solid $primary-color-hover;
+                color: $primary-color-hover;
+            }
+            
+        }
+    }
+    
+}
+
+.custom-line{
+    width: 71rem;
+    border-top: 2px solid #5f5f6066;;
+}

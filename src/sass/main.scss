@@ -4,8 +4,9 @@
 
 /*Import Components*/
  @import 'components/btns.scss';
+ @import 'components/infinite-carousel';
 /*Import pages*/
-  
+  @import'pages/home.scss';
 /*Import Layouts*/
  @import 'layout/nav';
  @import 'layout/footer';

@@ -4,7 +4,8 @@ footer{
     .footer--bg{
     display: block;
     width: 100%;
-    height: 20rem;
+    top: 0;
+    bottom: -10%;
     background-repeat: no-repeat !important;
     background: url('../src/assets/images/footer.svg');
     position: absolute;
@@ -53,7 +54,42 @@ footer{
             font-family: $font-family-light;
             color:$link-color;
             text-decoration: none;
-            
+            .contact-icon{
+                margin-#{$opposite-float}: 0.625rem;
+                font-size: 1rem;;
+
+            }
         }
     }
+
+    .socialMedia-list{ 
+        display: flex;
+        justify-content: center;
+        list-style-type: none;
+        .socialMedia-icon{
+            margin-#{$opposite-float}: 3.906rem;
+            font-size: 1.25rem;
+            line-height: 1.5rem;
+            font-family: $font-family-light;
+            color:$link-color;
+            text-decoration: none;
+            span:before{
+                color: #5f5f60;
+            }
+        }
+    
+    }
+    .copy-rights-container{
+        display: flex;
+        justify-content: center;
+        
+        .copy-rihts-txt{
+            font-size: 1rem;
+            
+            font-family: $font-family-light;
+            color:$link-color;
+            font-weight: bold;
+        }
+    }
+
 }

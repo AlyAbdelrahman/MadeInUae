@@ -1,3 +1,32 @@
 .white-colored-txt{
 color: $white;
 }
+.headers-txt{
+    font-size: 2rem;
+    line-height: 2.438rem;
+    font-family: $font-family-bold;
+    &--black{
+        color:$header-color
+    };
+    &--green{
+        color: $primary-color;
+    }
+}
+.sub-header-txt{
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    font-family: $font-family-base;
+    font-weight: bold;
+    &--black{
+        color:$header-color
+    };
+   
+}
+.section-details{
+    font-size: 1.25rem;
+    line-height:2.5rem;
+    font-family: $font-family-base;
+    &--grey{
+        color:$paragraph-color
+    }
+}

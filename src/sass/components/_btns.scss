@@ -1,0 +1,28 @@
+.btn{
+    &--rounded{
+        border-radius: 2rem;
+    }
+    &--lit-rounded{
+        border-radius: .5rem;
+    }
+    &-fill{
+        &--white{
+            background-color: $white;
+        }
+    }
+    &-txt{
+        &--black{
+            color: $black;
+        }
+        &--green{
+            color: $primary-color;
+        }
+    }
+
+    &--trasnparent{
+        background-color: transparent;
+        border:3px solid $primary-color;
+        
+    }
+
+}
