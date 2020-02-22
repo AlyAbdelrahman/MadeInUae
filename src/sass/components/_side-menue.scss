@@ -1,0 +1,87 @@
+.side-menue{
+    height: 47.938rem;
+    width: 13.313rem;
+    display: felx;
+    position: relative;
+    flex-direction: column;
+    overflow: hidden;
+    
+    &-details{
+        padding-top: 2rem;
+        padding-left: 0.938rem;
+        padding-right: 0.938rem;
+       
+        &:after{
+        content: '';
+        display: block;
+        position: absolute;
+        z-index: 1;
+        background: url('src/assets/images/aside-bg.png');
+        z-index: -1;
+        top: 49%;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        }
+        // border-radius: 0% 85% 0% 100% / 99% 23% 64% 0%;
+    }
+    &-image-container{
+        position: relative;
+        z-index: -1;
+
+    }
+    &-details-header-container{
+        display: flex;
+        justify-content: center;
+       
+    }
+    &__header{
+        font-size: 1.25rem;
+        line-height: 1.5rem;
+        color: $primary-color;
+        font-family: $font-family-base;
+        font-weight: bold;
+    }
+    &__details{
+        font-size: 1rem;
+        line-height: 1.188rem;
+        color:$paragraph-sec-color;
+        font-family: $font-family-base;
+       
+    }
+    &__image{
+        width: 100%;
+    }
+    &--right{
+        &:after{
+        transform: scaleX(-1);
+        }
+        .side-menue-details:after{
+            transform: scaleX(-1);
+        }
+    }
+    &:after{
+         content: '';
+        display: block;
+        position: absolute;
+        background: url('src/assets/images/aside-line.png');
+        height: 4rem;
+        left: 0;
+        right: 0;
+        top: 47%;
+        background-repeat: no-repeat;
+        background-size: cover;
+       
+    //     height: 24.029rem;
+    //     left: 0;
+    //     right: -1rem;
+    //     top: 45%;
+    //     width: 44rem;
+    //     z-index: -1;
+    //     border-top: 35px solid red;
+    //     background-color: #ECECEC;
+    //     border-radius: 0% 84% 0% 100% / 99% 18% 56% 0%;
+     }
+}

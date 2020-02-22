@@ -1,11 +1,23 @@
+
+/*******************************Generals in home page***************************************/
 .section-header-container{
     display: flex;
     justify-content: center;
 }
 
+.custom-line{
+    width: 71rem;
+    border-top: 2px solid #5f5f6066;;
+}
+
+
+/**********************************Sections in home page **********************************/
+
+//----------About portal Section------//
 .about-portal{
     width: 100%;
     height: 56.5vw;
+    margin-bottom: 1rem;
     padding-top: 4.375rem;
     position: relative;
     &::after {
@@ -66,7 +78,9 @@
     
 }
 
-.custom-line{
-    width: 71rem;
-    border-top: 2px solid #5f5f6066;;
+//---------Industrial Section --------//
+
+.industrial-sector{
+    display: flex;
+    justify-content: space-between;
 }

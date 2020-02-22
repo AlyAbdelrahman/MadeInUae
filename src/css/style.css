@@ -6549,7 +6549,7 @@ body {
   0% {
     transform: translateX(0); }
   100% {
-    transform: translateX(calc(-100vw)); } }
+    transform: translateX(calc(-250px * 7)); } }
 
 .slider {
   background: transparent;
@@ -6558,22 +6558,84 @@ body {
   overflow: hidden;
   position: relative;
   width: 100%; }
+  .slider::before, .slider::after {
+    background: linear-gradient(to right, #d7d8e075 0%, rgba(255, 255, 255, 0) 100%);
+    content: "";
+    height: 100px;
+    position: absolute;
+    width: 200px;
+    z-index: 2; }
+  .slider::after {
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg); }
+  .slider::before {
+    left: 0;
+    top: 0; }
   .slider .slide-track {
+    animation: scroll 40s linear infinite;
     display: flex;
-    width: 100%; }
+    width: calc(250px * 14); }
   .slider .slide {
-    animation: scroll 10s linear infinite;
     height: 100px;
     width: 250px; }
 
+.side-menue {
+  height: 47.938rem;
+  width: 13.313rem;
+  display: felx;
+  position: relative;
+  flex-direction: column;
+  overflow: hidden;
+  margin-right: 1rem; }
+  .side-menue-details {
+    position: relative;
+    top: -5%;
+    padding-top: 4rem;
+    z-index: 1;
+    padding-left: 0.938rem;
+    padding-right: 0.938rem; }
+  .side-menue-image-container {
+    position: relative;
+    z-index: -1; }
+  .side-menue-details-header-container {
+    display: flex;
+    justify-content: center; }
+  .side-menue__header {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    color: #0E930E;
+    font-family: "NeoSansArabic";
+    font-weight: bold; }
+  .side-menue:after {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 24.029rem;
+    left: 0;
+    right: -1rem;
+    top: 45%;
+    width: 44rem;
+    z-index: -1;
+    border-top: 35px solid red;
+    background-color: #ECECEC;
+    border-radius: 0% 84% 0% 100% / 99% 18% 56% 0%; }
+
 /*Import pages*/
+/*******************************Generals in home page***************************************/
 .section-header-container {
   display: flex;
   justify-content: center; }
 
+.custom-line {
+  width: 71rem;
+  border-top: 2px solid #5f5f6066; }
+
+/**********************************Sections in home page **********************************/
 .about-portal {
   width: 100%;
   height: 56.5vw;
+  margin-bottom: 1rem;
   padding-top: 4.375rem;
   position: relative; }
   .about-portal::after {
@@ -6616,14 +6678,11 @@ body {
       font-family: "NeoSansArabic";
       font-weight: bold;
       text-decoration: none;
-      transition: .5s; }
+      transition: .5s;
+      line-height: 1; }
       .about-portal .read-more-container .read-more:hover {
         border: 3px solid rgba(17, 88, 17, 0.986);
         color: rgba(17, 88, 17, 0.986); }
-
-.custom-line {
-  width: 71rem;
-  border-top: 2px solid #d6d3d3; }
 
 /*Import Layouts*/
 .nav-bar {
@@ -6682,6 +6741,7 @@ body {
 
 footer {
   padding-top: 4.125rem;
+  margin-top: 1rem;
   position: relative; }
   footer .footer--bg {
     display: block;
