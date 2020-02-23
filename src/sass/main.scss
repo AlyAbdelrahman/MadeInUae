@@ -6,8 +6,11 @@
  @import 'components/btns.scss';
  @import 'components/infinite-carousel';
  @import 'components/side-menue';
+ @import 'components/slider-carousel';
+ @import 'components/search-fied';
 /*Import pages*/
-  @import'pages/home.scss';
+@import'pages/home.scss';
+@import 'pages/about-portal.scss';
 /*Import Layouts*/
  @import 'layout/nav';
  @import 'layout/footer';

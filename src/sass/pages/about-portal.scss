@@ -1,0 +1,38 @@
+.site-guide{
+    position: relative;
+    &:after{
+        content: '';
+        display: block;
+        background:url('../src/assets/images/about-shapes-bg.svg') ;
+        height: 44.313rem;
+        width: 47vw;
+        position: absolute;
+        #{$opposite-float}: 0;
+        z-index: -1;
+        background-repeat: no-repeat;
+        top:2rem;
+        background-size: contain;
+
+    }
+    .uae-info-header-txt{
+        font-size:2rem ;
+        font-family: $font-family-light;
+        line-height: 2.438rem;
+        color:$header-color ;
+        font-weight: bold;
+        margin-bottom: 2.625rem;
+    }
+    .uae-info-paragraph-img-container{
+        height: 36.474rem;
+        width: 29.944rem;
+        margin: 0 auto;
+        padding-#{$default-float}:4rem;
+        
+        .uae-info-paragraph-img{
+            width: 100%;
+            height: 100%;
+        }
+       
+    }
+}
+

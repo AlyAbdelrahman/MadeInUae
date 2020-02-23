@@ -12,7 +12,11 @@
 
 
 /**********************************Sections in home page **********************************/
-
+//--------banner section-------------//
+.home-banner{
+    position: relative;
+    height: 100%;
+}
 //----------About portal Section------//
 .about-portal{
     width: 100%;
@@ -68,6 +72,7 @@
             text-decoration: none;
             transition: .5s;
             line-height: 1;
+            border:3px solid $primary-color;
             &:hover{
                 border: 3px solid $primary-color-hover;
                 color: $primary-color-hover;

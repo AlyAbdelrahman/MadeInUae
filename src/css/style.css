@@ -6541,9 +6541,24 @@ body {
 .btn-txt--green {
   color: #0E930E; }
 
+.btn-txt--white {
+  color: #fff !important; }
+
 .btn--trasnparent {
-  background-color: transparent;
-  border: 3px solid #0E930E; }
+  background-color: transparent; }
+
+.btn--main {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  padding-top: 0.938rem;
+  padding-bottom: 0.938rem;
+  font-size: 1.25rem;
+  font-family: "NeoSansArabic";
+  font-weight: bold;
+  text-decoration: none;
+  transition: .5s;
+  line-height: 1;
+  border: 3px solid #fff; }
 
 @keyframes scroll {
   0% {
@@ -6586,18 +6601,28 @@ body {
   display: felx;
   position: relative;
   flex-direction: column;
-  overflow: hidden;
-  margin-right: 1rem; }
+  overflow: hidden; }
   .side-menue-details {
-    position: relative;
-    top: -5%;
-    padding-top: 4rem;
-    z-index: 1;
+    padding-top: 2rem;
     padding-left: 0.938rem;
     padding-right: 0.938rem; }
+    .side-menue-details:after {
+      content: '';
+      display: block;
+      position: absolute;
+      z-index: 1;
+      background: url("src/assets/images/aside-bg.png");
+      z-index: -1;
+      top: 49%;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-repeat: no-repeat;
+      background-size: cover; }
   .side-menue-image-container {
     position: relative;
-    z-index: -1; }
+    z-index: -1;
+    height: 25.831rem; }
   .side-menue-details-header-container {
     display: flex;
     justify-content: center; }
@@ -6607,19 +6632,82 @@ body {
     color: #0E930E;
     font-family: "NeoSansArabic";
     font-weight: bold; }
+  .side-menue__details {
+    font-size: 1rem;
+    line-height: 1.188rem;
+    color: #262323;
+    font-family: "NeoSansArabic"; }
+  .side-menue__image {
+    width: 100%;
+    height: 100%; }
+  .side-menue--right:after {
+    transform: scaleX(-1); }
+  .side-menue--right .side-menue-details:after {
+    transform: scaleX(-1); }
   .side-menue:after {
     content: '';
     display: block;
     position: absolute;
-    height: 24.029rem;
+    background: url("src/assets/images/aside-line.png");
+    height: 4rem;
     left: 0;
-    right: -1rem;
-    top: 45%;
-    width: 44rem;
-    z-index: -1;
-    border-top: 35px solid red;
-    background-color: #ECECEC;
-    border-radius: 0% 84% 0% 100% / 99% 18% 56% 0%; }
+    right: 0;
+    top: 47%;
+    background-repeat: no-repeat;
+    background-size: cover; }
+
+.bs-big-carousel {
+  position: relative; }
+  .bs-big-carousel .big-carousel-image {
+    width: 100%; }
+  .bs-big-carousel .centered-caption {
+    top: 14.4rem; }
+  .bs-big-carousel .caption-header {
+    font-size: 3.125rem;
+    line-height: 3.875rem;
+    font-family: "NeoSansArabicBold"; }
+  .bs-big-carousel .caption-pagraph {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-family: "NeoSansArabicLight"; }
+  .bs-big-carousel .create-factory-btn {
+    position: relative;
+    top: 3.813rem;
+    text-decoration: none; }
+  .bs-big-carousel .carousel-indicators {
+    bottom: 0;
+    left: 2rem; }
+    .bs-big-carousel .carousel-indicators li {
+      border-radius: 3px;
+      width: 4.875rem;
+      height: 7px;
+      bottom: 6.375rem; }
+
+.search-input {
+  background-color: rgba(14, 147, 14, 0.56);
+  width: 100%;
+  bottom: 0;
+  position: absolute;
+  height: 5.375rem;
+  align-items: center;
+  display: flex; }
+  .search-input .search-input-field {
+    height: 3.75rem;
+    width: 65.125rem;
+    margin: 0 auto;
+    border-radius: 2rem;
+    border: 0px;
+    position: relative;
+    padding-right: 4.25rem; }
+  .search-input .search-btn {
+    position: absolute;
+    right: 10.9rem;
+    top: .5rem;
+    bottom: 0;
+    background-color: transparent;
+    border: none; }
+    .search-input .search-btn span:after {
+      font-size: 1.5rem; }
 
 /*Import pages*/
 /*******************************Generals in home page***************************************/
@@ -6632,6 +6720,10 @@ body {
   border-top: 2px solid #5f5f6066; }
 
 /**********************************Sections in home page **********************************/
+.home-banner {
+  position: relative;
+  height: 100%; }
+
 .about-portal {
   width: 100%;
   height: 56.5vw;
@@ -6679,17 +6771,26 @@ body {
       font-weight: bold;
       text-decoration: none;
       transition: .5s;
-      line-height: 1; }
+      line-height: 1;
+      border: 3px solid #0E930E; }
       .about-portal .read-more-container .read-more:hover {
         border: 3px solid rgba(17, 88, 17, 0.986);
         color: rgba(17, 88, 17, 0.986); }
+
+.industrial-sector {
+  display: flex;
+  justify-content: space-between; }
 
 /*Import Layouts*/
 .nav-bar {
   height: 4.375rem;
   background-color: rgba(0, 0, 0, 0.2);
   display: flex;
-  align-items: center; }
+  align-items: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 2; }
   .nav-bar .top-nav {
     display: flex;
     align-items: center; }

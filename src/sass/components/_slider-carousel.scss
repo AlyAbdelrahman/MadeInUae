@@ -1,0 +1,43 @@
+.bs-big-carousel{
+    //height: 48rem;
+    position: relative;
+    .big-carousel-image{
+        width: 100%;
+    }
+    .centered-caption{
+        top:14.4rem;
+        
+    }
+    .caption-header{
+        font-size: 3.125rem;
+        line-height: 3.875rem;
+        font-family: $font-family-bold;
+    }
+    .caption-pagraph{
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+        font-family: $font-family-light;
+        
+    }
+    .create-factory-btn{
+        position: relative;
+        top: 3.813rem;
+        text-decoration: none;
+        // &:hover{
+        //     // border: 3px solid $white;
+        //     // color:black;
+        //     // background-color: $white;
+        
+        // }
+    }
+    .carousel-indicators{
+        bottom: 0;
+        #{$opposite-float}:2rem;
+        li{
+        border-radius: 3px;
+        width: 4.875rem;
+        height: 7px;
+        bottom: 6.375rem;
+    }
+}
+}

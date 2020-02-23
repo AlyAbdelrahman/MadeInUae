@@ -17,12 +17,29 @@
         &--green{
             color: $primary-color;
         }
+        &--white{
+            color: $white !important;
+        }
     }
 
     &--trasnparent{
         background-color: transparent;
-        border:3px solid $primary-color;
-        
+       
+
+    }
+    &--main{
+        padding-left:2.5rem;
+        padding-right: 2.5rem;
+        padding-top:0.938rem;
+        padding-bottom:0.938rem;
+        font-size: 1.25rem;
+        font-family: $font-family-base;
+        font-weight: bold;
+        text-decoration: none;
+        transition: .5s;
+        line-height: 1;
+        border:3px solid $white;
+
     }
 
 }

@@ -1,0 +1,29 @@
+.search-input{
+    background-color: rgba($primary-color, 0.56);
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+    height: 5.375rem;
+    align-items: center;
+    display: flex;
+    .search-input-field{
+        height: 3.75rem;
+        width: 65.125rem;
+        margin: 0 auto;
+        border-radius: 2rem;
+        border:0px;
+       position: relative;
+       padding-#{$default-float}:4.25rem ;
+    }
+    .search-btn{
+        position: absolute;
+        #{$default-float}: 10.9rem;
+        top: .5rem;
+        bottom: 0;
+        background-color: transparent;
+        border: none;
+        span:after{
+            font-size: 1.5rem;
+        }
+    }
+}
