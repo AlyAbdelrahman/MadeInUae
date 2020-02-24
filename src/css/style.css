@@ -6781,6 +6781,36 @@ body {
   display: flex;
   justify-content: space-between; }
 
+.site-guide {
+  position: relative; }
+  .site-guide:after {
+    content: '';
+    display: block;
+    background: url("../src/assets/images/about-shapes-bg.svg");
+    height: 44.313rem;
+    width: 47vw;
+    position: absolute;
+    left: 0;
+    z-index: -1;
+    background-repeat: no-repeat;
+    top: 2rem;
+    background-size: contain; }
+  .site-guide .uae-info-header-txt {
+    font-size: 2rem;
+    font-family: "NeoSansArabicLight";
+    line-height: 2.438rem;
+    color: #292929;
+    font-weight: bold;
+    margin-bottom: 2.625rem; }
+  .site-guide .uae-info-paragraph-img-container {
+    height: 36.474rem;
+    width: 29.944rem;
+    margin: 0 auto;
+    padding-right: 4rem; }
+    .site-guide .uae-info-paragraph-img-container .uae-info-paragraph-img {
+      width: 100%;
+      height: 100%; }
+
 /*Import Layouts*/
 .nav-bar {
   height: 4.375rem;

@@ -1,0 +1,28 @@
+
+
+.container {
+    width: 100%;
+    max-width: 1170px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.img-responsive {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.swiper-slide span {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: black;
+    color: white;
+    padding: 6px;
+    display: block;
+    font-size: 20px;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+}
