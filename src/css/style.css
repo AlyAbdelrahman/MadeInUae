@@ -6762,6 +6762,13 @@ body {
   left: 3rem;
   right: auto; }
 
+.input-form {
+  display: flex;
+  flex-direction: column; }
+  .input-form__label {
+    font-size: 1.75rem;
+    font-family: "NeoSansArabic"; }
+
 /*Import pages*/
 /*******************************Generals in home page***************************************/
 .section-header-container {
@@ -6868,7 +6875,8 @@ body {
     background-size: cover; }
 
 .site-guide {
-  position: relative; }
+  position: relative;
+  margin-bottom: 5.281rem; }
   .site-guide:after {
     content: '';
     display: block;
@@ -7027,3 +7035,34 @@ footer {
       font-family: "NeoSansArabicLight";
       color: #5F5F60;
       font-weight: bold; }
+
+.page-banner {
+  overflow: hidden;
+  margin-bottom: 1.344rem; }
+  .page-banner-container {
+    height: 26.217rem;
+    border-bottom-right-radius: 9rem;
+    border-bottom-left-radius: 7rem;
+    transform: rotate(-4deg);
+    background-color: whitesmoke;
+    position: relative;
+    top: -5rem;
+    width: 102vw;
+    overflow: hidden;
+    left: 1rem; }
+  .page-banner-content-container {
+    width: 100%;
+    height: 120%;
+    transform: rotate(4deg);
+    display: flex; }
+  .page-banner__image {
+    width: 100%;
+    height: 100%; }
+  .page-banner__header {
+    position: absolute;
+    top: 50%;
+    color: #fff;
+    right: 50%;
+    transform: translateX(50%);
+    font-size: 3.5rem;
+    font-family: "NeoSansArabic"; }
