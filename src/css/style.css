@@ -6488,7 +6488,7 @@ body {
 
 @media (min-width: 1600px) {
   .container {
-    max-width: 1425px; } }
+    max-width: 1425px !important; } }
 
 @media (min-width: 1201px) and (max-width: 1640px) {
   .container {
@@ -6496,7 +6496,7 @@ body {
 
 @media (min-width: 1600px) {
   .container {
-    max-width: 1425px; } }
+    max-width: 1425px !important; } }
 
 .white-colored-txt {
   color: #fff; }
@@ -6657,6 +6657,7 @@ body {
     background-size: cover; }
 
 .bs-big-carousel {
+  margin-bottom: 2.063rem;
   position: relative; }
   .bs-big-carousel .big-carousel-image {
     width: 100%; }
@@ -6690,24 +6691,76 @@ body {
   position: absolute;
   height: 5.375rem;
   align-items: center;
-  display: flex; }
+  display: flex;
+  justify-content: center; }
   .search-input .search-input-field {
     height: 3.75rem;
     width: 65.125rem;
-    margin: 0 auto;
     border-radius: 2rem;
     border: 0px;
     position: relative;
     padding-right: 4.25rem; }
   .search-input .search-btn {
-    position: absolute;
-    right: 10.9rem;
-    top: .5rem;
+    position: relative;
+    left: 63.5rem;
+    top: 3px;
     bottom: 0;
     background-color: transparent;
     border: none; }
     .search-input .search-btn span:after {
       font-size: 1.5rem; }
+
+.industries-slider .container {
+  width: 100%;
+  max-width: 1170px;
+  padding: 0 15px;
+  margin: 0 auto; }
+
+.industries-slider .swiper-card {
+  display: flex;
+  flex-direction: column;
+  width: 15.563rem;
+  background-color: #000000;
+  height: 15.625rem;
+  border-radius: 10px 10px 10px 10px;
+  border: 1px solid #000;
+  overflow: hidden; }
+  .industries-slider .swiper-card-image-container {
+    border-radius: 0px 0px 10px 10px;
+    overflow: hidden;
+    background-color: #fff;
+    height: 12.75rem;
+    padding: 1rem; }
+  .industries-slider .swiper-card__img {
+    width: 100%;
+    height: 100%; }
+  .industries-slider .swiper-card-details-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    flex: 1; }
+  .industries-slider .swiper-card-details__txt {
+    color: #fff;
+    font-size: 1.25rem;
+    font-family: "NeoSansArabic";
+    line-height: 1.5rem;
+    margin-bottom: 0; }
+
+.swiper-button-next.swiper-button-white, .swiper-button-prev.swiper-button-white {
+  top: 43rem;
+  background-color: #fff;
+  border-radius: 10px;
+  width: 1.875rem;
+  height: 1.875rem; }
+  .swiper-button-next.swiper-button-white:after, .swiper-button-prev.swiper-button-white:after {
+    font-size: 0.875rem;
+    color: #000;
+    font-weight: bold; }
+
+.swiper-button-next, .swiper-container-rtl .swiper-button-prev {
+  left: 3rem;
+  right: auto; }
 
 /*Import pages*/
 /*******************************Generals in home page***************************************/
@@ -6779,7 +6832,40 @@ body {
 
 .industrial-sector {
   display: flex;
-  justify-content: space-between; }
+  justify-content: space-between;
+  position: relative; }
+  .industrial-sector__header-txt {
+    font-size: 2rem;
+    margin-bottom: 0;
+    font-family: "NeoSansArabic";
+    color: #000000;
+    padding-top: 2.063rem;
+    padding-bottom: 3.5rem;
+    line-height: 2.438rem; }
+  .industrial-sector:after {
+    content: '';
+    display: block;
+    background: url("../src/assets/images/home-slider-bg1.svg");
+    height: 44.313rem;
+    width: 47vw;
+    position: absolute;
+    left: 0;
+    z-index: -5;
+    background-repeat: no-repeat;
+    top: 4rem;
+    background-size: cover; }
+  .industrial-sector::before {
+    content: '';
+    display: block;
+    background: url("../src/assets/images/home-slider-bg-2.svg");
+    height: 21.9vw;
+    width: 41vw;
+    position: absolute;
+    right: 0;
+    z-index: -5;
+    background-repeat: no-repeat;
+    top: -2rem;
+    background-size: cover; }
 
 .site-guide {
   position: relative; }

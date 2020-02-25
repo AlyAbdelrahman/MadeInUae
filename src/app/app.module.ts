@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { SlidesCarouselComponent } from './slides-carousel/slides-carousel.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MuiltRowsSliderComponent } from './muilt-rows-slider/muilt-rows-slider.component';
+import { FooterSliderComponent } from './footer-slider/footer-slider.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SlidesCarouselComponent,
-    MuiltRowsSliderComponent
+    MuiltRowsSliderComponent,
+    FooterSliderComponent
   ],
   imports: [
     BrowserModule,

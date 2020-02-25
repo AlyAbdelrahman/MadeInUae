@@ -22,8 +22,7 @@ export class MuiltRowsSliderComponent implements OnInit  {
     // prevButton: '.swiper-button-prev',
     // nextButton: '.swiper-button-next',
     slidesPerView: 3,
-    spaceBetween:7,
-   
+    spaceBetween:20,
     slidesPerColumn:2,
     slidesPerColumnFill: 'col',
     slidesPerGroup: 6,

@@ -88,4 +88,42 @@
 .industrial-sector{
     display: flex;
     justify-content: space-between;
+    position: relative;
+    &__header-txt{
+        font-size: 2rem;
+        margin-bottom: 0;
+        font-family:$font-family-base ;
+        color:$secondary-color ;
+        padding-top: 2.063rem;
+        padding-bottom: 3.5rem;
+        line-height: 2.438rem;
+    }
+    &:after{
+        content: '';
+        display: block;
+        background:url('../src/assets/images/home-slider-bg1.svg') ;
+        height: 44.313rem;
+        width: 47vw;
+        position: absolute;
+        #{$opposite-float}: 0;
+        z-index: -5;
+        background-repeat: no-repeat;
+        top: 4rem;
+        background-size: cover;
+
+    }
+    &::before{
+        content: '';
+        display: block;
+        background:url('../src/assets/images/home-slider-bg-2.svg') ;
+        height: 21.9vw;
+        width: 41vw;
+        position: absolute;
+        #{$default-float}: 0;
+        z-index: -5;
+        background-repeat: no-repeat;
+        top: -2rem;
+        background-size: cover;
+
+    }
 }
