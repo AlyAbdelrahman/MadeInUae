@@ -62,12 +62,12 @@ export class FooterSliderComponent implements OnInit {
     
         agSwiper.mouseenter(function () {
           swiper.autoplay.stop();
-          console.log('slider stopped');
+         // console.log('slider stopped');
         });
     
         agSwiper.mouseleave(function () {
           swiper.autoplay.start();
-          console.log('slider started again');
+         // console.log('slider started again');
         });
       }
     
