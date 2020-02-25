@@ -1,6 +1,11 @@
 .white-colored-txt{
 color: $white;
 }
+.black-colored-txt{
+    color: $black;
+}
+
+
 .headers-txt{
     font-size: 2rem;
     line-height: 2.438rem;
@@ -29,4 +34,8 @@ color: $white;
     &--grey{
         color:$paragraph-color
     }
+}
+.submit-btn-container{
+    display: flex;
+    justify-content: center;
 }

@@ -15,6 +15,9 @@
         &:focus{
             border-color: $black;
             outline: none;
+            &+.select-arrow::before{
+                color: $black;
+            }
         }
     }
     &__select{
@@ -22,13 +25,31 @@
         -webkit-appearance:none; /* Safari and Chrome */
         appearance:none;
         position: relative;
-        &::after{
-            display: block;
-            position: absolute;
-            content:'\e905';
-            left: 1rem;
-            transform: rotate(45deg);
+       
+    }
+
+    .select__label{
+        position: relative;
+    // &::after{
+    //     display: block;
+    //     position: absolute;
+    //     content:'\e905';
+    //     width: 1rem;
+    //     height: 1rem;
+    //     left: 1rem;
+    //     transform: rotate(45deg);
+    //     color: $light-grey;
+    //     z-index: 3;
+    //  }
+    }
+    .select-arrow{
+        position: absolute;
+        bottom: 0;
+        #{$opposite-float}: 0;
+        top:2.5rem;
+        &::before{
             color: $light-grey;
         }
+
     }
 }
