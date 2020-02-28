@@ -1,5 +1,6 @@
 import { Component, OnInit ,ElementRef, AfterViewInit } from '@angular/core';
-import Swiper from 'swiper';
+ import  Swiper from 'swiper';
+//  import fs = require('fs');
 import * as jquery from 'jquery';
 @Component({
   selector: 'footer-slider',
@@ -61,13 +62,13 @@ export class FooterSliderComponent implements OnInit {
         // var mySwiper = document.querySelector('.swiper-container').swiper;
     
         agSwiper.mouseenter(function () {
-          swiper.autoplay.stop();
-         // console.log('slider stopped');
+          swiper.stopAutoplay;
+         //console.log('slider stopped');
         });
     
         agSwiper.mouseleave(function () {
-          swiper.autoplay.start();
-         // console.log('slider started again');
+          swiper.startAutoplay;
+        //  console.log('slider started again');
         });
       }
     

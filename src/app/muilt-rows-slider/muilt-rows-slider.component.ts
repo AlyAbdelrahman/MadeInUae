@@ -1,5 +1,5 @@
 import { Component, OnInit ,ElementRef, AfterViewInit } from '@angular/core';
-import Swiper from 'swiper';
+import   Swiper from 'swiper';
 @Component({
   selector: 'muilt-rows-slider',
   templateUrl: './muilt-rows-slider.component.html',
@@ -14,13 +14,13 @@ export class MuiltRowsSliderComponent implements OnInit  {
   }
 
   ngAfterViewInit() {
-   var mySwiper = new Swiper('.swiper-container', {
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-  },
-    // prevButton: '.swiper-button-prev',
-    // nextButton: '.swiper-button-next',
+   this.swiper = new Swiper('.swiper-container', {
+  //   navigation: {
+  //     nextEl: '.swiper-button-next',
+  //     prevEl: '.swiper-button-prev',
+  // },
+    prevButton: '.swiper-button-prev',
+    nextButton: '.swiper-button-next',
     slidesPerView: 3,
     spaceBetween:20,
     slidesPerColumn:2,
