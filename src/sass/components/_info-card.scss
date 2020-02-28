@@ -1,0 +1,69 @@
+.search-results-container{
+    width: 45.75rem;
+    background-color: red;
+}
+.search-result-card{
+    width: 100%;
+    display: flex;
+    background-color: $light-grey-bg;
+    
+    &--sm{
+        height: 13.813rem;
+        padding: 0.75rem;
+        
+        .search-result-card-image-container{
+            height:  12.188rem;
+            width:11.375rem;
+            margin-#{$opposite-float}: 0.75rem;
+            border-radius: 0.25rem;
+            overflow: hidden;
+            .search-result-card__img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .search-result-card-info{
+            width: 32.125rem;
+        }
+        .search-result-card__header{
+            color: $light-red;
+            font-size: 1.25rem;
+            line-height: 1.5rem;
+            font-family: $font-family-base;
+        }
+        .search-result-card-details__txt{
+            color:$dark-grey-txt;
+            font-size:0.875rem;
+            line-height: 1.5rem;
+            font-family: $font-family-base;
+
+        }
+        .search-card-contacts-list{
+            display: flex;
+            margin: 0;
+        }
+        .search-card-contact{
+            font-size: .75rem;
+            font-family: $font-family-base;
+            line-height: 0.938rem;
+           
+            &:before{
+                content: ' |';
+                font-size: .75rem;
+                font-family: $font-family-base;
+                line-height: 0.938rem;
+            }
+            &:first-child::before
+            {
+              content: '';
+            }
+        }
+    }
+
+    .search-card-contact{
+        list-style: none;
+    }
+    .contact-icon {
+        
+    }
+}
