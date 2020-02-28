@@ -10,9 +10,11 @@
  @import 'components/search-fied';
  @import 'components/muilt-row-slider';
  @import 'components/input-form';
+ @import 'components/accordion-search';
 /*Import pages*/
 @import'pages/home.scss';
 @import 'pages/about-portal.scss';
+@import 'pages/factories-sectors.scss';
 
 /*Import Layouts*/
  @import 'layout/nav';

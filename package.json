@@ -23,6 +23,7 @@
     "@angular/router": "~9.0.1",
     "@ng-bootstrap/ng-bootstrap": "^6.0.0",
     "@types/swiper": "3.4.3",
+    "bootstrap": "^4.4.1",
     "jquery": "^3.4.1",
     "node-sass": "^4.13.1",
     "rxjs": "~6.5.4",

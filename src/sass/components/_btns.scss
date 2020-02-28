@@ -61,5 +61,29 @@
             background-color: $primary-color;
         }
     }
+    &--search{
+        padding-left:2.5rem;
+        padding-right: 2.5rem;
+        padding-top:0.938rem;
+        padding-bottom:0.938rem;
+        font-size: 1.25rem;
+        font-family: $font-family-base;
+        font-weight: bold;
+        text-decoration: none;
+        transition: .5s;
+        line-height: 1;
+        cursor: pointer;
+        transition: .2s;
+        &:hover{
+            color: $white;
+            background-color: $primary-color;
+            border:2px solid $primary-color !important;
+        }
+    }
 
+    &-border{
+        &--black{
+        border:2px solid $black;
+    }
+}
 }

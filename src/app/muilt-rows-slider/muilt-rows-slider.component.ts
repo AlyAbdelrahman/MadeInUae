@@ -15,12 +15,12 @@ export class MuiltRowsSliderComponent implements OnInit  {
 
   ngAfterViewInit() {
    this.swiper = new Swiper('.swiper-container', {
-  //   navigation: {
-  //     nextEl: '.swiper-button-next',
-  //     prevEl: '.swiper-button-prev',
-  // },
-    prevButton: '.swiper-button-prev',
-    nextButton: '.swiper-button-next',
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+  },
+  // nextButton: '.swiper-button-next',
+  //   prevButton: '.swiper-button-prev',
     slidesPerView: 3,
     spaceBetween:20,
     slidesPerColumn:2,
