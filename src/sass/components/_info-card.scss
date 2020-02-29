@@ -87,13 +87,101 @@
        }
     }
 
+    &--md{
+        height: 20.896rem;
+        padding: 0.75rem;
+        border-radius: .5rem;
+        .search-result-card-image-container{
+            height: 18.75rem;
+            width:18.75rem;
+            margin-#{$opposite-float}: 1rem;
+            border-radius: 0.25rem;
+            overflow: hidden;
+            .search-result-card__img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+         .search-result-card-info{
+            width: 49.75rem;
+        }
+        .search-result-card__header{
+            color: $header-color;
+            font-size: 2rem;
+            line-height: 2.438rem;
+            font-family: $font-family-base;
+            margin-bottom: 1rem;
+            margin-top: 1rem;
+        }
+        .search-result-card-details__txt{
+            color:$dark-grey-txt;
+            font-size:1rem;
+            line-height: 1.5rem;
+            font-family: $font-family-base;
+            margin-bottom: .8rem;
+
+        }
+        .search-result-card-contacts-container{
+            width: 29.688rem;
+        }
+        .search-card-contacts-list{
+            padding: 0;
+            display: flex;
+            margin: 0;
+            flex-wrap: wrap;
+            height: 3.938rem;
+            width: 29.688rem;
+            flex-direction: column;
+           
+        }
+        .search-card-contact{
+            flex: 1;
+        }
+        .social-container{
+            display: flex;
+        .address-header{
+            margin-#{$opposite-float}:2.5rem ;
+            padding-top: .4rem;
+        }
+        }
+        .social-icon-list{
+            list-style: none;
+            display: flex;
+            padding: 0;
+        }
+        .social-icon{
+            margin-#{$default-float}:1rem ;
+        }
+        .social-action{
+            text-decoration: none;
+            font-size: 1.5rem;
+        }
+    }
     .search-card-contact,.search-result-card-action{
         list-style: none;
-
+        
     }
     .contact-icon {
         margin-right: .3rem;
         margin-left: .3rem;
     
+    }
+    .address-container{
+        margin-bottom: 1rem;
+    }
+    .address{
+        &-header{
+            color: $primary-color;
+            font-family: $font-family-base;
+            line-height: 1.188rem;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+        &-details{
+            color: $dark-grey-txt;
+            font-family: $font-family-base;
+            line-height: 1.5rem;
+            font-size: 1rem;
+        }
     }
 }
