@@ -1,0 +1,129 @@
+.person-details-box{
+    width: 20.438rem;
+    height: 19.313rem;
+    background-color: $light-pink;
+    display: flex;
+    flex-direction: column;
+    border-radius: .5rem;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+    .person{
+        &-image-container{
+            display: flex;
+            justify-content: center;
+            width: 7rem;
+            height: 7rem;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto;
+            border: 2px solid $light-red;
+            margin-bottom: 1rem;
+        }
+        &__img{
+            width: 100%;
+            height: 100%;
+        }
+        &-contact-header-container{
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        &__contact-header{
+            color:$header-color;
+            font-family: $font-family-base;
+            line-height: 1.813rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 0;
+        }
+        &-name-container,&-title-container,&-contacts-container{
+            display: flex;
+            justify-content: center;
+        }
+        &__name{
+            color:$header-color;
+            font-family: $font-family-base;
+            font-size: 1rem;
+            line-height: 1.188rem;
+            font-weight: bold;
+        }
+        &__title{
+            color:$header-color;
+            font-family: $font-family-base;
+            font-size: 1rem;
+            line-height: 1.188rem;
+        }
+        &-contacts-container{
+            flex-direction: column;
+        }
+        &__contact{
+            color:$header-color;
+            font-family: $font-family-base;
+            font-size: 1rem;
+            line-height: 1.188rem;
+            margin: 0.438rem auto;
+        }
+        &-contacts__icon{
+            &:before{
+            margin-#{$default-float}:.5rem;
+        }
+    }
+
+    }
+}
+
+.branches-box{
+    width: 20.438rem;
+    height: 17rem;
+    background-color: $light-pink;
+    display: flex;
+    flex-direction: column;
+    border-radius: .5rem;
+    justify-content: center;
+    .branch{
+        &-txt-container{
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        &__txt{
+            color:$header-color;
+            font-family: $font-family-base;
+            font-size: 1rem;
+            line-height: 1.188rem;
+            font-weight: bold;
+        }
+        &-name-container,&-branch-name-container,&-address-container,&-contact-number-container{
+            display: flex;
+            justify-content: center;
+        }
+        &__name,&__address,&__number{
+            color:$header-color;
+            font-family: $font-family-base;
+            font-size: 1rem;
+            line-height: 1.188rem;
+        }
+        &__name{
+            font-weight: bold;
+        }
+        &-info{
+            &:after{
+                content: '';
+                width: 78%;
+                height: 2px;
+                background-color: red;
+                display: block;
+                margin: 1rem auto;
+                justify-content: center;
+            }
+        }
+
+    }
+    .branches-info-container{
+        &:last-child{
+            &:after{
+                height: 50px;
+            }
+        }
+    }
+}
