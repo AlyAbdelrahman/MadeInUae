@@ -1,6 +1,6 @@
 .search-results-container{
     width: 45.75rem;
-    background-color: red;
+    
 }
 .search-result-card{
     width: 100%;
@@ -10,7 +10,8 @@
     &--sm{
         height: 13.813rem;
         padding: 0.75rem;
-        
+        border-radius: .5rem;
+        margin-bottom: 1rem;
         .search-result-card-image-container{
             height:  12.188rem;
             width:11.375rem;
@@ -46,7 +47,7 @@
             font-size: .75rem;
             font-family: $font-family-base;
             line-height: 0.938rem;
-           
+           margin-#{$opposite-float}: .4rem;
             &:before{
                 content: ' |';
                 font-size: .75rem;
@@ -58,12 +59,41 @@
               content: '';
             }
         }
+        .search-result-card-actions-list{
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            padding-top: 1.188rem;
+        }
+       .search-result-card-action{
+       
+       }
+       .action-btn{
+           border: 1px solid $black;
+           padding-left: 1.063rem;
+           padding-right: 1.063rem;
+           margin-#{$opposite-float}:1rem ;
+           cursor: pointer;
+           transition: .2s;
+           font-size: 0.75rem;
+           line-height: 0.938rem;
+           font-family: $font-family-base;
+           cursor: pointer;
+   
+           &:hover{
+               background-color: $primary-color;
+               color: $white;
+           }
+       }
     }
 
-    .search-card-contact{
+    .search-card-contact,.search-result-card-action{
         list-style: none;
+
     }
     .contact-icon {
-        
+        margin-right: .3rem;
+        margin-left: .3rem;
+    
     }
 }

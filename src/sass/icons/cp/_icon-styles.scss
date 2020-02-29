@@ -27,11 +27,6 @@ $base-url:'src/sass/icons/';
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-Icon-share {
-  &:before {
-    content: $icon-Icon-share; 
-  }
-}
 .icon-Icon-fax {
   &:before {
     content: $icon-Icon-fax;     
@@ -158,6 +153,4 @@ $base-url:'src/sass/icons/';
     color: #7f7f7f;
   }
 }
-
-
 

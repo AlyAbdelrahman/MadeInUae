@@ -1,0 +1,37 @@
+.pagination-container{
+    display: flex;
+    justify-content: center;
+}
+
+.pagination-list{
+    list-style: none;
+    display: flex;
+    &:first-child{
+        margin-#{$opposite-float}: 0rem;
+
+    }
+    .page-number,.last-page{
+        background-color: $shadow-light-grey-bg;
+        border-radius: .5rem;
+        margin-#{$opposite-float}: 0.5rem;
+        padding: .4rem 0.8rem;
+        &__txt{
+            color: $med-grey-txt;
+            font-size: 1rem;
+            font-family: $font-family-base;
+            line-height: 1.188rem;
+            text-decoration: none;
+        }
+
+    }
+    .page-number{
+        &.active{
+            background-color: $light-green;
+            a{
+            color: white;
+        }
+            border-radius: 50%;
+        }
+    }
+}
+
