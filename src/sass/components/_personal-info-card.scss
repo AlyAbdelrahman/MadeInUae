@@ -80,6 +80,7 @@
     flex-direction: column;
     border-radius: .5rem;
     justify-content: center;
+    padding: .2rem;
     .branch{
         &-txt-container{
             display: flex;
@@ -89,7 +90,7 @@
         &__txt{
             color:$header-color;
             font-family: $font-family-base;
-            font-size: 1rem;
+            font-size: 1.5rem;
             line-height: 1.188rem;
             font-weight: bold;
         }
@@ -107,23 +108,27 @@
             font-weight: bold;
         }
         &-info{
+            list-style: none;
             &:after{
                 content: '';
                 width: 78%;
                 height: 2px;
                 background-color: red;
                 display: block;
-                margin: 1rem auto;
+                margin: .5rem auto;
                 justify-content: center;
+            }
+            &:last-child{
+                &:after{
+                   display: none;
+                }
             }
         }
 
     }
     .branches-info-container{
-        &:last-child{
-            &:after{
-                height: 50px;
-            }
-        }
+        padding: 0;
+        margin-bottom: 0;
+      
     }
 }
