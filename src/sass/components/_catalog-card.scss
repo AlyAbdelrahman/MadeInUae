@@ -9,6 +9,7 @@
     .product-catalog-header-container{
         display: flex;
         justify-content: center;
+        margin-bottom: 2rem;
     }
     .product-catalog-header__txt{
         color:$header-color;
@@ -17,10 +18,24 @@
         line-height: 1.188rem;
         font-weight: bold;
     }
-
-
-
-
-
-
+}
+.category-details-container{
+    display: flex;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+    .category-details{
+        background-color: $white;
+        border: 1px solid $light-red;
+        border-radius: .5rem;
+        padding:  .2rem .5rem;
+        margin-top: .8rem;
+        margin-#{$opposite-float}: 1rem;
+        &__txt{
+            font-size: 1rem;
+            font-family: $font-family-base;
+            line-height: 1.188;
+            color: $black;
+            text-align: center;
+        }
+    }
 }

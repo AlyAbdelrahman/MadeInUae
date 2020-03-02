@@ -35,23 +35,35 @@ export class CatalogSliderComponent implements OnInit {
         if (ww <= 400) sliderView = 1;
     
         var swiper = new Swiper('.catalog-swiper-container', {
+          navigation: {
+            nextEl: '.Ca-swiper-button-next',
+            prevEl: '.Ca-swiper-button-prev',
+          },
+          pagination: {
+            el: '.swiper-pagination',
+            type: 'bullets',
+            clickable: true,
+          },
+          observer: true, 
+          observeParents: true,
           slidesPerView: sliderView,
-          spaceBetween: 0,
+          spaceBetween: 50,
           loop: true,
-          loopedSlides: 16,
+          // loopedSlides: 3,
           speed: 500,
-          autoplay: true,
+         // autoplay: true,
           autoplayDisableOnInteraction: true,
-          centeredSlides: true
+          centeredSlides: true,
+        
         });
     
         $(window).resize(function () {
           var ww = $(window).width();
-          if (ww >= 1700) swiper.params.slidesPerView = 7;
-          if (ww <= 1700) swiper.params.slidesPerView = 7;
-          if (ww <= 1560) swiper.params.slidesPerView = 6;
-          if (ww <= 1400) swiper.params.slidesPerView = 5;
-          if (ww <= 1060) swiper.params.slidesPerView = 4;
+          if (ww >= 1700) swiper.params.slidesPerView = 3;
+          if (ww <= 1700) swiper.params.slidesPerView = 3;
+          if (ww <= 1560) swiper.params.slidesPerView = 3;
+          if (ww <= 1400) swiper.params.slidesPerView = 3;
+          if (ww <= 1060) swiper.params.slidesPerView = 3;
           if (ww <= 800) swiper.params.slidesPerView = 3;
           if (ww <= 560) swiper.params.slidesPerView = 2;
           if (ww <= 400) swiper.params.slidesPerView = 1;

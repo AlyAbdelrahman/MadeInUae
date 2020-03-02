@@ -42,3 +42,16 @@ color: $white;
     display: flex;
     justify-content: center;
 }
+.swiper-pagination-container{
+    display: flex;
+    justify-content: center;
+    .swiper-pagination-bullet{
+        margin-left: .5rem;
+        width: 0.75rem;
+        height: 0.75rem;
+    }
+    .swiper-pagination-bullet-active{
+        background-color: red;
+    }
+}
+
