@@ -15,11 +15,14 @@
  @import 'components/pagination';
  @import 'components/personal-info-card';
  @import 'components/catalog-card';
+ @import 'components/catalog-slider';
+ @import 'components/footer-slider';
 /*Import pages*/
 @import'pages/home.scss';
 @import 'pages/about-portal.scss';
 @import 'pages/factories-sectors.scss';
 @import 'pages/factory-details.scss';
+
 
 /*Import Layouts*/
  @import 'layout/nav';
