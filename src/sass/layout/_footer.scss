@@ -94,3 +94,29 @@ footer{
     }
 
 }
+
+@media (max-width:1200px) {
+    footer{
+        .footer--bg {
+            background-size: 110rem;
+        }
+        .site-map-list .site-map-tab a {
+            font-size: 1rem;
+        }
+        .contacts-list .contact-link {
+            margin-left: 1rem;
+            font-size: 1rem;
+        }
+    }
+    .footer-swiper-container{
+        width: 100vw !important;
+    }
+
+}
+
+@media (max-width:500px){
+.site-map-list,.contacts-list{
+    flex-direction: column;
+    text-align: center;
+}
+}

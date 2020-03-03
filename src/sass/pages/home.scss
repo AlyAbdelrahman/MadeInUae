@@ -149,4 +149,18 @@
    hr{
        display: none;
    }
+
+   .about-portal{
+    background: #dee0eb;
+    margin-top: 4rem;
+    height: 100%;
+    padding-bottom: 1rem;
+    &-image-container {
+        width: auto;
+        height: auto;
+    }
+   }
+   .container {
+    max-width: auto;
+    }
 }
