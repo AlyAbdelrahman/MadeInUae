@@ -35,3 +35,13 @@
 
         }
 }
+@media (max-width:1200px) {
+    .page-banner-container{
+        // height: 51.313rem;
+        width: 105vw;
+    }
+
+    .page-banner__header{
+        font-size: 2.5rem;
+    }
+}

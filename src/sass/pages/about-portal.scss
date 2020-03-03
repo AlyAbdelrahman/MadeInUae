@@ -36,4 +36,14 @@
        
     }
 }
-
+@media (max-width:1200px) {
+    .uae-info-paragraph-img-container{
+        height: auto !important;
+        width: auto !important;
+    }
+    .site-guide:after {
+    height: 51.313rem;
+    width: 129vw;
+    top: 38rem;
+    }
+}
