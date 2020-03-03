@@ -21,13 +21,47 @@ export class MuiltRowsSliderComponent implements OnInit  {
   },
   // nextButton: '.swiper-button-next',
   //   prevButton: '.swiper-button-prev',
-    slidesPerView: 3,
-    spaceBetween:20,
-    slidesPerColumn:2,
-    slidesPerColumnFill: 'col',
-    slidesPerGroup: 6,
-    observer: true, 
-    observeParents: true
+    // slidesPerView: 3,
+    // spaceBetween:20,
+    // slidesPerColumn:2,
+    // slidesPerColumnFill: 'col',
+    // slidesPerGroup: 6,
+    // observer: true, 
+    // observeParents: true,
+      slidesPerView: 1,
+        slidesPerColumn:1,
+        slidesPerGroup: 1,
+        
+        spaceBetween:1,
+        
+    breakpoints: {
+      640: {
+        slidesPerView:3,
+        slidesPerColumn:1,
+        slidesPerGroup: 1,
+        
+        spaceBetween:0,
+      },
+      // 1100: {
+      //   slidesPerView: 2,
+      // },
+    
+      810: {
+        // slidesPerView: 2,
+        // slidesPerColumn:1,
+        // slidesPerGroup: 1,
+        // spaceBetween:50,
+
+        slidesPerView: 3,
+        spaceBetween:20,
+        slidesPerColumn:2,
+        slidesPerColumnFill: 'col',
+        slidesPerGroup: 6,
+        observer: true, 
+        observeParents: true,
+      },
+     
+    }
     });
   }
 }

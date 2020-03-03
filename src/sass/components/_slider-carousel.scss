@@ -42,3 +42,59 @@
     }
 }
 }
+
+//*****************RESPONSIVE*******************//
+
+
+@media (max-width:950px) {
+    .bs-big-carousel .centered-caption {
+        top: 10rem;
+    }
+    .bs-big-carousel .caption-header {
+        font-size: 1.125rem;
+        line-height: 1.875rem;
+    }
+    .bs-big-carousel .caption-pagraph {
+        font-size: 1rem;
+        line-height: 1rem;
+    }
+    .bs-big-carousel .create-factory-btn {
+        top: 0.4rem;
+        padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    font-size: 1rem;
+    }
+    .bs-big-carousel .carousel-indicators{
+        display: none;
+    }
+}
+
+/********************RESPONSIVE Mobile *************************/
+@media (max-width:500px){
+    .bs-big-carousel .centered-caption {
+        top: 3rem;
+    }
+    .bs-big-carousel .caption-header {
+        font-size: .9rem;
+        line-height: 1rem;
+    }
+
+    .bs-big-carousel .caption-pagraph {
+        font-size: .7rem;
+        line-height: 1rem;
+        margin-bottom: 0;
+    }
+    .bs-big-carousel .create-factory-btn {
+        top: 0.4rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        font-size: .5rem;
+        border: 1px solid;
+    }
+
+    
+}

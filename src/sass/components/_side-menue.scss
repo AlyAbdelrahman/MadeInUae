@@ -86,3 +86,10 @@
     //     border-radius: 0% 84% 0% 100% / 99% 18% 56% 0%;
      }
 }
+
+@media (max-width:1200px) {
+
+    .side-menue{
+        display: none;
+    }
+}

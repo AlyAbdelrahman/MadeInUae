@@ -1,4 +1,5 @@
-<nav class="nav-bar">
+<nav class="nav-bar custom-toggler">
+   
   <div class="container top-nav"> 
       <div class="logo-container"> 
       <img class="logo-img" src="../assets/images/Logo.png" alt="logo">
@@ -14,8 +15,44 @@
     <li class="nav-tab " routerLinkActive="active"><a routerLink="/ContactUs">اتصل بنا</a></li>
 </ul>
 <button class="btn--rounded btn-fill--white btn-txt--black border-0 lang-switcher">English</button>
+
 </div>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
 </nav>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item active">
+            <a class="nav-link" routerLink="/">الصفحةالرئيسية</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/About">عن البوابة</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " routerLink="/Factories">الاقسام الصناعية</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " routerLink="/FactoryDetails">الرعاة المشاركون</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " routerLink="/AddFactory">اضف مصنعك</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " routerLink="/ContactUs">اتصل بنا</a>
+          </li>
+          <li class="nav-item">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">English</button>
+          </li>
+
+        </ul>
+        <form class="form-inline my-2 my-lg-0 search-form">
+          <input class="form-control mr-sm-2" type="search" placeholder="ابحث">
+          <button class="btn btn-outline-success my-2 my-sm-0 w-75" type="submit">ابحث</button>
+        </form>
+      </div>
 <router-outlet></router-outlet>
 <!------------------------------------Home Page --------------------------------------->
 <!--slider-->

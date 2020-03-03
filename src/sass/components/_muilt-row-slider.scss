@@ -63,3 +63,28 @@
     #{$opposite-float}: 3rem;
     right: auto;
 }
+
+
+//*************************Responsive TABLET************************//
+
+
+
+@media (max-width:1200px) {
+    .industrial-sector-details{
+width:100vw !important;
+        .swiper-button-prev,.swiper-button-next{
+           top: 26rem;
+
+        }
+    }
+    
+}
+
+@media (max-width:800px) {
+    .industrial-sector-details{
+
+        width: 100vw !important;
+    }
+    
+}
+

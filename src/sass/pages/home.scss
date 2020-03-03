@@ -130,3 +130,23 @@
 
     }
 }
+.industrial-sector-details{
+    width: 50rem ;
+    position: relative;
+}
+
+
+
+
+/*********************RESPONSIVE*********************/
+@media (max-width:1200px) {
+    .home-banner{
+        height: 54vw;
+    }
+    .industrial-sector{
+        justify-content: center ;
+    }
+   hr{
+       display: none;
+   }
+}
