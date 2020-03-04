@@ -11,3 +11,63 @@
 .accordion-search{
     margin-top: 1.063rem;
 }
+
+@media (max-width:1200px) {
+    .factories-sectors{
+        padding: 0;
+        padding-right: 1rem;
+        flex-direction: column;
+    }
+    .side-menue-filter{
+        width: 95vw;
+    }
+    .filter-accordion{
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width:500px){
+    .factories-sectors{
+        overflow: hidden;
+        padding: .5rem;
+    }
+    .search-result-card--sm{
+        height: auto;
+        flex-direction: column;
+        width: 95vw;
+    }
+    .search-result-card--sm .search-result-card-image-container{
+        width: 100%;
+    }
+    .search-result-card--sm .search-result-card-info{
+        width: 100%;
+    }
+    .search-result-card--sm .search-card-contacts-list{
+        flex-direction: column;
+    }
+    .search-result-card--sm .search-card-contact:first-child::before{
+        display: none;
+    }
+    .search-result-card--sm .search-card-contact:before{
+        display: none;
+    }
+    .search-result-card-header-container{
+        margin-top: 1rem;
+    }
+    .search-result-card--sm .search-card-contacts-list{
+        padding: 0;
+    }
+    .search-result-card__header{
+        display: flex;
+        justify-content: center;
+    }
+    .search-result-card .search-card-contact{
+        margin: 0 auto;
+    }
+    .search-results-container{
+        width: 100vw;
+    }
+    .search-results-container{
+        width: 66vw;
+    }
+}
