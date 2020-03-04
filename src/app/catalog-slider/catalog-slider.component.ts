@@ -64,7 +64,7 @@ export class CatalogSliderComponent implements OnInit {
           if (ww <= 1560) swiper.params.slidesPerView = 3;
           if (ww <= 1400) swiper.params.slidesPerView = 3;
           if (ww <= 1060) swiper.params.slidesPerView = 3;
-          if (ww <= 800) swiper.params.slidesPerView = 3;
+          if (ww <= 800) swiper.params.slidesPerView = 2;
           if (ww <= 560) swiper.params.slidesPerView = 2;
           if (ww <= 400) swiper.params.slidesPerView = 1;
         });
