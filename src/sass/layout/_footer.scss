@@ -104,7 +104,7 @@ footer{
             font-size: 1rem;
         }
         .contacts-list .contact-link {
-            margin-left: 1rem;
+            margin-#{$opposite-float}: 1rem;
             font-size: 1rem;
         }
     }

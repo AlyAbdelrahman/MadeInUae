@@ -38,6 +38,10 @@
             bottom: 0;
             #{$opposite-float}: 0;
             top:-0.313rem;
+        @if($lang==en){
+            #{$opposite-float}: 2rem;
+        
+        }
             &::before{
                 color: $light-grey;
                 font-size: 0.688rem;

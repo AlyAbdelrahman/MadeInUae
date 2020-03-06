@@ -26,6 +26,7 @@
     height: 56.5vw;
     margin-bottom: 1rem;
     padding-top: 4.375rem;
+    overflow: hidden;
     position: relative;
     &::after {
         content: "";
@@ -113,6 +114,10 @@
         background-repeat: no-repeat;
         top: 4rem;
         background-size: cover;
+        @if($lang==en){
+        
+            transform: scalex(-1);
+        }
 
     }
     &::before{
@@ -127,6 +132,10 @@
         background-repeat: no-repeat;
         top: -2rem;
         background-size: cover;
+        @if($lang==en){
+        
+            transform: scalex(-1);
+        }
 
     }
 }

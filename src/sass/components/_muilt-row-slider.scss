@@ -61,7 +61,13 @@
 
 .swiper-button-next, .swiper-container-rtl .swiper-button-prev{
     #{$opposite-float}: 3rem;
-    right: auto;
+    #{$default-float}: auto;
+}
+@if($lang==en){
+    .swiper-button-prev.muilt-row-slider-prev{
+    #{$default-float}: 85%;
+
+    }
 }
 
 
@@ -77,6 +83,8 @@ width:100vw !important;
 
         }
     }
+
+
     
 }
 
@@ -84,6 +92,12 @@ width:100vw !important;
     .industrial-sector-details{
 
         width: 100vw !important;
+    }
+    @if($lang==en){
+        .swiper-button-prev.muilt-row-slider-prev{
+        #{$default-float}: 69%;
+    
+        }
     }
     
 }

@@ -2,7 +2,7 @@
   "name": "uae",
   "version": "0.0.0",
   "scripts": {
-    "start": " node-sass -w src/sass/main-rtl.scss  src/css/style.css",
+    "start": " node-sass -w src/sass/main-rtl.scss  src/css/style.css && node-sass -w src/sass/main-rtl.scss  src/css/style-ltr.css",
     "ng": "ng",
     "run": "ng serve",
     "build": "ng build",

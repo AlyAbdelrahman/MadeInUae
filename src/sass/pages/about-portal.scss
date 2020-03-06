@@ -13,7 +13,9 @@
         background-repeat: no-repeat;
         top:2rem;
         background-size: contain;
-
+        @if($lang==en){
+            transform: scaleX(-1);
+        }
     }
     .uae-info-header-txt{
         font-size:2rem ;
@@ -45,5 +47,19 @@
     height: 51.313rem;
     width: 129vw;
     top: 38rem;
+   
     }
+}
+@media (max-width:800px) {
+    .site-guide:after {
+        top: 22rem;
+       
+        }
+}
+
+@media (max-width:500px) {
+    .site-guide:after {
+        top: 42rem;
+       
+        }
 }

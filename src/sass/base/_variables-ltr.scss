@@ -1,2 +1,75 @@
-﻿
+﻿@import '_variables.scss';
+
+// RTL languages directions.
+
+$default-float: left;
+$opposite-float: right;
+$default-direction: ltr;
+$opposite-direction: rtl;
+$lang: en;
+
+// RTL Fonts
+@font-face {
+    font-family: 'NeoSansArabic';
+    src: url('#{$arabic-font-base}.eot?ver=0');
+    src: url('#{$arabic-font-base}.eot?ver=0#iefix') format('embedded-opentype'), url('#{$arabic-font-base}.woff2?ver=0') format('woff2'), url('#{$arabic-font-base}.woff?ver=0') format('woff'), url('#{$arabic-font-base}.ttf?ver=0') format('truetype'), url('#{$arabic-font-base}.svg?ver=0#NeoSansArabic') format('svg');
+    
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Neo-Sans-Arabic-Regular';
+    src: url('#{$arabic-font-regular}.eot?ver=0');
+    src: url('#{$arabic-font-regular}.eot?ver=0#iefix') format('embedded-opentype'), url('#{$arabic-font-regular}.woff2?ver=0') format('woff2'), url('#{$arabic-font-regular}.woff?ver=0') format('woff'), url('#{$arabic-font-regular}.ttf?ver=0') format('truetype'), url('#{$arabic-font-regular}.svg?ver=0#Neo-Sans-Arabic-Regular') format('svg');
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Neo-Sans-Arabic-black';
+    src: url('#{$arabic-font-black}.eot?ver=0');
+    src: url('#{$arabic-font-black}.eot?ver=0#iefix') format('embedded-opentype'), url('#{$arabic-font-black}.woff2?ver=0') format('woff2'), url('#{$arabic-font-black}.woff?ver=0') format('woff'), url('#{$arabic-font-black}.ttf?ver=0') format('truetype'), url('#{$arabic-font-black}.svg?ver=0#Neo-Sans-Arabic-black') format('svg');
+    font-style: normal;
+}
+@font-face {
+    font-family: 'NeoSansArabicUltra';
+    src: url('#{$arabic-font-ultra}.eot?ver=0');
+    src: url('#{$arabic-font-ultra}.eot?ver=0#iefix') format('embedded-opentype'), url('#{$arabic-font-ultra}.woff2?ver=0') format('woff2'), url('#{$arabic-font-ultra}.woff?ver=0') format('woff'), url('#{$arabic-font-ultra}.ttf?ver=0') format('truetype'), url('#{$arabic-font-ultra}.svg?ver=0#NeoSansArabicUltra') format('svg');
+    font-style: normal;
+}
+@font-face {
+    font-family: 'NeoSansMedium';
+    src: url('#{$arabic-font-medium}.eot?ver=0');
+    src: url('#{$arabic-font-medium}.eot?ver=0#iefix') format('embedded-opentype'), url('#{$arabic-font-medium}.woff2?ver=0') format('woff2'), url('#{$arabic-font-medium}.woff?ver=0') format('woff'), url('#{$arabic-font-medium}.ttf?ver=0') format('truetype'), url('#{$arabic-font-medium}.svg?ver=0#NeoSansMedium') format('svg');
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'NeoSansArabicBold';
+    src: url('#{$arabic-font-bold}.eot?ver=0');
+    src: url('#{$arabic-font-bold}.eot?ver=0#iefix') format('embedded-opentype'), url('#{$arabic-font-bold}.woff2?ver=0') format('woff2'), url('#{$arabic-font-bold}.woff?ver=0') format('woff'), url('#{$arabic-font-bold}.ttf?ver=0') format('truetype'), url('#{$arabic-font-bold}.svg?ver=0#NeoSansArabicBold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'NeoSansArabicLight';
+    src: url('#{$arabic-font-light}.eot?ver=0');
+    src: url('#{$arabic-font-light}.eot?ver=0#iefix') format('embedded-opentype'), url('#{$arabic-font-light}.woff2?ver=0') format('woff2'), url('#{$arabic-font-light}.woff?ver=0') format('woff'), url('#{$arabic-font-light}.ttf?ver=0') format('truetype'), url('#{$arabic-font-bold}.svg?ver=0#NeoSansArabicBold') format('svg');
+    font-style: normal;
+}
+
+
+$font-family-base: "NeoSansArabic";
+$font-family-regular:"Neo-Sans-Arabic-Regular";
+$font-family-black: "NeoSansArabicBlack";
+$font-family-ultra: "NeoSansArabicUltra";
+$font-family-medium: "NeoSansMedium";
+
+$font-family-bold: "NeoSansArabicBold";
+$font-family-light: "NeoSansArabicLight";
+
+
+
+
+
+
 @import '../vendors/bootstrap/scss/bootstrap.scss';
+

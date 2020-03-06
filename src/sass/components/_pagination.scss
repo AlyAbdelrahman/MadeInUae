@@ -24,6 +24,14 @@
         }
 
     }
+    @if($lang==ar){
+       .last-page{
+
+           transform: rotate(180deg);
+       } 
+
+    }
+    
     .page-number{
         &.active{
             background-color: $light-green;

@@ -15,7 +15,7 @@
 @media (max-width:1200px) {
     .factories-sectors{
         padding: 0;
-        padding-right: 1rem;
+        padding-#{$default-float}: 1rem;
         flex-direction: column;
     }
     .side-menue-filter{
@@ -68,6 +68,6 @@
         width: 100vw;
     }
     .search-results-container{
-        width: 66vw;
+        width: 85vw;
     }
 }
