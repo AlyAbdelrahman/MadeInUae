@@ -53,6 +53,19 @@
         font-family: $font-family-light;
         color:$white;
         text-decoration: none;
+        position: relative;
+        &::after{
+            content: '';
+        transition: .5s;
+
+            display: block;
+            position: absolute;
+            width:0%;
+            height: 0.438rem;
+            border-radius: 0.125rem;
+            bottom: -1.5rem;
+            background-color: $primary-color;
+          }
         }
         &.active{
             position: relative;
@@ -63,10 +76,18 @@
             width: 100%;
             height: 0.438rem;
             border-radius: 0.125rem;
-            bottom: -1.344rem;
+            bottom: -1.5rem;
             background-color: $primary-color;
           }
 
+        }
+        
+        &:hover{
+            a{
+           &::after{
+               width: 100%;
+           }
+        }
         }
     }
   

@@ -1,0 +1,16 @@
+::ng-deep {
+    .carousel-item {
+      transition: opacity 2s linear !important;
+      position: absolute !important;
+      display: block !important;
+      opacity: 0;
+      transform: scale(1.5);
+    //   filter: blur(15px);
+    }  
+    .carousel-item.active {
+      position: relative !important;
+      opacity: 1;
+      transform: scale(1);
+    //   filter: blur(0);
+    }
+}

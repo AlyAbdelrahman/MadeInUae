@@ -18,6 +18,7 @@
     border-radius: 10px 10px 10px 10px;
     border: 1px solid $black;
     overflow: hidden;
+    transition: .3s;
     &-image-container{
         border-radius: 0px 0px 10px 10px;
         overflow: hidden;
@@ -42,6 +43,11 @@
         font-family: $font-family-base;
         line-height: 1.5rem;
         margin-bottom: 0;
+    }
+    &:hover{
+        -webkit-box-shadow: -2px 3px 11px -2px rgba(0,0,0,0.75);
+        -moz-box-shadow: -2px 3px 11px -2px rgba(0,0,0,0.75);
+        box-shadow: -2px 3px 11px -2px rgba(0,0,0,0.75);
     }
 
 }
@@ -70,7 +76,12 @@
     }
 }
 
-
+.muilt-row-slider-next,.muilt-row-slider-prev {
+    transition: .3s;
+    &:hover{
+        border-radius: 50%;
+    }
+}
 //*************************Responsive TABLET************************//
 
 

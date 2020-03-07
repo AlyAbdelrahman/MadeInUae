@@ -116,11 +116,23 @@
   .swiper-btns-wrapperr{
     position: absolute;
     #{$opposite-float}: 0;
-    top: -6%;
+    top: -7%;
+    // @if($lang==en){
+    // top:-9%
+    // }
   }
 
   .Ca-swiper-button-next{
     margin-#{$opposite-float}: 43.5rem;
+    @if($lang==en){
+    left: -3rem;
+    }
+
+  }
+  .Ca-swiper-button-prev{
+    @if($lang==en){
+      left: -49rem;
+      }
   }
   .Ca-swiper-button-next,.Ca-swiper-button-prev{
       background-color: black !important;

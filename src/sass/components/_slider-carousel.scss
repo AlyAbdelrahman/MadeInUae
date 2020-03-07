@@ -24,12 +24,36 @@
         position: relative;
         top: 3.813rem;
         text-decoration: none;
+        overflow: hidden;
         // &:hover{
         //     // border: 3px solid $white;
         //     // color:black;
         //     // background-color: $white;
         
         // }
+        &:before {
+            content: "";
+            display: block;
+            background: $primary-color;
+            position: absolute;
+            width:200% ;
+            height: 500%;
+            transform: translate(-120%, -50%) translateZ(0);
+            z-index: -1;
+            border-radius: 100%;
+            transition: 0.4s cubic-bezier(0.4, 0, 1, 1);
+
+        }
+        &:hover{
+            border: solid  $primary-color !important;
+            &:before {
+            transform: translate(16%, -34%) translateZ(0);
+            @if($lang==en){
+                transform: translate(-33%, -34%) translateZ(0);
+        
+                }
+        }
+    }
     }
     .carousel-indicators{
         bottom: 0;
