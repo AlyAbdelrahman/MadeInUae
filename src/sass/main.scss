@@ -1,33 +1,33 @@
 // @import 'base/_global'; 
 @import 'base/_media-query';
- @import'base/typography';
+@import'base/_typography';
 
 /*Import Components*/
- @import 'components/btns.scss';
- @import 'components/infinite-carousel';
- @import 'components/side-menue';
- @import 'components/slider-carousel';
- @import 'components/search-fied';
- @import 'components/muilt-row-slider';
- @import 'components/input-form';
- @import 'components/accordion-search';
- @import 'components/info-card';
- @import 'components/pagination';
- @import 'components/personal-info-card';
- @import 'components/catalog-card';
- @import 'components/catalog-slider';
- @import 'components/footer-slider';
+ @import 'components/_btns.scss';
+ @import 'components/_infinite-carousel';
+ @import 'components/_side-menue';
+ @import 'components/_slider-carousel';
+ @import 'components/_search-fied';
+ @import 'components/_muilt-row-slider';
+ @import 'components/_input-form';
+ @import 'components/_accordion-search';
+ @import 'components/_info-card';
+ @import 'components/_pagination';
+ @import 'components/_personal-info-card';
+ @import 'components/_catalog-card'; 
+ @import 'components/_catalog-slider';
+ @import 'components/_footer-slider';
 /*Import pages*/
-@import'pages/home.scss';
-@import 'pages/about-portal.scss';
-@import 'pages/factories-sectors.scss';
-@import 'pages/factory-details.scss';
+@import'pages/_home.scss';
+@import 'pages/_about-portal.scss';
+@import 'pages/_factories-sectors.scss'; 
+@import 'pages/_factory-details.scss';
 
 
 /*Import Layouts*/
- @import 'layout/nav';
- @import 'layout/footer';
-@import'layout/banner'; 
+ @import 'layout/_nav';
+ @import 'layout/_footer'; 
+@import'layout/_banner'; 
 
 
 

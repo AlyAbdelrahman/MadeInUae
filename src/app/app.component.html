@@ -1,3 +1,5 @@
+<link rel="stylesheet" [href]='cssUrl'>
+ 
 <nav class="nav-bar custom-toggler">
    
   <div class="container top-nav"> 
@@ -5,7 +7,7 @@
       <img class="logo-img" src="../assets/images/Logo.png" alt="logo">
   </div>
 <ul class="nav-tabs-container">
-    <li class="nav-tab " routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a routerLink="/"> الصفحةالرئيسية</a></li>
+    <li class="nav-tab " routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a routerLink="/"> {{'homePage' | translate}}</a></li>
     <li class="nav-tab " routerLinkActive="active"><a routerLink="/About">عن البوابة</a> </li>
     <li class="nav-tab " routerLinkActive="active"><a routerLink="/Factories">الاقسام الصناعية</a>
         <!-- <span class="icon-Icon-arrow rotate-down white-colored-txt drop-down-arrow"></span> -->
@@ -14,7 +16,7 @@
     <li class="nav-tab " routerLinkActive="active"><a routerLink="/AddFactory">اضف مصنعك</a></li>
     <li class="nav-tab " routerLinkActive="active"><a routerLink="/ContactUs">اتصل بنا</a></li>
 </ul>
-<button class="btn--rounded btn-fill--white btn-txt--black border-0 lang-switcher">English</button>
+<button class="btn--rounded btn-fill--white btn-txt--black border-0 lang-switcher" (click)="switchLang('en')">English</button>
 
 </div>
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,7 +28,7 @@
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
           <li class="nav-item active">
-            <a class="nav-link" routerLink="/">الصفحةالرئيسية</a>
+            <a class="nav-link" routerLink="/">{{'homePage' || translate}}</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" routerLink="/About">عن البوابة</a>
@@ -44,7 +46,7 @@
             <a class="nav-link " routerLink="/ContactUs">اتصل بنا</a>
           </li>
           <li class="nav-item">
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">English</button>
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="switchLang('en')">English</button>
           </li>
 
         </ul>

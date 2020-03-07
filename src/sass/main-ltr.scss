@@ -1,7 +1,8 @@
 ﻿@import 'base/_colors';
 @import 'base/_variables-ltr';
+@import 'base/_typography'; 
 // Import the main style
 // Import the main style
 @import 'base/_global'; 
 @import 'base/_media-query';
-@import 'main.scss';
+@import '_main.scss';
