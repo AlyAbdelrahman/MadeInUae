@@ -19,7 +19,7 @@ export class AppComponent implements OnInit  {
   }
   ngOnInit() {
 
-    this.cssUrl= this.sanitizer.bypassSecurityTrustResourceUrl('uae/src/css/style-ltr.css')
+    // this.cssUrl= this.sanitizer.bypassSecurityTrustResourceUrl('uae/src/css/style-ltr.css')
   }
 
   switchLang() {
