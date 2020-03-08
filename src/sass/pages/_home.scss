@@ -36,7 +36,7 @@
         left: 0;
         height: 100%;
         width: 103%;
-        background:  url('../src/assets/images/section-bg.svg') bottom center;
+        background:  url('../images/section-bg.svg') bottom center;
         background-size: 100%;
         background-repeat: no-repeat !important;
         background-image: -.5rem;
@@ -126,7 +126,7 @@
     &:after{
         content: '';
         display: block;
-        background:url('../src/assets/images/home-slider-bg1.svg') ;
+        background:url('../images/home-slider-bg1.svg') ;
         height: 44.313rem;
         width: 47vw;
         position: absolute;
@@ -144,7 +144,7 @@
     &::before{
         content: '';
         display: block;
-        background:url('../src/assets/images/home-slider-bg-2.svg') ;
+        background:url('../images/home-slider-bg-2.svg') ;
         height: 21.9vw;
         width: 41vw;
         position: absolute;

@@ -1,5 +1,5 @@
 @import "variables";
-$base-url:'src/sass/icons/';
+$base-url:'../icons/';
 @font-face {
   font-family: '#{$icomoon-font-family}';
   src:  url('#{$base-url}/#{$icomoon-font-path}/#{$icomoon-font-family}.eot?kp53a7');

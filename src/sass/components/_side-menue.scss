@@ -8,15 +8,15 @@
     
     &-details{
         padding-top: 2rem;
-        padding-left: 0.938rem;
+        padding-left: 0.938rem;    
         padding-right: 0.938rem;
        
-        &:after{
+        &:after{  
         content: '';
         display: block;
         position: absolute;
         z-index: 1;
-        background: url('src/assets/images/aside-bg.png');
+        background: url('../images/aside-bg.png');
         z-index: -1;
         top: 49%;
         bottom: 0;
@@ -67,14 +67,14 @@
          content: '';
         display: block;
         position: absolute;
-        background: url('src/assets/images/aside-line.png');
+        background: url('../images/aside-line.png');
         height: 4rem;
         left: 0;
         right: 0;
         top: 47%;
         background-repeat: no-repeat;
         background-size: cover;
-       
+        
     //     height: 24.029rem;
     //     left: 0;
     //     right: -1rem;

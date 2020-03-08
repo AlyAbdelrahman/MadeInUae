@@ -2,45 +2,45 @@
 /*Fonts*/
 @font-face {
   font-family: 'NeoSansArabic';
-  src: url("src/fonts/NeoSansArabic.eot?ver=0");
-  src: url("src/fonts/NeoSansArabic.eot?ver=0#iefix") format("embedded-opentype"), url("src/fonts/NeoSansArabic.woff2?ver=0") format("woff2"), url("src/fonts/NeoSansArabic.woff?ver=0") format("woff"), url("src/fonts/NeoSansArabic.ttf?ver=0") format("truetype"), url("src/fonts/NeoSansArabic.svg?ver=0#NeoSansArabic") format("svg");
+  src: url("../fonts/NeoSansArabic.eot?ver=0");
+  src: url("../fonts/NeoSansArabic.eot?ver=0#iefix") format("embedded-opentype"), url("../fonts/NeoSansArabic.woff2?ver=0") format("woff2"), url("../fonts/NeoSansArabic.woff?ver=0") format("woff"), url("../fonts/NeoSansArabic.ttf?ver=0") format("truetype"), url("../fonts/NeoSansArabic.svg?ver=0#NeoSansArabic") format("svg");
   font-style: normal; }
 
 @font-face {
   font-family: 'Neo-Sans-Arabic-Regular';
-  src: url("src/fonts/Neo-Sans-Arabic-Regular.eot?ver=0");
-  src: url("src/fonts/Neo-Sans-Arabic-Regular.eot?ver=0#iefix") format("embedded-opentype"), url("src/fonts/Neo-Sans-Arabic-Regular.woff2?ver=0") format("woff2"), url("src/fonts/Neo-Sans-Arabic-Regular.woff?ver=0") format("woff"), url("src/fonts/Neo-Sans-Arabic-Regular.ttf?ver=0") format("truetype"), url("src/fonts/Neo-Sans-Arabic-Regular.svg?ver=0#Neo-Sans-Arabic-Regular") format("svg");
+  src: url("../fonts/Neo-Sans-Arabic-Regular.eot?ver=0");
+  src: url("../fonts/Neo-Sans-Arabic-Regular.eot?ver=0#iefix") format("embedded-opentype"), url("../fonts/Neo-Sans-Arabic-Regular.woff2?ver=0") format("woff2"), url("../fonts/Neo-Sans-Arabic-Regular.woff?ver=0") format("woff"), url("../fonts/Neo-Sans-Arabic-Regular.ttf?ver=0") format("truetype"), url("../fonts/Neo-Sans-Arabic-Regular.svg?ver=0#Neo-Sans-Arabic-Regular") format("svg");
   font-style: normal; }
 
 @font-face {
   font-family: 'Neo-Sans-Arabic-black';
-  src: url("src/fonts/NeoSansArabicBlack.eot?ver=0");
-  src: url("src/fonts/NeoSansArabicBlack.eot?ver=0#iefix") format("embedded-opentype"), url("src/fonts/NeoSansArabicBlack.woff2?ver=0") format("woff2"), url("src/fonts/NeoSansArabicBlack.woff?ver=0") format("woff"), url("src/fonts/NeoSansArabicBlack.ttf?ver=0") format("truetype"), url("src/fonts/NeoSansArabicBlack.svg?ver=0#Neo-Sans-Arabic-black") format("svg");
+  src: url("../fonts/NeoSansArabicBlack.eot?ver=0");
+  src: url("../fonts/NeoSansArabicBlack.eot?ver=0#iefix") format("embedded-opentype"), url("../fonts/NeoSansArabicBlack.woff2?ver=0") format("woff2"), url("../fonts/NeoSansArabicBlack.woff?ver=0") format("woff"), url("../fonts/NeoSansArabicBlack.ttf?ver=0") format("truetype"), url("../fonts/NeoSansArabicBlack.svg?ver=0#Neo-Sans-Arabic-black") format("svg");
   font-style: normal; }
 
 @font-face {
   font-family: 'NeoSansArabicUltra';
-  src: url("src/fonts/NeoSansArabicUltra.eot?ver=0");
-  src: url("src/fonts/NeoSansArabicUltra.eot?ver=0#iefix") format("embedded-opentype"), url("src/fonts/NeoSansArabicUltra.woff2?ver=0") format("woff2"), url("src/fonts/NeoSansArabicUltra.woff?ver=0") format("woff"), url("src/fonts/NeoSansArabicUltra.ttf?ver=0") format("truetype"), url("src/fonts/NeoSansArabicUltra.svg?ver=0#NeoSansArabicUltra") format("svg");
+  src: url("../fonts/NeoSansArabicUltra.eot?ver=0");
+  src: url("../fonts/NeoSansArabicUltra.eot?ver=0#iefix") format("embedded-opentype"), url("../fonts/NeoSansArabicUltra.woff2?ver=0") format("woff2"), url("../fonts/NeoSansArabicUltra.woff?ver=0") format("woff"), url("../fonts/NeoSansArabicUltra.ttf?ver=0") format("truetype"), url("../fonts/NeoSansArabicUltra.svg?ver=0#NeoSansArabicUltra") format("svg");
   font-style: normal; }
 
 @font-face {
   font-family: 'NeoSansMedium';
-  src: url("src/fonts/NeoSansMedium.eot?ver=0");
-  src: url("src/fonts/NeoSansMedium.eot?ver=0#iefix") format("embedded-opentype"), url("src/fonts/NeoSansMedium.woff2?ver=0") format("woff2"), url("src/fonts/NeoSansMedium.woff?ver=0") format("woff"), url("src/fonts/NeoSansMedium.ttf?ver=0") format("truetype"), url("src/fonts/NeoSansMedium.svg?ver=0#NeoSansMedium") format("svg");
+  src: url("../fonts/NeoSansMedium.eot?ver=0");
+  src: url("../fonts/NeoSansMedium.eot?ver=0#iefix") format("embedded-opentype"), url("../fonts/NeoSansMedium.woff2?ver=0") format("woff2"), url("../fonts/NeoSansMedium.woff?ver=0") format("woff"), url("../fonts/NeoSansMedium.ttf?ver=0") format("truetype"), url("../fonts/NeoSansMedium.svg?ver=0#NeoSansMedium") format("svg");
   font-style: normal; }
 
 @font-face {
   font-family: 'NeoSansArabicBold';
-  src: url("src/fonts/NeoSansArabicBold.eot?ver=0");
-  src: url("src/fonts/NeoSansArabicBold.eot?ver=0#iefix") format("embedded-opentype"), url("src/fonts/NeoSansArabicBold.woff2?ver=0") format("woff2"), url("src/fonts/NeoSansArabicBold.woff?ver=0") format("woff"), url("src/fonts/NeoSansArabicBold.ttf?ver=0") format("truetype"), url("src/fonts/NeoSansArabicBold.svg?ver=0#NeoSansArabicBold") format("svg");
+  src: url("../fonts/NeoSansArabicBold.eot?ver=0");
+  src: url("../fonts/NeoSansArabicBold.eot?ver=0#iefix") format("embedded-opentype"), url("../fonts/NeoSansArabicBold.woff2?ver=0") format("woff2"), url("../fonts/NeoSansArabicBold.woff?ver=0") format("woff"), url("../fonts/NeoSansArabicBold.ttf?ver=0") format("truetype"), url("../fonts/NeoSansArabicBold.svg?ver=0#NeoSansArabicBold") format("svg");
   font-weight: bold;
   font-style: normal; }
 
 @font-face {
   font-family: 'NeoSansArabicLight';
-  src: url("src/fonts/NeoSansArabicLight.eot?ver=0");
-  src: url("src/fonts/NeoSansArabicLight.eot?ver=0#iefix") format("embedded-opentype"), url("src/fonts/NeoSansArabicLight.woff2?ver=0") format("woff2"), url("src/fonts/NeoSansArabicLight.woff?ver=0") format("woff"), url("src/fonts/NeoSansArabicLight.ttf?ver=0") format("truetype"), url("src/fonts/NeoSansArabicBold.svg?ver=0#NeoSansArabicBold") format("svg");
+  src: url("../fonts/NeoSansArabicLight.eot?ver=0");
+  src: url("../fonts/NeoSansArabicLight.eot?ver=0#iefix") format("embedded-opentype"), url("../fonts/NeoSansArabicLight.woff2?ver=0") format("woff2"), url("../fonts/NeoSansArabicLight.woff?ver=0") format("woff"), url("../fonts/NeoSansArabicLight.ttf?ver=0") format("truetype"), url("../fonts/NeoSansArabicBold.svg?ver=0#NeoSansArabicBold") format("svg");
   font-style: normal; }
 
 /*!
@@ -6408,8 +6408,8 @@ a.text-dark:hover, a.text-dark:focus {
 /*Fonts*/
 @font-face {
   font-family: "icomoon";
-  src: url("src/sass/icons//fonts/icomoon.eot?kp53a7");
-  src: url("src/sass/icons//fonts/icomoon.eot?kp53a7#iefix") format("embedded-opentype"), url("src/sass/icons//fonts/icomoon.ttf?kp53a7") format("truetype"), url("src/sass/icons//fonts/icomoon.woff?kp53a7") format("woff"), url("src/sass/icons//fonts/icomoon.svg?kp53a7#icomoon") format("svg");
+  src: url("../icons//fonts/icomoon.eot?kp53a7");
+  src: url("../icons//fonts/icomoon.eot?kp53a7#iefix") format("embedded-opentype"), url("../icons//fonts/icomoon.ttf?kp53a7") format("truetype"), url("../icons//fonts/icomoon.woff?kp53a7") format("woff"), url("../icons//fonts/icomoon.svg?kp53a7#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block; }
@@ -6736,7 +6736,7 @@ body {
       display: block;
       position: absolute;
       z-index: 1;
-      background: url("src/assets/images/aside-bg.png");
+      background: url("../images/aside-bg.png");
       z-index: -1;
       top: 49%;
       bottom: 0;
@@ -6773,7 +6773,7 @@ body {
     content: '';
     display: block;
     position: absolute;
-    background: url("src/assets/images/aside-line.png");
+    background: url("../images/aside-line.png");
     height: 4rem;
     left: 0;
     right: 0;
@@ -7269,7 +7269,11 @@ body {
     background-color: #3CCF5E;
     border-radius: 50%; }
     .pagination-list .page-number.active a {
-      color: white; }
+      color: white;
+      text-decoration: none; }
+  .pagination-list .page-number:hover {
+    border: 50%;
+    overflow: hidden; }
 
 .person-details-box {
   width: 20.438rem;
@@ -7382,7 +7386,7 @@ body {
 
 .products-catalog-container {
   width: 49.438rem;
-  height: 36.75rem;
+  height: auto;
   background-color: #DEE0EB;
   border-radius: .5rem;
   margin-right: 1.125rem;
@@ -7718,7 +7722,7 @@ li {
     left: 0;
     height: 100%;
     width: 103%;
-    background: url("../assets/images/section-bg.svg") bottom center;
+    background: url("../images/section-bg.svg") bottom center;
     background-size: 100%;
     background-repeat: no-repeat !important;
     background-image: -.5rem;
@@ -7787,7 +7791,7 @@ li {
   .industrial-sector:after {
     content: '';
     display: block;
-    background: url("../assets/images/home-slider-bg1.svg");
+    background: url("../images/home-slider-bg1.svg");
     height: 44.313rem;
     width: 47vw;
     position: absolute;
@@ -7799,7 +7803,7 @@ li {
   .industrial-sector::before {
     content: '';
     display: block;
-    background: url("../assets/images/home-slider-bg-2.svg");
+    background: url("../images/home-slider-bg-2.svg");
     height: 21.9vw;
     width: 41vw;
     position: absolute;
@@ -7838,7 +7842,7 @@ li {
   .site-guide:after {
     content: '';
     display: block;
-    background: url("../assets/images/about-shapes-bg.svg");
+    background: url("../images/about-shapes-bg.svg");
     height: 44.313rem;
     width: 47vw;
     position: absolute;
@@ -8129,7 +8133,7 @@ footer {
     top: 0;
     bottom: -10%;
     background-repeat: no-repeat !important;
-    background: url("../assets/images/footer.svg");
+    background: url("../images/footer.svg");
     position: absolute;
     top: 0;
     z-index: -1;

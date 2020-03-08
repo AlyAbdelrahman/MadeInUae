@@ -25,20 +25,26 @@
 
     }
     @if($lang==ar){
-       .last-page{
+       .last-page{                
 
            transform: rotate(180deg);
        } 
 
-    }
+    }  
     
     .page-number{
         &.active{
             background-color: $light-green;
             a{
             color: white;
+            text-decoration: none;
         }
             border-radius: 50%;
+        }
+        &:hover{
+            border: 50%;
+            overflow: hidden;
+
         }
     }
 }
