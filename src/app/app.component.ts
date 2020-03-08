@@ -10,18 +10,29 @@ import { TranslateService } from '@ngx-translate/core';
 export class AppComponent implements OnInit  {
   title = 'uae';
   cssUrl: SafeResourceUrl ;
+  lang:string='ar';
+  currentL:string;
   
   constructor(public sanitizer: DomSanitizer, public translate: TranslateService) {
     translate.addLangs(['en', 'ar']);
-    translate.setDefaultLang('ar');
+    translate.setDefaultLang(this.lang);
   }
   ngOnInit() {
 
     this.cssUrl= this.sanitizer.bypassSecurityTrustResourceUrl('uae/src/css/style-ltr.css')
   }
 
-  switchLang(lang: string) {
-    this.translate.use(lang);
+  switchLang() {
+    
+      if(this.lang=='en'){
+        this.translate.use('ar');
+        this.lang='ar'
+      }
+      else{
+        this.translate.use('en');
+        this.lang='en'
+      }
+
   }
 }
 
