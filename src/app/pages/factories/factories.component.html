@@ -4,7 +4,7 @@
     <div class="page-banner-container">
         <div class="page-banner-content-container">
             <img class="page-banner__image" src="../assets/images/c1.jpg">
-            <h2 class="page-banner__header">عن البوابة</h2>
+            <h2 class="page-banner__header">{{'IndustrialDepartments' | translate}}</h2>
         </div>
     </div>
 </div>
@@ -14,14 +14,14 @@
     <!--filter side-->
     <aside class="side-menue-filter">
         <div class="input-form-search">
-            <input type="text" class="input-form-search__txt big-font-placeholder"  placeholder="الشركة">
+            <input type="text" class="input-form-search__txt big-font-placeholder"  placeholder="{{'Company' | translate}}">
             <span class="icon-Icon-Search "></span>
         </div>
 
         <div class="input-form-search">
             <div class="input-form position-relative mb-1">
                 <select  class="input-form__select" id="city-name" >
-                    <option value="المدينه">المدينه</option>
+                    <option value="المدينه">{{'city' |translate}}</option>
                     <option value="دبي">دبي</option>
                     
                 </select>
@@ -30,7 +30,7 @@
 
             <div class="input-form position-relative mb-1">
                 <select  class="input-form__select" id="Factory-sector" >
-                    <option value="القطاع">القطاع</option>
+                    <option value="القطاع">{{'sector' |translate}}</option>
                     <option value="الصناعي">الصناعي</option>
                 </select>
                 <span class="icon-Icon-arrow rotate-down black-colored-txt drop-down-arrow small-select-arrow"></span>
@@ -38,14 +38,14 @@
         </div>
 
         <div class="submit-btn-container w-100  ">
-            <button class="btn--search btn--trasnparent btn-txt--black btn--lit-rounded btn-border--black w-100 p-btn" >بحث</button>
+            <button class="btn--search btn--trasnparent btn-txt--black btn--lit-rounded btn-border--black w-100 p-btn" >{{'search' | translate}}</button>
         </div>
 
         <div class="filter-accordion">
             <div class="card">
               <div class="search-accordion-card-header" id="headingOne">
                   <button class="search-accordion-card-header__btn" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                   القطاع الصناعي
+                   {{'IndustrialSector' |translate}}
                   </button>
                   <span class="icon-Icon-arrow  drop-down-arrow"></span>
               </div>
@@ -96,8 +96,45 @@
                     <ul class="search-result-card-actions-list">
                         <li class="search-result-card-action">
                             <button class="action-btn btn--trasnparent btn-txt--black btn--lit-rounded ">
-                                مشاركه 
-                          
+                               {{'share'|translate}}
+                            </button>
+                        </li>
+                        <li class="search-result-card-action"><button class="action-btn btn--trasnparent btn-txt--black btn--lit-rounded ">{{'more'|translate}}</button></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="search-result-card search-result-card--sm">
+            <div class="search-result-card-image-container shadow">
+                <img class="search-result-card__img" src="../assets/images/c1.jpg" alt="card-img">
+            </div>
+            <div class="search-result-card-info">
+                <div class="search-result-card-header-container">
+                    <h3 class="search-result-card__header">شركة قطر للمواد الاولية</h3>
+                </div>
+                <div class="search-result-card-details-container">
+                    <p class="search-result-card-details__txt">
+                        تأسست شركة قطر للمواد الأولية بناء على تعليمات من الحكومة القطرية في العام 2006 من أجل ضمان إمدادات مواد البناء في السوق المحلية تمتلك الشركة و تشغّل احتياطيات استراتيجية من المواد الأولية داخل دولة قطر، كما توفر حلولا متكاملة في مجالات عدة منها : إدارة الموانئ , العمليات اللوجستية و الإمداد , التخزين و توزيع المواد الأولية الرئيسية لتلبية 
+                       
+                    </p>
+                </div>
+                <div class="search-result-card-contacts-container">
+                    <ul class="search-card-contacts-list">
+                        <li class="search-card-contact ">974-44479411<span class="icon-Icon-telephone contact-icon "></span>+</li>
+                        <li class="search-card-contact">info@qpmc.qa <span class="icon-Icon-email contact-icon "></span></li>
+                        <li class="search-card-contact">974-44479422<span class="icon-Icon-print contact-icon "></span>+</li>
+                        <li class="search-card-contact">www.qpmc.qa<span class="icon-Icon-globe contact-icon "></span></li>
+    
+                        
+                    </ul>
+                </div>
+                <div class="search-reult-card-actions-container">
+                    <ul class="search-result-card-actions-list">
+                        <li class="search-result-card-action">
+                            <button class="action-btn btn--trasnparent btn-txt--black btn--lit-rounded ">
+                                {{'share'|translate}} 
                             </button>
                         </li>
                         <li class="search-result-card-action"><button class="action-btn btn--trasnparent btn-txt--black btn--lit-rounded ">المزيد</button></li>
@@ -135,45 +172,7 @@
                     <ul class="search-result-card-actions-list">
                         <li class="search-result-card-action">
                             <button class="action-btn btn--trasnparent btn-txt--black btn--lit-rounded ">
-                                مشاركه 
-                            </button>
-                        </li>
-                        <li class="search-result-card-action"><button class="action-btn btn--trasnparent btn-txt--black btn--lit-rounded ">المزيد</button></li>
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="search-result-card search-result-card--sm">
-            <div class="search-result-card-image-container shadow">
-                <img class="search-result-card__img" src="../assets/images/c1.jpg" alt="card-img">
-            </div>
-            <div class="search-result-card-info">
-                <div class="search-result-card-header-container">
-                    <h3 class="search-result-card__header">شركة قطر للمواد الاولية</h3>
-                </div>
-                <div class="search-result-card-details-container">
-                    <p class="search-result-card-details__txt">
-                        تأسست شركة قطر للمواد الأولية بناء على تعليمات من الحكومة القطرية في العام 2006 من أجل ضمان إمدادات مواد البناء في السوق المحلية تمتلك الشركة و تشغّل احتياطيات استراتيجية من المواد الأولية داخل دولة قطر، كما توفر حلولا متكاملة في مجالات عدة منها : إدارة الموانئ , العمليات اللوجستية و الإمداد , التخزين و توزيع المواد الأولية الرئيسية لتلبية 
-                       
-                    </p>
-                </div>
-                <div class="search-result-card-contacts-container">
-                    <ul class="search-card-contacts-list">
-                        <li class="search-card-contact ">974-44479411<span class="icon-Icon-telephone contact-icon "></span>+</li>
-                        <li class="search-card-contact">info@qpmc.qa <span class="icon-Icon-email contact-icon "></span></li>
-                        <li class="search-card-contact">974-44479422<span class="icon-Icon-print contact-icon "></span>+</li>
-                        <li class="search-card-contact">www.qpmc.qa<span class="icon-Icon-globe contact-icon "></span></li>
-    
-                        
-                    </ul>
-                </div>
-                <div class="search-reult-card-actions-container">
-                    <ul class="search-result-card-actions-list">
-                        <li class="search-result-card-action">
-                            <button class="action-btn btn--trasnparent btn-txt--black btn--lit-rounded ">
-                                مشاركه 
+                                {{'share'|translate}} 
                             </button>
                         </li>
                         <li class="search-result-card-action"><button class="action-btn btn--trasnparent btn-txt--black btn--lit-rounded ">المزيد</button></li>
@@ -227,12 +226,12 @@
     <!--Footer Site map -->
     <div class="site-map-container ">
         <ul class="site-map-list">
-            <li class="site-map-tab"><a href="#">الصفحة الرئيسية</a></li>
-            <li class="site-map-tab"><a href="#">عن البوابة </a></li>
-            <li class="site-map-tab"><a href="#">الاقسام الصناعية</a></li>
-            <li class="site-map-tab"><a href="#">الرعاة المشاركون</a></li>
-            <li class="site-map-tab"><a href="#">اضف مصنعك</a></li>
-            <li class="site-map-tab"><a href="#">اتصل بنا </a></li>
+            <li class="site-map-tab"><a href="#">{{'homePage' | translate}}</a></li>
+            <li class="site-map-tab"><a href="#">{{'About' | translate}} </a></li>
+            <li class="site-map-tab"><a href="#">{{'IndustrialDepartments' | translate}}</a></li>
+            <li class="site-map-tab"><a href="#">{{'sponsors' | translate}}</a></li>
+            <li class="site-map-tab"><a href="#">{{'AddFactory' | translate}}</a></li>
+            <li class="site-map-tab"><a href="#">{{'ContactUs'| translate}}</a></li>
         </ul>
     </div>
     <!--Footer Contact info-->

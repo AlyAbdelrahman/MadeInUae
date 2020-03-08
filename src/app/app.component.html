@@ -8,15 +8,15 @@
   </div>
 <ul class="nav-tabs-container">
     <li class="nav-tab " routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a routerLink="/"> {{'homePage' | translate}}</a></li>
-    <li class="nav-tab " routerLinkActive="active"><a routerLink="/About">عن البوابة</a> </li>
-    <li class="nav-tab " routerLinkActive="active"><a routerLink="/Factories">الاقسام الصناعية</a>
+    <li class="nav-tab " routerLinkActive="active"><a routerLink="/About">{{'aboutPortal' | translate}}</a> </li>
+    <li class="nav-tab " routerLinkActive="active"><a routerLink="/Factories">{{'IndustrialDepartments' | translate}}</a>
         <!-- <span class="icon-Icon-arrow rotate-down white-colored-txt drop-down-arrow"></span> -->
     </li>
-    <li class="nav-tab " routerLinkActive="active"><a routerLink="/FactoryDetails">الرعاة المشاركون</a></li>
-    <li class="nav-tab " routerLinkActive="active"><a routerLink="/AddFactory">اضف مصنعك</a></li>
-    <li class="nav-tab " routerLinkActive="active"><a routerLink="/ContactUs">اتصل بنا</a></li>
+    <li class="nav-tab " routerLinkActive="active"><a routerLink="/FactoryDetails">{{'sponsors' | translate}}</a></li>
+    <li class="nav-tab " routerLinkActive="active"><a routerLink="/AddFactory">{{'AddFactory' | translate}}</a></li>
+    <li class="nav-tab " routerLinkActive="active"><a routerLink="/ContactUs">{{'ContactUs' | translate}}</a></li>
 </ul>
-<button class="btn--rounded btn-fill--white btn-txt--black border-0 lang-switcher" (click)="switchLang('en')">English</button>
+<button class="btn--rounded btn-fill--white btn-txt--black border-0 lang-switcher" (click)="switchLang('en')">{{'lang'|translate}}</button>
 
 </div>
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,31 +28,31 @@
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
           <li class="nav-item active">
-            <a class="nav-link" routerLink="/">{{'homePage' || translate}}</a>
+            <a class="nav-link" routerLink="/">{{'homePage' | translate}}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/About">عن البوابة</a>
+            <a class="nav-link" routerLink="/About">{{'aboutPortal' | translate}}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " routerLink="/Factories">الاقسام الصناعية</a>
+            <a class="nav-link " routerLink="/Factories">{{'IndustrialDepartments' | translate}}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " routerLink="/FactoryDetails">الرعاة المشاركون</a>
+            <a class="nav-link " routerLink="/FactoryDetails">{{'sponsors' | translate}}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " routerLink="/AddFactory">اضف مصنعك</a>
+            <a class="nav-link " routerLink="/AddFactory">{{'AddFactory' | translate}}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " routerLink="/ContactUs">اتصل بنا</a>
+            <a class="nav-link " routerLink="/ContactUs">{{'ContactUs' | translate}}</a>
           </li>
           <li class="nav-item">
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="switchLang('en')">English</button>
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="switchLang('en')">{{'lang'|translate}}</button>
           </li>
 
         </ul>
         <form class="form-inline my-2 my-lg-0 search-form">
-          <input class="form-control mr-sm-2" type="search" placeholder="ابحث">
-          <button class="btn btn-outline-success my-2 my-sm-0 w-75" type="submit">ابحث</button>
+          <input class="form-control mr-sm-2" type="search" placeholder="{{'search' | translate}}">
+          <button class="btn btn-outline-success my-2 my-sm-0 w-75" type="submit">{{'search' | translate}}</button>
         </form>
       </div>
 <router-outlet></router-outlet>

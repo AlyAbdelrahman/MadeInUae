@@ -1,3 +1,73 @@
 {
-    "homePage":"Home"
+    "homePage":"Home",
+    "aboutPortal":"About us",
+    "IndustrialDepartments":"Industrial departments",
+    "sponsors":"Sponsors",
+    "AddFactory":"Add your Factory",
+    "ContactUs":"Contact Us",
+    "arabic":"arabic",
+    "lang":"عربي",
+    "search":"Search",
+    "IndustrialSectors":"Industrial sectors",
+    "About":"About Us",
+    "more":"More",
+    "Company":"Company",
+    "IndustrialSector":"Industrial Sector",
+    "share":"Share",
+    "sector":"Sector",
+    "city":"City",
+    "CommercialCommunication":"Commercial Communication",
+    "branches":"Branches",
+    "productsCatalog":"Products Catalog",
+    "copyRights":"© All Copy Right 2019",
+
+    "factory":{
+        "nameHeader":" Factory / Company  Name",
+        "arabicName":"Factory / Company  Arabic Name",
+        "englishName":"Factory / Company English Name",
+
+        "aboutHeader":"About Company / Factory",
+        "aboutArabic":"About Company / Factory in arabic",
+        "aboutEnglish":"About Company / Factory in english",
+
+        "sectorTypeHeader":"Sector Type",
+
+        "address":"Address",
+        "arabicAddress":"Address in arabic",
+        "englishAddress":"Address in English",
+
+        "phone":"Phone",
+        "phoneNumber":"Phone Number",
+
+        "fax":"Fax",
+        "faxNumber":"Fax number",
+
+        "webSite":"Web Site",
+
+        "emailAddress":"Email",
+
+        "contactPersonHeader":"contact person's name",
+        "contactPersonNameArabic":"contact person's arabic name",
+        "contactPersonNameEnglish":"contact person's Enlgish name",
+
+        "jobTitle":"Job title",
+        "arabicJobTitle":"Arabic job title",
+        "englishJobTitle":"English job title"
+
+
+
+
+    },
+
+    "contactUs":{
+        "name":"Name",
+        "fullName":"Full Name",
+        "email":"Email",
+        "subject":"Subject",
+        "message":"Message",
+        "send":"Send"
+
+    }
+
+
 }

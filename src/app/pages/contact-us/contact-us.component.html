@@ -4,7 +4,7 @@
     <div class="page-banner-container">
         <div class="page-banner-content-container">
             <img class="page-banner__image" src="../assets/images/c1.jpg">
-            <h2 class="page-banner__header">عن البوابة</h2>
+            <h2 class="page-banner__header">{{'ContactUs' | translate}}</h2>
         </div>
     </div>
 </div>
@@ -17,33 +17,33 @@
                  <!-- الاسم-->
                   <div class="input-form">
                     <label class="input-form__label" for="name-arabic">
-                        الاسم
+                        {{'contactUs.name' | translate}}
                     </label>
-                    <input type="text" class="input-form__txt" id="name-arabic" placeholder="الاسم بالكامل">
+                    <input type="text" class="input-form__txt" id="name-arabic" placeholder="{{'contactUs.fullName' | translate}}">
                 </div> 
 
                 <!--البريد الالكترونى-->
                 <div class="input-form">
                     <label class="input-form__label" for="contact-email">
-                        البريد الالكترونى
+                       {{'contactUs.email' | translate}}
                     </label>
-                    <input type="text" class="input-form__txt" id="contact-email" placeholder="البريد الالكترونى">
+                    <input type="text" class="input-form__txt" id="contact-email" placeholder="{{'contactUs.email' | translate}}">
                 </div> 
 
                 <!--عنوان الموضوع-->
                <div class="input-form">
                     <label class="input-form__label" for="contact-email">
-                        عنوان الموضوع
+                       {{'contactUs.subject'|translate}}
                     </label>
-                    <input type="text" class="input-form__txt" id="contact-email" placeholder="عنوان الموضوع">
+                    <input type="text" class="input-form__txt" id="contact-email" placeholder="{{'contactUs.subject'|translate}}">
                 </div> 
 
                 <!--الرسالة-->
                  <div class="input-form">
                     <label class="input-form__label" for="contact-email">
-                        الرسالة
+                        {{'contactUs.message' | translate}}
                     </label>
-                    <textarea type="text" class="input-form__txt" id="contact-email" placeholder="نص الرسالة"></textarea>
+                    <textarea type="text" class="input-form__txt" id="contact-email" placeholder="{{'contactUs.message' | translate}}"></textarea>
                 </div> 
 
              </div>
@@ -52,7 +52,7 @@
         <div class="row">
             <div class="col">
                 <div class="submit-btn-container">
-                    <button class="btn--submit btn--trasnparent btn-txt--green btn--lit-rounded p-btn" >ارسال</button>
+                    <button class="btn--submit btn--trasnparent btn-txt--green btn--lit-rounded p-btn" >{{'contactUs.send' | translate}}</button>
                 </div>
             </div>
         </div>
@@ -72,12 +72,12 @@
     <!--Footer Site map -->
     <div class="site-map-container ">
         <ul class="site-map-list">
-            <li class="site-map-tab"><a href="#">الصفحة الرئيسية</a></li>
-            <li class="site-map-tab"><a href="#">عن البوابة </a></li>
-            <li class="site-map-tab"><a href="#">الاقسام الصناعية</a></li>
-            <li class="site-map-tab"><a href="#">الرعاة المشاركون</a></li>
-            <li class="site-map-tab"><a href="#">اضف مصنعك</a></li>
-            <li class="site-map-tab"><a href="#">اتصل بنا </a></li>
+            <li class="site-map-tab"><a href="#">{{'homePage' | translate}}</a></li>
+            <li class="site-map-tab"><a href="#">{{'About' | translate}} </a></li>
+            <li class="site-map-tab"><a href="#">{{'IndustrialDepartments' | translate}}</a></li>
+            <li class="site-map-tab"><a href="#">{{'sponsors' | translate}}</a></li>
+            <li class="site-map-tab"><a href="#">{{'AddFactory' | translate}}</a></li>
+            <li class="site-map-tab"><a href="#">{{'ContactUs'| translate}}</a></li>
         </ul>
     </div>
     <!--Footer Contact info-->

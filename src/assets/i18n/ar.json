@@ -1,3 +1,72 @@
 {
-    "homePage":"الصفحه الرئيسيه"
+    "homePage":"الصفحه الرئيسيه",
+    "aboutPortal":"عن البوابه",
+    "IndustrialDepartments":"الاقسام الصناعيه",
+    "sponsors":"الرعاه المشاركون",
+    "AddFactory":"اضف مصنعك",
+    "ContactUs":"اتصل بنا",
+    "lang":"english",
+    "search":"ابحث",
+    "IndustrialSectors":"القطاعات الصناعية",
+    "About":"عن البوابه",
+    "more":"المزيد",
+    "Company":"الشركه",
+    "IndustrialSector":"القطاع الصناعي",
+    "share":"مشاركه",
+    "sector":"القطاع",
+    "city":"المدينه",
+    "CommercialCommunication":"التواصل التجارى",
+    "branches":"الفروع",
+    "productsCatalog":"كتالوج المنتجات",
+    "copyRights":"© جميع الحقوق محفوظة 2019",
+
+    "factory":{
+        "nameHeader":" اسم الشركة / المصنع",
+        "arabicName":"اسم الشركة / المصنع باللغة العربية",
+        "englishName":"اسم الشركة / المصنع باللغة الانجليزية",
+
+        "aboutHeader":"عن الشركة / المصنع",
+        "aboutArabic":"نبذة عن الشركة / المصنع باللغة العربية",
+        "aboutEnglish":"نبذة عن الشركة / المصنع باللغة الانجليزية",
+
+        "sectorTypeHeader":"نوع القطاع",
+
+        "address":"العنوان",
+        "arabicAddress":"العنوان باللغة العربية",
+        "englishAddress":"العنوان باللغة الانجليزية",
+
+        "phone":"الهاتف",
+        "phoneNumber":"رقم الهاتف",
+
+        "fax":"فاكس",
+        "faxNumber":"رقم الفاكس",
+
+        "webSite":"الموقع الالكتروني",
+
+        "emailAddress":"البريد الالكتروني",
+
+        "contactPersonHeader":"اسم مسئول التواصل",
+        "contactPersonNameArabic":"اسم مسئول التواصل باللغة العربية",
+        "contactPersonNameEnglish":"اسم مسئول التواصل باللغة الانجليزية",
+
+        "jobTitle":"المسمى الوظيفى",
+        "arabicJobTitle":"المسمى الوظيفى باللغة العربية",
+        "englishJobTitle":"المسمى الوظيفى باللغة الانجليزية"
+
+
+
+
+    },
+
+    "contactUs":{
+        "name":"الاسم",
+        "fullName":"الاسم بالكامل",
+        "email":"البريد الالكترونى",
+        "subject":"عنوان الموضوع",
+        "message":"الرسالة",
+        "send":"ارسال"
+    }
+
+
+
 }
