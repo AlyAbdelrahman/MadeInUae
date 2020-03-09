@@ -10,14 +10,14 @@ import * as jquery from 'jquery';
 export class FooterSliderComponent implements OnInit {
   swiper: any;
   constructor() { }
-
+  
   ngOnInit(): void {
   }
 
   ngAfterViewInit() {
-    (function ($) {
-      $(function () {
-    
+    // (function ($) {
+      // $(function () {
+      
       var agSwiper = $('.footer-swiper-container');
     
       if (agSwiper.length > 0) {
@@ -72,7 +72,8 @@ export class FooterSliderComponent implements OnInit {
         });
       }
     
-      });
-    })(jquery);
+      // });
+    // })(jquery);
    }
+   
 }

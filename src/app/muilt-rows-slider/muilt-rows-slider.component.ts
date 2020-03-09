@@ -26,13 +26,12 @@ export class MuiltRowsSliderComponent implements OnInit  {
     // slidesPerColumn:2,
     // slidesPerColumnFill: 'col',
     // slidesPerGroup: 6,
-    // observer: true, 
-    // observeParents: true,
+      observer: true, 
+      observeParents: true,
       slidesPerView: 1,
-        slidesPerColumn:1,
-        slidesPerGroup: 1,
-        
-        spaceBetween:1,
+      slidesPerColumn:1,
+      slidesPerGroup: 1,
+      spaceBetween:1,
         
     breakpoints: {
       640: {
