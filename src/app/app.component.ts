@@ -26,21 +26,22 @@ export class AppComponent implements OnInit  {
   switchLang() {
     
     var oldlink = document.getElementById("mycss"); // by default rtl
-    var newlink = document.createElement("link");
-    newlink.setAttribute("rel", "stylesheet");
-    newlink.setAttribute("type", "text/css");
-    newlink.setAttribute("id","mycss");
-      if(this.lang=='en'){
+    var swiperlink =document.getElementById("swipermin");
+    if(this.lang=='en'){
         this.translate.use('ar');
-        newlink.setAttribute("href", this.files[0]); 
-        document.getElementsByTagName("head").item(0).replaceChild(newlink, oldlink);
-    
+        oldlink.remove();
+        swiperlink.remove();
+        document.head.innerHTML = document.head.innerHTML + '<link id="swipermin" rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">'
+        document.head.innerHTML = document.head.innerHTML + '<link href="assets/css/style-rtl.css"  type="text/css"  id="mycss"  rel="stylesheet" />'
         this.lang='ar'
       }
       else{
         this.translate.use('en');
-        newlink.setAttribute("href", this.files[1]); 
-        document.getElementsByTagName("head").item(0).replaceChild(newlink, oldlink);
+        oldlink.remove();
+        swiperlink.remove();
+        document.head.innerHTML = document.head.innerHTML + '<link id="swipermin" rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">'
+        document.head.innerHTML = document.head.innerHTML + '<link href="assets/css/style-ltr.css"  type="text/css"  id="mycss"  rel="stylesheet" />'
+
     
         this.lang='en'
       }
