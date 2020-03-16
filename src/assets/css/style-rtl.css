@@ -7172,7 +7172,8 @@ body {
   .search-result-card--md {
     height: 20.896rem;
     padding: 0.75rem;
-    border-radius: .5rem; }
+    border-radius: .5rem;
+    width: 102%; }
     .search-result-card--md .search-result-card-image-container {
       height: 18.75rem;
       width: 18.75rem;

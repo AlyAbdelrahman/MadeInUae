@@ -80,6 +80,9 @@
         position: absolute;
         bottom: 0;
         #{$opposite-float}: 0;
+        @if($lang==en){
+            #{$opposite-float}: 3rem;
+        }
         top:2.5rem;
         &::before{
             color: $light-grey;

@@ -49,6 +49,9 @@
   .Ca-slide_list.swiper-wrapper{
     margin-bottom: 0;
     margin-#{$default-float}: -2rem;
+    @if($lang==en){
+      margin-right: -2.5rem;
+    }
 }
 
   
@@ -125,7 +128,7 @@
   .Ca-swiper-button-next{
     margin-#{$opposite-float}: 43.5rem;
     @if($lang==en){
-    left: -3rem;
+    left: -2rem;
     }
 
   }
