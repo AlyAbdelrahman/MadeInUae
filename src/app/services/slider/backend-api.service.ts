@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class BackendApiService {
 
-  baseUrl :string= 'http://mbesher-002-site4.dtempurl.com/api/user/Sectors/GetAll?typeId=1';
+  baseUrl :string= 'http://mbesher-002-site4.dtempurl.com/api/user/Slide/GetAll/3';
  
   constructor(private http:HttpClient) {}
 

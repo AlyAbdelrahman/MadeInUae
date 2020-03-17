@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {BackendApiService} from '../../services/slider/backend-api.service'
+import {BackendApiService} from '../../services/slider/backend-api.service';
+import {LanguageService} from '../../services/languages/language.service'
 import { Slide } from 'src/app/models/Slide';
 
 
@@ -10,10 +11,17 @@ import { Slide } from 'src/app/models/Slide';
 })
 export class SlidesCarouselComponent implements OnInit {
   Slides:Slide[];
-  constructor(private SlidesData:BackendApiService) { }
+  baseUrl:string ='http://mbesher-002-site4.dtempurl.com/sliders/';
+  constructor(private SlidesData:BackendApiService ,public Currentlang: LanguageService) {
+    // console.log(Currentlang.getCurrentLanguage())
 
-  ngOnInit(): void {
-   this.SlidesData.getSlides().subscribe(Slide=>console.log(Slide));
   }
-  images = [944, 1011, 984].map((n) => `https://picsum.photos/id/${n}/900/500`);
+  
+  ngOnInit(): void {
+    this.SlidesData.getSlides().subscribe(Slide=>this.Slides=Slide);
+   
+  }
+  getLang(){
+   return this.Currentlang.lang;
+  }
 }

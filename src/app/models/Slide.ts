@@ -1,7 +1,8 @@
 export interface Slide{
     "id": number,
-    "name": string,
-    "nameAr": string,
-    "image": string,
-    "type": number
+    "title": string,
+    "titleAr": string,
+    "description": string,
+    "descriptionAr": string,
+    "image":string
 }

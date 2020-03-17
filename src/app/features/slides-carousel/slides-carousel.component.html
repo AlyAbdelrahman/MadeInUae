@@ -1,45 +1,19 @@
 <div class="home-banner">
 
-    <ngb-carousel *ngIf="images" class="bs-big-carousel">
+    <ngb-carousel  class="bs-big-carousel">
 
-        <ng-template ngbSlide>
+        <ng-template ngbSlide *ngFor="let slide of Slides">
         <div class="picsum-img-wrapper">
-            <img src="../../assets/images/c1.jpg" alt="Random first slide" class="big-carousel-image">
+            <img  [src] = "baseUrl+slide.image" alt=" slide" class="big-carousel-image">
         </div>
         <div class="carousel-caption centered-caption">
-            <h3 class="caption-header">ابنى مصنعك مع فريق كبير</h3>
-            <p class="caption-pagraph">شكل عشوائي أخذتها من نص، لتكوّن كتيّب بمثابة دليل أو مرجع شكلي لهذه الأحرف. خمسة قرون من الزمن لم تقضي على 
-                هذا النص، بل انه حتى صار مستخدماً وبشكله الأصلي في الطباعة والتنضيد الإلكتروني.</p>
+            <h3 class="caption-header">{{getLang()=='ar'?slide.titleAr:slide.title}}</h3>
+            <p class="caption-pagraph">{{getLang()=='ar'?slide.descriptionAr:slide.description}}</p>
                 <button  class="btn--trasnparent btn-txt--white btn--lit-rounded btn--main create-factory-btn">
                     اضف مصنعك الان </button>
         </div>
         </ng-template>
 
-        <ng-template ngbSlide>
-        <div class="picsum-img-wrapper">
-            <img src="../../assets/images/c2.jpg" alt="Random second slide" class="big-carousel-image">
-        </div>
-        <div class="carousel-caption centered-caption">
-            <h3 class="caption-header">ابنى مصنعك مع فريق كبير</h3>
-            <p class="caption-pagraph">شكل عشوائي أخذتها من نص، لتكوّن كتيّب بمثابة دليل أو مرجع شكلي لهذه الأحرف. خمسة قرون من الزمن لم تقضي على 
-                هذا النص، بل انه حتى صار مستخدماً وبشكله الأصلي في الطباعة والتنضيد الإلكتروني.</p>
-                <button  class="btn--trasnparent btn-txt--white btn--lit-rounded btn--main create-factory-btn">اضف مصنعك الان </button>
-
-        </div>
-        </ng-template>
-
-        <ng-template ngbSlide>
-        <div class="picsum-img-wrapper">
-            <img src="../../assets/images/c3.jpg" alt="Random third slide" class="big-carousel-image">
-        </div>
-        <div class="carousel-caption centered-caption">
-            <h3 class="caption-header">ابنى مصنعك مع فريق كبير</h3>
-            <p class="caption-pagraph">شكل عشوائي أخذتها من نص، لتكوّن كتيّب بمثابة دليل أو مرجع شكلي لهذه الأحرف. خمسة قرون من الزمن لم تقضي على 
-                هذا النص، بل انه حتى صار مستخدماً وبشكله الأصلي في الطباعة والتنضيد الإلكتروني.</p>
-                <button  class="btn--trasnparent btn-txt--white btn--lit-rounded btn--main create-factory-btn">اضف مصنعك الان </button>
-
-        </div>
-        </ng-template>
     
     </ngb-carousel>
 
