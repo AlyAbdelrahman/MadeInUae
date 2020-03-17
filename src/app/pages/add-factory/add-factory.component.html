@@ -1,15 +1,9 @@
 <layout [FooterSilder]="false">
 
   <!---------------------------------------------- Pages Shared Bannrr Details----------------------->
-<div class="page-banner">
-    <div class="page-banner-container">
-        <div class="page-banner-content-container">
-            <img class="page-banner__image" src="../assets/images/c1.jpg">
-            <h2 class="page-banner__header">{{'AddFactory'|translate}}</h2>
-        </div>
-    </div>
-</div>
-
+<banner [imageSrc]="'../assets/images/c1.jpg'" >
+    {{'AddFactory'|translate}}
+</banner>
 <!--Create factory form-->
  <section class="Create-Factory">
     <div class="container">

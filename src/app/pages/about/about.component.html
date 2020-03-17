@@ -1,15 +1,11 @@
 
 <layout [FooterSilder]="false">
 
-  <!---------------------------------------------- Pages Shared Bannrr Details----------------------->
-<div class="page-banner">
-    <div class="page-banner-container">
-        <div class="page-banner-content-container">
-            <img class="page-banner__image" src="../assets/images/c1.jpg">
-            <h2 class="page-banner__header">{{'aboutPortal' | translate }}</h2>
-        </div>
-    </div>
-</div>
+ 
+ <!---------------------------------------------- Pages Shared Bannrr Details----------------------->
+ <banner [imageSrc]="'../assets/images/c1.jpg'" >
+    {{'aboutPortal' | translate }}
+</banner>
 
 <!-----------------------------------------------Secound Page Details------------------------->
 

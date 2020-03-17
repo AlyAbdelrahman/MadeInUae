@@ -20,6 +20,7 @@ import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { NavbarComponent } from './core/navbar/navbar.component';
 import { FooterComponent } from './core/footer/footer.component';
 import { LayoutComponent } from './core/layout/layout.component';
+import { BannerComponent } from './features/banner/banner.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { LayoutComponent } from './core/layout/layout.component';
     ContactUsComponent,
     NavbarComponent,
     FooterComponent,
-    LayoutComponent
+    LayoutComponent,
+    BannerComponent
   ],
   imports: [
     BrowserModule,
