@@ -60,9 +60,9 @@
    </div>
    <div class="container">
     <div class="row">
-        <div class="col-lg-6 col-md-12 col-sm-12">
+        <div class="col-lg-6 col-md-12 col-sm-12" *ngIf="AboutUs">
             <div class="about-portal-image-container ">
-                <img class="about-portal-image" src="../assets/images/view-of-factory.png">
+                <img class="about-portal-image" [src]="baseImageUrl+AboutUs.image" >
             </div>
         </div>
         <div class="col-lg-6 col-md-12 col-sm-12 info-section" *ngIf="AboutUs">
@@ -70,7 +70,7 @@
                 <h4 class="sub-header-txt sub-header-txt--black mb-0">دليل قطر الصناعى</h4>
             </div>
                 <p class="section-details section-details--grey">
-                    <!-- {{getLang()=='ar'?AboutUs.descriptionAr:AboutUs.description}} -->
+                    {{getLang()=='ar'?AboutUs.descriptionAr:AboutUs.description}}
                 </p>
                 <div class="read-more-container">
                     <button  class="btn--trasnparent btn-txt--green btn--lit-rounded read-more read-more-btn">{{'more'|translate}}</button>

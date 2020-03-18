@@ -11,14 +11,15 @@ import {aboutUs} from '../../models/aboutSection'
 })
 export class HomepageComponent implements OnInit {
   Aside:homeSponser[];
-  AboutUs:aboutUs[];
+  AboutUs:aboutUs;
+  baseImageUrl:string ='http://mbesher-002-site4.dtempurl.com/Dalel/';
   
 
   constructor(private AsideData:HomeSponserAsidesService ,private AboutUsData : AboutUsService, public Currentlang: LanguageService) { }
 
   ngOnInit(): void {
     this.AsideData.getAsideData().subscribe(info=>this.Aside=info);
-    // this.AboutUsData.getAboutData().subscribe(info=>{this.AboutUs=info,console.log(this.AboutUs.description)});
+    this.AboutUsData.getAboutData().subscribe(info=>{this.AboutUs=info,console.log(this.AboutUs.description)});
 
 
   }

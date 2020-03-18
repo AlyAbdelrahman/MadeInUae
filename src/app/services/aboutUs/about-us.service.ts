@@ -10,7 +10,7 @@ export class AboutUsService {
   baseUrl :string= 'http://mbesher-002-site4.dtempurl.com/api/user/Setting/about';
 
   constructor(private http:HttpClient) {}
-  getAboutData():Observable<aboutUs[]>{
-   return this.http.get<aboutUs[]>(this.baseUrl);
+  getAboutData():Observable<aboutUs>{
+   return this.http.get<aboutUs>(this.baseUrl);
   }
 }
