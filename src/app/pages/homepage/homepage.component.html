@@ -67,7 +67,7 @@
         </div>
         <div class="col-lg-6 col-md-12 col-sm-12 info-section" *ngIf="AboutUs">
             <div class="section-sub-header-container">
-                <h4 class="sub-header-txt sub-header-txt--black mb-0">دليل قطر الصناعى</h4>
+                <h4 class="sub-header-txt sub-header-txt--black mb-0">{{getLang()=='ar'?AboutUs.nameAr:AboutUs.name}}</h4>
             </div>
                 <p class="section-details section-details--grey">
                     {{getLang()=='ar'?AboutUs.descriptionAr:AboutUs.description}}

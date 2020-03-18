@@ -19,7 +19,7 @@ export class HomepageComponent implements OnInit {
 
   ngOnInit(): void {
     this.AsideData.getAsideData().subscribe(info=>this.Aside=info);
-    this.AboutUsData.getAboutData().subscribe(info=>{this.AboutUs=info,console.log(this.AboutUs.description)});
+    this.AboutUsData.getAboutData().subscribe(info=>this.AboutUs=info);
 
 
   }
