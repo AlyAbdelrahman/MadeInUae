@@ -1,5 +1,8 @@
 import { Component, OnInit ,ElementRef, AfterViewInit } from '@angular/core';
 import   Swiper from 'swiper';
+import {MuiltRowSliderService} from '../../services/muiltRowSlider/muilt-row-slider.service';
+import {muiltRowSlider} from '../../models/muiltRowSlider';
+import {LanguageService} from '../../services/languages/language.service'
 @Component({
   selector: 'muilt-rows-slider',
   templateUrl: './muilt-rows-slider.component.html',
@@ -7,10 +10,14 @@ import   Swiper from 'swiper';
 })
 export class MuiltRowsSliderComponent implements OnInit  {
   // mySwiper: Swiper;
+  Slides:muiltRowSlider[];
   swiper: any;
-  constructor(private elementRef: ElementRef) { }
+  baseUrl:string='http://mbesher-002-site4.dtempurl.com/sector/';
+  constructor(private elementRef: ElementRef , public SectorsData:MuiltRowSliderService,public Currentlang: LanguageService) { }
 
   ngOnInit(): void {
+    this.SectorsData.getSlides().subscribe(Slide=>this.Slides=Slide);
+
   }
 
   ngAfterViewInit() {
@@ -63,4 +70,8 @@ export class MuiltRowsSliderComponent implements OnInit  {
     }
     });
   }
+
+  getLang(){
+    return this.Currentlang.lang;
+   }
 }

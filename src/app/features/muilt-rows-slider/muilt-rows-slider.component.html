@@ -3,93 +3,17 @@
   <div class="swiper-container industries-slider" dir="rtl">
         <div class="swiper-wrapper">
            
-        <div class="swiper-slide">
+        <div class="swiper-slide" *ngFor="let slide of Slides">
             <div class="swiper-card">
                 <div class="swiper-card-image-container">
-                    <img class="swiper-card__img" src="../../assets/images/test images/s1.png">
+                    <img class="swiper-card__img" src="../../assets/images/test images/s1.png" [src] = "baseUrl+slide.image">
                 </div>
                 <div class="swiper-card-details-container">
-                    <p class="swiper-card-details__txt">الصناعات الانشائيه</p>
+                    <p class="swiper-card-details__txt">{{getLang()=='ar'?slide.nameAr:slide.name}}</p>
                 </div>
             </div>
         </div>
        
-        <div class="swiper-slide">
-            <div class="swiper-card">
-                <div class="swiper-card-image-container">
-                    <img class="swiper-card__img" src="../../assets/images/test images/s2.png">
-                </div>
-                <div class="swiper-card-details-container">
-                    <p class="swiper-card-details__txt">الصناعات البلاستيكية</p>
-                </div>
-            </div>
-        </div>
-        
-        <div class="swiper-slide">
-            <div class="swiper-card">
-                <div class="swiper-card-image-container">
-                    <img class="swiper-card__img" src="../../assets/images/test images/s3.png">
-                </div>
-                <div class="swiper-card-details-container">
-                    <p class="swiper-card-details__txt">الصناعات الكيميائية</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="swiper-slide">
-            <div class="swiper-card">
-                <div class="swiper-card-image-container">
-                    <img class="swiper-card__img" src="../../assets/images/test images/s1.png">
-                </div>
-                <div class="swiper-card-details-container">
-                    <p class="swiper-card-details__txt">الصناعات الانشائيه</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="swiper-slide">
-            <div class="swiper-card">
-                <div class="swiper-card-image-container">
-                    <img class="swiper-card__img" src="../../assets/images/test images/s2.png">
-                </div>
-                <div class="swiper-card-details-container">
-                    <p class="swiper-card-details__txt">الصناعات الكيميائية</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="swiper-slide">
-            <div class="swiper-card">
-                <div class="swiper-card-image-container">
-                    <img class="swiper-card__img" src="../../assets/images/test images/s3.png">
-                </div>
-                <div class="swiper-card-details-container">
-                    <p class="swiper-card-details__txt">الصناعات الكيميائية</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="swiper-slide">
-            <div class="swiper-card">
-                <div class="swiper-card-image-container">
-                    <img class="swiper-card__img" src="../../assets/images/test images/s2.png">
-                </div>
-                <div class="swiper-card-details-container">
-                    <p class="swiper-card-details__txt">الصناعات البلاستيكية</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="swiper-slide">
-            <div class="swiper-card">
-                <div class="swiper-card-image-container">
-                    <img class="swiper-card__img" src="../../assets/images/test images/s1.png">
-                </div>
-                <div class="swiper-card-details-container">
-                    <p class="swiper-card-details__txt">الصناعات الانشائيه</p>
-                </div>
-            </div>
-        </div>
         </div>
 
     </div>

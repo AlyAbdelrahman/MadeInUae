@@ -4,14 +4,15 @@
   <slides-carousel></slides-carousel> 
 
   <!--industrial-section-->
-  <section class="industrial-sector">
+  <section class="industrial-sector" *ngIf="Aside" >
     <aside class=" side-menue side-menue--right">
         <div class="side-menue-image-container">
             <img class="side-menue__image" src="../assets/images/aside-header-bg.jpg" alt="aside-bg">
         </div>
         <div class="side-menue-details">
             <div class="side-menue-details-header-container">
-                <h5 class="side-menue__header">القطاعات الصناعيه</h5>
+                <h5 class="side-menue__header">{{getLang()=='ar'?Aside[0].companyNameAr:Aside[0].companyName}}</h5>
+                
             </div>
             <div class="side-menue-details-body">
                 <p class="side-menue__details">لوريم إيبسوم(Lorem Ipsum)
@@ -32,13 +33,13 @@
         <muilt-rows-slider></muilt-rows-slider>
     </div>
 
-    <aside class=" side-menue side-menue--left">
+    <aside class=" side-menue side-menue--left" *ngIf="Aside">
         <div class="side-menue-image-container">
             <img class="side-menue__image" src="../assets/images/aside-header-bg.jpg" alt="aside-bg">
         </div>
         <div class="side-menue-details">
             <div class="side-menue-details-header-container">
-                <h5 class="side-menue__header">القطاعات الصناعيه</h5>
+                <h5 class="side-menue__header">{{getLang()=='ar'?Aside[1].companyNameAr:Aside[1].companyName}}</h5>
             </div>
             <div class="side-menue-details-body">
                 <p class="side-menue__details">لوريم إيبسوم(Lorem Ipsum)
@@ -64,23 +65,17 @@
                 <img class="about-portal-image" src="../assets/images/view-of-factory.png">
             </div>
         </div>
-        <div class="col-lg-6 col-md-12 col-sm-12 info-section">
+        <div class="col-lg-6 col-md-12 col-sm-12 info-section" *ngIf="AboutUs">
             <div class="section-sub-header-container">
                 <h4 class="sub-header-txt sub-header-txt--black mb-0">دليل قطر الصناعى</h4>
             </div>
                 <p class="section-details section-details--grey">
-                    يوفر معلومات موثقة ولمحه كاملة عن التصنيع والمنتجات بطريقة 
-                    عمليه وبالتالى تمكين الصناعيين والمصنعين لتحقيق النمو واهداف 
-                    التنمية وتعزيز المنتجات فى السوق الجديدة. كما يتضمن الدليل بيان 
-                    كامل عن المشروعات القطرية ومنتجات المصانع مصنفة سلعيا 
-                    وقوائم بالمصانع مقسمة بالقطاع بالإضافة الى التعريف بالقطاع 
-                    الداعم للصناعة فى مجال (الشركات الجارية والمصارف والبنوك 
-                    وشركات التأمين وشركات النقل والتخليص الجمركى.
+                    <!-- {{getLang()=='ar'?AboutUs.descriptionAr:AboutUs.description}} -->
                 </p>
                 <div class="read-more-container">
                     <button  class="btn--trasnparent btn-txt--green btn--lit-rounded read-more read-more-btn">{{'more'|translate}}</button>
                 </div>
-            
+             
         </div>
     </div> 
     </div>
