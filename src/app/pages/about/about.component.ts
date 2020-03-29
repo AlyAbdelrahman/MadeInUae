@@ -19,6 +19,6 @@ export class AboutComponent implements OnInit {
   }
   getLang(){
     return this.Currentlang.lang;
-   }
+  }
 
 }

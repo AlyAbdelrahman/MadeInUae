@@ -1,5 +1,7 @@
 import { Component, OnInit ,ElementRef, AfterViewInit } from '@angular/core';
- import  Swiper from 'swiper';
+import  Swiper from 'swiper';
+import {footerSlider} from '../../models/footerSlider';
+import {FooterSliderService} from '../../services/footer/slider/footer-slider.service'
 //  import fs = require('fs');
 import * as jquery from 'jquery';
 @Component({
@@ -9,9 +11,14 @@ import * as jquery from 'jquery';
 })
 export class FooterSliderComponent implements OnInit {
   swiper: any;
-  constructor() { }
+  footerSliderData:footerSlider[];
+  baseUrl:string ='http://mbesher-002-site4.dtempurl.com/sponsors/';
+  
+  constructor(private FootSliderData:FooterSliderService) { }
   
   ngOnInit(): void {
+    this.FootSliderData.getFooterSliderData().subscribe(Slide=>{this.footerSliderData=Slide,console.log(this.FootSliderData)});
+
   }
 
   ngAfterViewInit() {
@@ -25,7 +32,7 @@ export class FooterSliderComponent implements OnInit {
         var sliderView = 1;
         var ww = $(window).width();
         console.log(ww)
-        if (ww >= 1700) sliderView = 7;
+        if (ww >= 1700) sliderView = 8;
         if (ww <= 1700) sliderView = 7;
         if (ww <= 1560) sliderView = 6;
         if (ww <= 1400) sliderView = 6;
@@ -42,7 +49,9 @@ export class FooterSliderComponent implements OnInit {
           speed: 500,
           autoplay: true,
           autoplayDisableOnInteraction: true,
-          centeredSlides: true
+          centeredSlides: true,
+          observer: true, 
+      observeParents: true,
         });
     
         $(window).resize(function () {
@@ -76,4 +85,7 @@ export class FooterSliderComponent implements OnInit {
     // })(jquery);
    }
    
+   
+
+
 }

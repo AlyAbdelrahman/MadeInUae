@@ -20,10 +20,10 @@
         <div class="row">
             <div class="col-lg-6 col-md-12 col-sm-12 uae-info-section">
              
-               <div class="uae-info-paragraph-container">
-                   <p class="uae-info-paragraph-txt">
+               <div class="uae-info-paragraph-container" [innerHTML]="getLang()=='ar'?AboutUs.descriptionAr:AboutUs.description">
+                   <!-- <p class="uae-info-paragraph-txt">
                     {{getLang()=='ar'?AboutUs.descriptionAr:AboutUs.description}}
-                    </p>
+                    </p> -->
                </div>
             </div>
             <div class="col-lg-6 col-md-12 col-sm-12">

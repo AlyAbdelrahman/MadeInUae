@@ -13,30 +13,32 @@
     <!--Footer Site map -->
     <div class="site-map-container ">
         <ul class="site-map-list">
-            <li class="site-map-tab"><a href="#">{{'homePage' | translate}}</a></li>
-            <li class="site-map-tab"><a href="#">{{'About' | translate}} </a></li>
-            <li class="site-map-tab"><a href="#">{{'IndustrialDepartments' | translate}}</a></li>
-            <li class="site-map-tab"><a href="#">{{'sponsors' | translate}}</a></li>
-            <li class="site-map-tab"><a href="#">{{'AddFactory' | translate}}</a></li>
-            <li class="site-map-tab"><a href="#">{{'ContactUs'| translate}}</a></li>
+            <li class="site-map-tab"><a routerLink="/">{{'homePage' | translate}}</a></li>
+            <li class="site-map-tab"><a routerLink="/About">{{'About' | translate}} </a></li>
+            <li class="site-map-tab"><a routerLink="/Factories">{{'IndustrialDepartments' | translate}}</a></li>
+            <!-- <li class="site-map-tab"><a href="#">{{'sponsors' | translate}}</a></li> -->
+            <li class="site-map-tab"><a routerLink="/AddFactory">{{'AddFactory' | translate}}</a></li>
+            <li class="site-map-tab"><a routerLink="/ContactUs">{{'ContactUs'| translate}}</a></li>
         </ul>
     </div> 
     <!--Footer Contact info-->
-     <div class="contacts-container">
+     <div class="contacts-container" *ngIf="FooterInfo">
         <ul class="contacts-list">
-            <li class="contact-link">974-55754954<span class="contact-icon icon-Icon-whatsapp"> </span>+</li>
-            <li class="contact-link">974-55754954<span class="contact-icon icon-Icon-fax"></span>+ </li>
-            <li class="contact-link">974-55754954<span class="contact-icon icon-Icon-phone-alt"></span>+</li>
-            <li class="contact-link">info@madeinqatar.qa<span class="contact-icon icon-Icon-env"></span></li>
+            <li class="contact-link">{{FooterInfo.addressAr}}<span class="contact-icon icon-Icon-globe"> </span></li>
+            <li class="contact-link">{{FooterInfo.address}}<span class="contact-icon icon-Icon-globe"></span></li>
+            <li class="contact-link">{{FooterInfo.phone}}  <span class="contact-icon icon-Icon-phone-alt"></span></li>
+            <li class="contact-link">{{FooterInfo.email}}<span class="contact-icon icon-Icon-env"></span></li>
         </ul>
     </div>
     <!--social-media icons-->
-     <div class="socialMedia-container">
+     <div class="socialMedia-container" *ngIf="FooterInfo">
         <ul class="socialMedia-list">
-            <li class="socialMedia-icon"><span class="icon-Icon-instagram"></span></li>
-            <li class="socialMedia-icon"><span class="icon-Icon-facebook"></span></li>
-            <li class="socialMedia-icon"><span class="icon-Icon-twitter"></span></li>
-            <li class="socialMedia-icon"><span class="icon-Icon-youtube"></span></li>
+            <li class="socialMedia-icon"><a [href]='FooterInfo.instagram' style="text-decoration: none;"><span  class="icon-Icon-instagram"></span></a></li>
+            <li class="socialMedia-icon"><a [href]='FooterInfo.facebook' style="text-decoration: none;"><span class="icon-Icon-facebook"></span></a></li>
+            <li class="socialMedia-icon"><a [href]='FooterInfo.twitter' style="text-decoration: none;"><span class="icon-Icon-twitter"></span></a></li>
+            <li class="socialMedia-icon"><a [href]='FooterInfo.youTube' style="text-decoration: none;"><span class="icon-Icon-youtube"></span></a></li>
+            <li class="socialMedia-icon"><a [href]='FooterInfo.google' style="text-decoration: none;"><span class="icon-Icon-Gmail"></span></a></li>
+
         </ul>
     </div>
     <!--copyRight-->

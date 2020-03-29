@@ -69,11 +69,11 @@
             <div class="section-sub-header-container">
                 <h4 class="sub-header-txt sub-header-txt--black mb-0">{{getLang()=='ar'?AboutUs.nameAr:AboutUs.name}}</h4>
             </div>
-                <p class="section-details section-details--grey">
-                    {{getLang()=='ar'?AboutUs.descriptionAr:AboutUs.description}}
+                <p class="section-details section-details--grey" [innerHTML]="getLang()=='ar'?AboutUs.descriptionAr:AboutUs.description|slice:0:500">
+                    
                 </p>
                 <div class="read-more-container">
-                    <button  class="btn--trasnparent btn-txt--green btn--lit-rounded read-more read-more-btn">{{'more'|translate}}</button>
+                    <button routerLink="/About"  class="btn--trasnparent btn-txt--green btn--lit-rounded read-more read-more-btn" style="cursor: pointer;">{{'more'|translate}}</button>
                 </div>
              
         </div>

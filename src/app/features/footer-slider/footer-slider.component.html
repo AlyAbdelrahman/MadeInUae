@@ -1,34 +1,14 @@
 <section class="ag-slide-block">
     <div class="footer-swiper-container" dir="rtl">
       <ul class="swiper-wrapper ag-slide_list">
-        <li class="swiper-slide ag-slide_item" data-swiper-autoplay="1500" data-swiper-slide-index="0">
+        <li class="swiper-slide ag-slide_item" data-swiper-autoplay="1500" data-swiper-slide-index="0" *ngFor="let Sponser of footerSliderData">
           <!--data-swiper-autoplay -->
           <div class="ag-slide-item-image-container">
-           <img src=".././../assets/images/footer-slider-ph.png" class="ag-slide_img" alt="">
+           <img [src] = "baseUrl+Sponser.image"  class="ag-slide_img" alt="sponser">
           </div>
         </li>
        
-        <li class="swiper-slide ag-slide_item" data-swiper-autoplay="1500" data-swiper-slide-index="1">
-          <div class="ag-slide-item-image-container">
-            <img src=".././../assets/images/footer-slider-ph.png" class="ag-slide_img" alt="">
-        </div>
-        </li>
-        
-        <li class="ag-slide_item swiper-slide swiper-slide-prev" data-swiper-autoplay="1500" data-swiper-slide-index="2">
-        <div class="ag-slide-item-image-container">
-            <img src=".././../assets/images/footer-slider-ph.png" class="ag-slide_img" alt="">
-        </div>
-        </li>
-        <li class="ag-slide_item swiper-slide swiper-slide-active" data-swiper-autoplay="1500" data-swiper-slide-index="3">
-            <div class="ag-slide-item-image-container">
-                <img src=".././../assets/images/footer-slider-ph.png" class="ag-slide_img" alt="">
-            </div>
-        </li>
-        <li class="ag-slide_item swiper-slide swiper-slide-next" data-swiper-autoplay="1500" data-swiper-slide-index="4">
-            <div class="ag-slide-item-image-container">
-                <img src=".././../assets/images/footer-slider-ph.png" class="ag-slide_img" alt="">
-            </div>
-        </li>
+      
      
       </ul>
     </div>
