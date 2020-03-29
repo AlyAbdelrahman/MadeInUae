@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import * as jquery from 'jquery';
 import  Swiper from 'swiper';
+import {companyDetails} from '../../models/companyDetails';
+import {CatalogSliderService} from '../../services/catalogSlider/catalog-slider.service'
 
 @Component({
   selector: 'catalog-slider',
@@ -9,9 +11,13 @@ import  Swiper from 'swiper';
 })
 export class CatalogSliderComponent implements OnInit {
   swiper: any;
-  constructor() { }
+  // baseUrl:string='http://mbesher-002-site4.dtempurl.com/sector/';
+  companyDetails:companyDetails;
+  constructor(private catalogSlides: CatalogSliderService) { }
 
   ngOnInit(): void {
+    this.catalogSlides.getCatalogSlides().subscribe(Slide=>{this.companyDetails=Slide,console.log(Slide)});
+
   }
 
   ngAfterViewInit() {
