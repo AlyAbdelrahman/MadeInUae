@@ -17,10 +17,13 @@
                     <label class="input-form__label" for="name-arabic">
                         {{'contactUs.name' | translate}}
                     </label>
-                    <input type="text" name="name"  #name="ngModel"   required  [(ngModel)]="client.fullName" class="input-form__txt" id="name-arabic" placeholder="{{'contactUs.fullName' | translate}}">
-                    <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
-                            <div *ngIf="name.errors.required">
+                    <input minlength="4" type="text" name="name"  #name="ngModel"   required  [(ngModel)]="client.fullName" class="input-form__txt" id="name-arabic" placeholder="{{'contactUs.fullName' | translate}}">
+                    <div *ngIf=" f.submitted && name.invalid " class="alert alert-danger">
+                            <div *ngIf="f.submitted && name.errors.required">
                                 {{'contactUs.NameIsRequired' | translate}}
+                            </div>
+                            <div *ngIf="f.submitted && name.errors.minlength">
+                                {{'contactUs.NameTooShort' | translate}}
                             </div>
                         </div>
                         
@@ -31,12 +34,14 @@
                     <label class="input-form__label" for="contact-email">
                        {{'contactUs.email' | translate}}
                     </label>
-                    <input type="text" name="email"  #email="ngModel"   required  [(ngModel)]="client.email" class="input-form__txt" id="contact-email" placeholder="{{'contactUs.email' | translate}}">
-                        <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
-                            <div *ngIf="email.errors.required">
+                    <input type="text" name="email"  #email="ngModel" email  required  [(ngModel)]="client.email" class="input-form__txt" id="contact-email" placeholder="{{'contactUs.email' | translate}}">
+                        <div *ngIf="f.submitted && email.invalid" class="alert alert-danger">
+                            <div *ngIf="f.submitted && email.errors.required">
                                 {{'contactUs.EmailIsRequired' | translate}}
                             </div>
+                            <div *ngIf="f.submitted && email.errors.email">{{'contactUs.EmailIsWrong' | translate}}</div>
                         </div>
+                       
                 </div> 
 
                 <!--عنوان الموضوع-->
@@ -44,10 +49,13 @@
                     <label class="input-form__label" for="contact-subject">
                        {{'contactUs.subject'|translate}}
                     </label>
-                    <input type="text" name="subject"  #subject="ngModel"   required  [(ngModel)]="client.subject" class="input-form__txt" id="contact-subject" placeholder="{{'contactUs.subject'|translate}}">
-                    <div *ngIf="subject.invalid && (subject.dirty || subject.touched)" class="alert alert-danger">
-                        <div *ngIf="subject.errors.required">
+                    <input type="text" name="subject"  #subject="ngModel" minlength="6"   required  [(ngModel)]="client.subject" class="input-form__txt" id="contact-subject" placeholder="{{'contactUs.subject'|translate}}">
+                    <div *ngIf="f.submitted && f.submitted  && subject.invalid" class="alert alert-danger">
+                        <div *ngIf="f.submitted && subject.errors.required">
                             {{'contactUs.SubjectIsRequired' | translate}}
+                        </div>
+                        <div *ngIf="f.submitted && subject.errors.minlength">
+                            {{'contactUs.MessageTooShort' | translate}}
                         </div>
                     </div>
                 </div> 
@@ -57,10 +65,14 @@
                     <label class="input-form__label" for="contact-message">
                         {{'contactUs.message' | translate}}
                     </label>
-                    <textarea type="text" name="message"  #message="ngModel"   required  [(ngModel)]="client.body" class="input-form__txt" id="contact-message" placeholder="{{'contactUs.message' | translate}}"></textarea>
-                    <div *ngIf="message.invalid && (message.dirty || message.touched)" class="alert alert-danger">
-                        <div *ngIf="message.errors.required">
+                    <textarea type="text" name="message"  #message="ngModel"  minlength="6" required  [(ngModel)]="client.body" class="input-form__txt" id="contact-message" placeholder="{{'contactUs.message' | translate}}"></textarea>
+                    <div *ngIf="f.submitted && message.invalid" class="alert alert-danger">
+                        <div *ngIf="f.submitted && message.errors.required">
                             {{'contactUs.MessageIsReuierd' | translate}}
+                        </div>
+                        <div *ngIf="f.submitted && message.errors.minlength">
+                            {{'contactUs.MessageTooShort' | translate}}
+
                         </div>
                     </div>
                 </div> 

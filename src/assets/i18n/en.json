@@ -68,8 +68,12 @@
         "send":"Send",
         "NameIsRequired":"Name is Requierd",
         "EmailIsRequired":"Email is Requierd",
+        "EmailIsWrong":"Email must be a valid email address",
         "SubjectIsRequired":"Subject is Requierd",
-        "MessageIsReuierd":"Message is Requierd"
+        "MessageIsReuierd":"Message is Requierd",
+        "MessageTooShort":"Message must be at least 6 characters long",
+        "NameTooShort":"Name must be at least 3 charaters long"
+
     }
 
 

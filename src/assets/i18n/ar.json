@@ -67,8 +67,11 @@
         "send":"ارسال",
         "NameIsRequired":"الاسم مطلوب",
         "EmailIsRequired":"البريد الالكترونى مطلوب",
+        "EmailIsWrong":"البريد الالكترونى غير صحيح",
         "SubjectIsRequired":"عنوان الموضوع مطلوب",
-        "MessageIsReuierd":" الرساله مطلوبه"
+        "MessageIsReuierd":" الرساله مطلوبه",
+        "MessageTooShort":"الرساله يجب أن تكون علي الاقل 6 احرف",
+        "NameTooShort":"الاسم يجب أن يكون علي الاقل 3 احرف"
     }
 
 
