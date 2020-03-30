@@ -64,7 +64,11 @@
         "email":"البريد الالكترونى",
         "subject":"عنوان الموضوع",
         "message":"الرسالة",
-        "send":"ارسال"
+        "send":"ارسال",
+        "NameIsRequired":"الاسم مطلوب",
+        "EmailIsRequired":"البريد الالكترونى مطلوب",
+        "SubjectIsRequired":"عنوان الموضوع مطلوب",
+        "MessageIsReuierd":" الرساله مطلوبه"
     }
 
 

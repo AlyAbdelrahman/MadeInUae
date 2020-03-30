@@ -9,6 +9,7 @@
 <!--Contact Us Form-->
 <section class="Contact-us">
     <div class="container">
+    <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm"  novalidate>
         <div class="row">
             <div class="col"> 
                  <!-- الاسم-->
@@ -16,7 +17,13 @@
                     <label class="input-form__label" for="name-arabic">
                         {{'contactUs.name' | translate}}
                     </label>
-                    <input type="text" class="input-form__txt" id="name-arabic" placeholder="{{'contactUs.fullName' | translate}}">
+                    <input type="text" name="name"  #name="ngModel"   required  [(ngModel)]="client.fullName" class="input-form__txt" id="name-arabic" placeholder="{{'contactUs.fullName' | translate}}">
+                    <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+                            <div *ngIf="name.errors.required">
+                                {{'contactUs.NameIsRequired' | translate}}
+                            </div>
+                        </div>
+                        
                 </div> 
 
                 <!--البريد الالكترونى-->
@@ -24,23 +31,38 @@
                     <label class="input-form__label" for="contact-email">
                        {{'contactUs.email' | translate}}
                     </label>
-                    <input type="text" class="input-form__txt" id="contact-email" placeholder="{{'contactUs.email' | translate}}">
+                    <input type="text" name="email"  #email="ngModel"   required  [(ngModel)]="client.email" class="input-form__txt" id="contact-email" placeholder="{{'contactUs.email' | translate}}">
+                        <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+                            <div *ngIf="email.errors.required">
+                                {{'contactUs.EmailIsRequired' | translate}}
+                            </div>
+                        </div>
                 </div> 
 
                 <!--عنوان الموضوع-->
                <div class="input-form">
-                    <label class="input-form__label" for="contact-email">
+                    <label class="input-form__label" for="contact-subject">
                        {{'contactUs.subject'|translate}}
                     </label>
-                    <input type="text" class="input-form__txt" id="contact-email" placeholder="{{'contactUs.subject'|translate}}">
+                    <input type="text" name="subject"  #subject="ngModel"   required  [(ngModel)]="client.subject" class="input-form__txt" id="contact-subject" placeholder="{{'contactUs.subject'|translate}}">
+                    <div *ngIf="subject.invalid && (subject.dirty || subject.touched)" class="alert alert-danger">
+                        <div *ngIf="subject.errors.required">
+                            {{'contactUs.SubjectIsRequired' | translate}}
+                        </div>
+                    </div>
                 </div> 
 
                 <!--الرسالة-->
                  <div class="input-form">
-                    <label class="input-form__label" for="contact-email">
+                    <label class="input-form__label" for="contact-message">
                         {{'contactUs.message' | translate}}
                     </label>
-                    <textarea type="text" class="input-form__txt" id="contact-email" placeholder="{{'contactUs.message' | translate}}"></textarea>
+                    <textarea type="text" name="message"  #message="ngModel"   required  [(ngModel)]="client.body" class="input-form__txt" id="contact-message" placeholder="{{'contactUs.message' | translate}}"></textarea>
+                    <div *ngIf="message.invalid && (message.dirty || message.touched)" class="alert alert-danger">
+                        <div *ngIf="message.errors.required">
+                            {{'contactUs.MessageIsReuierd' | translate}}
+                        </div>
+                    </div>
                 </div> 
 
              </div>
@@ -53,6 +75,7 @@
                 </div>
             </div>
         </div>
+    </form>
     </div>
 </section> 
 

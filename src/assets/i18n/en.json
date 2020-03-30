@@ -65,8 +65,11 @@
         "email":"Email",
         "subject":"Subject",
         "message":"Message",
-        "send":"Send"
-
+        "send":"Send",
+        "NameIsRequired":"Name is Requierd",
+        "EmailIsRequired":"Email is Requierd",
+        "SubjectIsRequired":"Subject is Requierd",
+        "MessageIsReuierd":"Message is Requierd"
     }
 
 

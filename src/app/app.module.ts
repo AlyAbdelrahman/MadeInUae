@@ -21,6 +21,8 @@ import { NavbarComponent } from './core/navbar/navbar.component';
 import { FooterComponent } from './core/footer/footer.component';
 import { LayoutComponent } from './core/layout/layout.component';
 import { BannerComponent } from './features/banner/banner.component';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -43,6 +45,7 @@ import { BannerComponent } from './features/banner/banner.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     NgbModule,
     HttpClientModule,
     TranslateModule.forRoot({
