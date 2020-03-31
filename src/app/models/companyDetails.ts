@@ -8,7 +8,7 @@ export interface companyDetails{
     "image": string,
     "description": string,
      "descriptionAr": string,
-     "phone": "+971-600522261",
+     "phone": string,
     "secondPhone":string,
     "address":string,
     "addressAr": string,

@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: '', component: HomepageComponent },
   { path: 'About', component: AboutComponent },
   { path: 'Factories', component: FactoriesComponent },
-  { path: 'FactoryDetails', component: FactoryDetailsComponent },
+  { path: 'FactoryDetails/:id', component: FactoryDetailsComponent },
   { path: 'AddFactory', component: AddFactoryComponent },
   { path: 'ContactUs', component: ContactUsComponent },
 

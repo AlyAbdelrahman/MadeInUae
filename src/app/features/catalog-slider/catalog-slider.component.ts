@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import * as jquery from 'jquery';
 import  Swiper from 'swiper';
 import {companyDetails} from '../../models/companyDetails';
-import {CatalogSliderService} from '../../services/catalogSlider/catalog-slider.service'
+import {CatalogSliderService} from '../../services/catalogSlider/catalog-slider.service';
+import { ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'catalog-slider',
@@ -11,12 +13,14 @@ import {CatalogSliderService} from '../../services/catalogSlider/catalog-slider.
 })
 export class CatalogSliderComponent implements OnInit {
   swiper: any;
-  // baseUrl:string='http://mbesher-002-site4.dtempurl.com/sector/';
+  baseUrl:string='http://mbesher-002-site4.dtempurl.com/CompanyProduct/';
   companyDetails:companyDetails;
-  constructor(private catalogSlides: CatalogSliderService) { }
+  constructor(private catalogSlides: CatalogSliderService,private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.catalogSlides.getCatalogSlides().subscribe(Slide=>{this.companyDetails=Slide,console.log(Slide)});
+    let id = this.route.snapshot.params.id;
+
+     this.catalogSlides.getCatalogSlides(id).subscribe(Slide=>this.companyDetails=Slide);
 
   }
 

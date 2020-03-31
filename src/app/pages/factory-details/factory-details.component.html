@@ -13,40 +13,40 @@
             <div class="search-result-card-image-container shadow">
                 <img class="search-result-card__img" src="../assets/images/c1.jpg" alt="card-img">
             </div>
-            <div class="search-result-card-info">
-                <div class="search-result-card-header-container">
-                    <h3 class="search-result-card__header">معماري قطر</h3>
+            <div class="search-result-card-info" *ngIf="company">
+                <div class="search-result-card-header-container" >
+                    <h3 class="search-result-card__header">{{getLang()=='ar'?company.nameAr:company.name}}</h3>
                 </div>
-                <div class="search-result-card-details-container">
+                <div class="search-result-card-details-container" *ngIf="company">
                     <p class="search-result-card-details__txt">
-                        أسست معماري قطر يو بي في سي في عام ٢٠٠٧ في قطر لتكون من الشركات الرائدة في مجال صناعة النوافذ والابواب العازلة حيث تم انشاء اول مصنع في قطر يعمل بتكنولوجي ال سي ان سي والتي تقلص تدخل العنصر البشري في عملية التصنيع
+                        {{getLang()=='ar'?company.descriptionAr:company.description}}
                     </p>
                 </div>
                 <div class="search-result-card-contacts-container">
                     <ul class="search-card-contacts-list">
-                        <li class="search-card-contact ">974-44479411<span class="icon-Icon-telephone contact-icon "></span>+</li>
-                        <li class="search-card-contact">info@qpmc.qa <span class="icon-Icon-email contact-icon "></span></li>
-                        <li class="search-card-contact">974-44479422<span class="icon-Icon-print contact-icon "></span>+</li>
-                        <li class="search-card-contact">www.qpmc.qa<span class="icon-Icon-globe contact-icon "></span></li>
+                        <li class="search-card-contact ">{{company.phone}}<span class="icon-Icon-telephone contact-icon "></span></li>
+                        <li class="search-card-contact">{{company.email}}<span class="icon-Icon-email contact-icon "></span></li>
+                        <li class="search-card-contact">{{company.fax}}<span class="icon-Icon-print contact-icon "></span></li>
+                        <li class="search-card-contact">{{company.website}}<span class="icon-Icon-globe contact-icon "></span></li>
     
                         
                     </ul>
                 </div>
                 <div class="address-container">
-                    <span class="address-header">العنوان :</span>
-                    <span class="address-details">  بالقرب من دوار ميد ماك ، الدوحة ، قطر</span>
+                    <span class="address-header">{{'companyAddress' | translate}}</span>
+                    <span class="address-details"> {{getLang()=='ar'?company.addressAr:company.address}}</span>
                 </div>
                 <div class="social-container">
-                    <span class="address-header">مواقع التواصل</span>
+                    <span class="address-header">{{'communicationLinks' | translate}}</span>
                     <span class="social-icons-details"> 
                         <ul class="social-icon-list">
-                            <li class="social-icon"><a href="#" class="social-action"><span class="icon-Icon-linkedin "></span></a></li>
-                            <li class="social-icon"><a href="#" class="social-action"><span class="icon-Icon-Gmail"></span></a></li>
-                            <li class="social-icon"><a href="#" class="social-action"><span class="icon-Icon-facebook"></span></a></li>
-                            <li class="social-icon"><a href="#" class="social-action"><span class="icon-Icon-youtube"></span></a></li>
-                            <li class="social-icon"><a href="#" class="social-action"><span class="icon-Icon-twitter"></span></a></li>
-                            <li class="social-icon"><a href="#" class="social-action"><span class="icon-Icon-instagram"></span></a></li>
-                            <li class="social-icon"><a href="#" class="social-action"><span class="Icon-snapchat"></span></a></li>
+                            <li class="social-icon" *ngIf="company.google"><a [href]='company.google' class="social-action"><span class="icon-Icon-linkedin "></span></a></li>
+                            <!-- <li class="social-icon"><a  class="social-action"><span class="icon-Icon-Gmail"></span></a></li> -->
+                            <li class="social-icon" *ngIf="company.facebook"><a [href]='company.facebook' class="social-action"><span class="icon-Icon-facebook"></span></a></li>
+                            <li class="social-icon" *ngIf="company.youTube"><a [href]='company.youTube' class="social-action"><span class="icon-Icon-youtube"></span></a></li>
+                            <li class="social-icon" *ngIf="company.twitter"><a [href]='company.twitter' class="social-action"><span class="icon-Icon-twitter"></span></a></li>
+                            <li class="social-icon" *ngIf="company.instagram"><a [href]='company.instagram' class="social-action"><span class="icon-Icon-instagram"></span></a></li>
+                            <li class="social-icon" *ngIf="company.snapChat"><a [href]='company.snapChat' class="social-action"><span class="icon-Icon-snapchat"></span></a></li>
 
 
 
@@ -77,16 +77,16 @@
                     <div class="person-image-container">
                         <img class="person__img" src="../assets/images/c1.jpg" alt="person">
                     </div>
-                    <div class="person-name-container">
-                        <h4 class="person__name">السيد/ أسامة جمال</h4>
+                    <div class="person-name-container" *ngIf="company">
+                        <h4 class="person__name" *ngIf="company.communicationOfficerNameAr  && company.communicationOfficerName">{{getLang()=='ar'?company.communicationOfficerNameAr:company.communicationOfficerName}}</h4>
                     </div>
-                    <div class="person-title-container">
-                        <h5 class="person__title">المدير العام - التسويق والمبيعات</h5>
+                    <div class="person-title-container" *ngIf="company" >
+                        <h5 class="person__title" *ngIf="company.communicationOfficerPositionAr && company.communicationOfficerPosition"  >{{getLang()=='ar'?company.communicationOfficerPositionAr:company.communicationOfficerPosition}}</h5>
                     </div>
 
-                    <div class="person-contacts-container">
-                        <h5 class="person__contact"><span class="icon-Icon-phone-alt person-contacts__icon"></span>+974-55802697</h5>
-                        <h5 class="person__contact"><span class="icon-Icon-email person-contacts__icon"></span>o.jamal@dohacables.com</h5>
+                    <div class="person-contacts-container" *ngIf="company">
+                        <h5 class="person__contact" *ngIf="company.communicationOfficerPhone"><span class="icon-Icon-phone-alt person-contacts__icon"></span>{{company.communicationOfficerPhone}}</h5>
+                        <h5 class="person__contact" *ngIf="company.communicationOfficerEmail"><span class="icon-Icon-email person-contacts__icon"></span>{{company.communicationOfficerEmail}}</h5>
 
                     </div>
                     

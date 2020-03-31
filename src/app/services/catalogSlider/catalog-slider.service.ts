@@ -8,11 +8,11 @@ import { Observable } from 'rxjs';
 })
 export class CatalogSliderService {
 
-  baseUrl :string= 'http://mbesher-002-site4.dtempurl.com/api/user/Companies/2';
+  baseUrl :string= 'http://mbesher-002-site4.dtempurl.com/api/user/Companies';
 
   constructor(private http:HttpClient) { }
 
-  getCatalogSlides():Observable<companyDetails>{
-    return this.http.get<companyDetails>(this.baseUrl);
+  getCatalogSlides(id:number):Observable<companyDetails>{
+    return this.http.get<companyDetails>(this.baseUrl+'/'+id);
    }
 }
