@@ -1,7 +1,7 @@
 <section class="Ca-slide-block" >
     <div class="catalog-swiper-container" dir="rtl">
       <ul class="swiper-wrapper Ca-slide_list" >
-        <li *ngFor="let catalog of companyDetails.products" class="swiper-slide Ca-slide_item" data-swiper-autoplay="1500" data-swiper-slide-index="0">
+        <li *ngFor="let catalog of companyDetails" class="swiper-slide Ca-slide_item" data-swiper-autoplay="1500" data-swiper-slide-index="0">
           <!--data-swiper-autoplay -->
           <div class="Ca-slide-item-image-container shadow">
            <img [src]="baseUrl+catalog.image" class="Ca-slide_img" alt="">

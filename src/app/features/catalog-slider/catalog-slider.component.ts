@@ -4,6 +4,7 @@ import  Swiper from 'swiper';
 import {companyDetails} from '../../models/companyDetails';
 import {CatalogSliderService} from '../../services/catalogSlider/catalog-slider.service';
 import { ActivatedRoute } from '@angular/router';
+import {productsDetails} from '../../models/productsCategory'
 
 
 @Component({
@@ -14,13 +15,13 @@ import { ActivatedRoute } from '@angular/router';
 export class CatalogSliderComponent implements OnInit {
   swiper: any;
   baseUrl:string='http://mbesher-002-site4.dtempurl.com/CompanyProduct/';
-  companyDetails:companyDetails;
+  companyDetails:productsDetails[];
   constructor(private catalogSlides: CatalogSliderService,private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     let id = this.route.snapshot.params.id;
 
-     this.catalogSlides.getCatalogSlides(id).subscribe(Slide=>this.companyDetails=Slide);
+     this.catalogSlides.getCatalogSlides(id).subscribe(Slide=>this.companyDetails=Slide.products);
 
   }
 
