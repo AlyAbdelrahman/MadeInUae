@@ -7,110 +7,218 @@
 <!--Create factory form-->
  <section class="Create-Factory">
     <div class="container">
-        <div class="row">
-            <div class="col"> 
+        <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm"  novalidate>
+            <div class="row">
+                <div class="col"> 
 
-                <!-- اسم الشركة / المصنع-->
-                 <div class="input-form">
-                    <label class="input-form__label" for="Factoryname-arabic">
-                       {{'factory.nameHeader' | translate}}
-                    </label>
-                    <input type="text" class="input-form__txt" id="Factoryname-arabic" placeholder="{{'factory.arabicName' | translate}}">
-                    <input type="text" class="input-form__txt" id="Factoryname-english" placeholder="{{'factory.englishName' | translate}}">
+                    <!-- اسم الشركة / المصنع-->
+                    <div class="input-form">
+                        <label class="input-form__label" for="Factoryname-arabic">
+                        {{'factory.nameHeader' | translate}}
+                        </label>
+                        <input  minlength="4" name="companyNameAr"  #companyNameAr="ngModel"   required  [(ngModel)]="company.companyNameAr" type="text" class="input-form__txt" id="Factoryname-arabic" placeholder="{{'factory.arabicName' | translate}}">
+                        <div *ngIf=" f.submitted && companyNameAr.invalid " class="alert alert-danger">
+                            <div *ngIf="f.submitted && companyName.errors.required">
+                                {{'newCompany.ArabicNameIsRequired' | translate}}
+                            </div>
+                            <div *ngIf="f.submitted && companyName.errors.minlength">
+                                {{'newCompany.ArabicNameIsTooShort' | translate}}
+                            </div>
+                        </div>
+                        <input  minlength="4" name="companyName"  #companyName="ngModel"   required  [(ngModel)]="company.companyName" type="text" class="input-form__txt" id="Factoryname-english" placeholder="{{'factory.englishName' | translate}}">
+                        <div *ngIf=" f.submitted && companyName.invalid " class="alert alert-danger">
+                            <div *ngIf="f.submitted && companyName.errors.required">
+                                {{'newCompany.EnglishNameIsRequired' | translate}}
+                            </div>
+                            <div *ngIf="f.submitted && companyName.errors.minlength">
+                                {{'newCompany.EnglishNameIsTooShort' | translate}}
+                            </div>
+                        </div>
+                    </div> 
 
-                </div> 
+                    <!--عن الشركة / المصنع-->
+                    <div class="input-form">
+                        <label class="input-form__label" for="about-Factory-arabic">
+                        {{'factory.aboutHeader' | translate}}
+                        </label>
+                        <textarea  minlength="4" name="aboutCompanyAr"  #aboutCompanyAr="ngModel"   required  [(ngModel)]="company.aboutCompanyAr" type="text" class="input-form__txt" id="about-Factory-arabic" placeholder="{{'factory.aboutArabic' | translate}}"></textarea>
+                        <div *ngIf=" f.submitted && aboutCompanyAr.invalid " class="alert alert-danger">
+                            <div *ngIf="f.submitted && aboutCompanyAr.errors.required">
+                                {{'newCompany.aboutCompanyArIsRequired' | translate}}
+                            </div>
+                            <div *ngIf="f.submitted && aboutCompanyAr.errors.minlength">
+                                {{'newCompany.aboutCompanyArIsTooShort' | translate}}
+                            </div>
+                        </div>
+                        <textarea minlength="4" name="aboutCompany"  #aboutCompany="ngModel"   required  [(ngModel)]="company.aboutCompany" type="text" class="input-form__txt" id="about-Factory-english" placeholder="{{'factory.aboutEnglish'| translate}}"></textarea>
+                        <div *ngIf=" f.submitted && aboutCompany.invalid " class="alert alert-danger">
+                            <div *ngIf="f.submitted && aboutCompany.errors.required">
+                                {{'newCompany.aboutCompanyIsRequired' | translate}}
+                            </div>
+                            <div *ngIf="f.submitted && aboutCompany.errors.minlength">
+                                {{'newCompany.aboutCompanyIsTooShort' | translate}}
+                            </div>
+                        </div>
+                    </div> 
 
-                <!--عن الشركة / المصنع-->
-                 <div class="input-form">
-                    <label class="input-form__label" for="about-Factory-arabic">
-                       {{'factory.aboutHeader' | translate}}
-                    </label>
-                    <textarea type="text" class="input-form__txt" id="about-Factory-arabic" placeholder="{{'factory.aboutArabic' | translate}}"></textarea>
-                    <textarea type="text" class="input-form__txt" id="about-Factory-english" placeholder="{{'factory.aboutEnglish'| translate}}"></textarea>
-                </div> 
+                    <!--نوع القطاع-->
+                    <div class="input-form position-relative">
+                        <label class="input-form__label select__label" for="Factory-sector">
+                            {{'factory.sectorTypeHeader' | translate}}
+                        </label>
+                        <select  class="input-form__select" id="Factory-sector" name="sector" #sector="ngModel" required [(ngModel)]="company.sectorName">
+                            <option *ngFor="let sector of sectorsData" value="{{getLang()=='ar'?sector.nameAr:sector.name}}">{{getLang()=='ar'?sector.nameAr:sector.name}}</option>
+                            
+                        </select>
+                        <span class="icon-Icon-arrow rotate-down black-colored-txt drop-down-arrow select-arrow"></span>
+                    </div>
 
-                <!--نوع القطاع-->
-                 <div class="input-form position-relative">
-                    <label class="input-form__label select__label" for="Factory-sector">
-                        {{'factory.sectorTypeHeader' | translate}}
-                    </label>
-                    <select  class="input-form__select" id="Factory-sector" >
-                        <option value="قطاع صناعي">قطاع صناعي</option>
-                        <option value="قطاع صناعي">قطاع صناعي</option>
-                        
-                    </select>
-                    <span class="icon-Icon-arrow rotate-down black-colored-txt drop-down-arrow select-arrow"></span>
-                </div>
+                    <!--  العنوان-->
+                    <div class="input-form">
+                        <label class="input-form__label" for="Factory-address-arabic">
+                        {{'factory.address' | translate}}
+                        </label>
+                        <input type="text" minlength="4" name="addressAr"  #addressAr="ngModel"   required  [(ngModel)]="company.addressAr"  class="input-form__txt" id="Factory-address-arabic" placeholder="{{'factory.arabicAddress'|translate}}">
+                        <div *ngIf=" f.submitted && addressAr.invalid " class="alert alert-danger">
+                            <div *ngIf="f.submitted && addressAr.errors.required">
+                                {{'newCompany.addressArIsRequired' | translate}}
+                            </div>
+                            <div *ngIf="f.submitted && addressAr.errors.minlength">
+                                {{'newCompany.addressArIsTooShort' | translate}}
+                            </div>
+                        </div>
+                        <input  minlength="4" name="address"  #address="ngModel"   required  [(ngModel)]="company.address"  type="text" class="input-form__txt" id="Factory-address-english" placeholder="{{'factory.englishAddress'|translate}}">
+                        <div *ngIf=" f.submitted && address.invalid " class="alert alert-danger">
+                            <div *ngIf="f.submitted && address.errors.required">
+                                {{'newCompany.addressIsRequired' | translate}}
+                            </div>
+                            <div *ngIf="f.submitted && address.errors.minlength">
+                                {{'newCompany.addressIsTooShort' | translate}}
+                            </div>
+                        </div>
+                    </div> 
 
-                <!--  العنوان-->
-                 <div class="input-form">
-                    <label class="input-form__label" for="Factory-address-arabic">
-                       {{'factory.address' | translate}}
-                    </label>
-                    <input type="text" class="input-form__txt" id="Factory-address-arabic" placeholder="{{'factory.arabicAddress'|translate}}">
-                    <input type="text" class="input-form__txt" id="Factory-address-english" placeholder="{{'factory.englishAddress'|translate}}">
+                    <!--الهاتف-->
+                    <div class="input-form">
+                        <label class="input-form__label" for="phone-number">
+                        {{'factory.phone' |translate}}
+                        </label>
+                        <input  minlength="9" name="tel"  #tel="ngModel"   required  [(ngModel)]="company.tel" type="text" class="input-form__txt" id="phone-number" placeholder="{{'factory.phoneNumber' | translate}}">
+                        <div *ngIf=" f.submitted && tel.invalid " class="alert alert-danger">
+                            <div *ngIf="f.submitted && tel.errors.required">
+                                {{'newCompany.telIsRequired' | translate}}
+                            </div>
+                            <div *ngIf="f.submitted && tel.errors.minlength">
+                                {{'newCompany.telIsTooShort' | translate}}
+                            </div>
+                        </div>
+                    </div> 
 
-                </div> 
+                    <!--فاكس-->
+                    <div class="input-form">
+                        <label class="input-form__label" for="fax-number">
+                            {{'factory.fax' | translate}}
+                        </label>
+                        <input minlength="9" name="fax"  #fax="ngModel"   required  [(ngModel)]="company.fax" type="text" class="input-form__txt" id="fax-number" placeholder="{{'factory.faxNumber' | translate}}">
+                        <div *ngIf=" f.submitted && fax.invalid " class="alert alert-danger">
+                            <div *ngIf="f.submitted && fax.errors.required">
+                                {{'newCompany.faxIsRequired' | translate}}
+                            </div>
+                            <div *ngIf="f.submitted && fax.errors.minlength">
+                                {{'newCompany.faxIsTooShort' | translate}}
+                            </div>
+                        </div>
+                    </div> 
 
-                <!--الهاتف-->
-                 <div class="input-form">
-                    <label class="input-form__label" for="phone-number">
-                       {{'factory.phone' |translate}}
-                    </label>
-                    <input type="text" class="input-form__txt" id="phone-number" placeholder="{{'factory.phoneNumber' | translate}}">
+                    <!--الموقع الالكترونى-->
+                    <div class="input-form">
+                        <label class="input-form__label" for="website">
+                            {{'factory.webSite' | translate}}
+                        </label>
+                        <input minlength="8" name="companyWebSite"  #companyWebSite="ngModel"   required  [(ngModel)]="company.companyWebSite" type="text" class="input-form__txt" id="website" placeholder="{{'factory.webSite' | translate}}">
+                        <div *ngIf=" f.submitted && companyWebSite.invalid " class="alert alert-danger">
+                            <div *ngIf="f.submitted && companyWebSite.errors.required">
+                                {{'newCompany.companyWebSiteIsRequired' | translate}}
+                            </div>
+                            <div *ngIf="f.submitted && companyWebSite.errors.minlength">
+                                {{'newCompany.companyWebSiteIsTooShort' | translate}}
+                            </div>
+                        </div>
+                    </div> 
 
-                </div> 
+                    <!--البريد الالكترونى-->
+                    <div class="input-form">
+                        <label class="input-form__label" for="email">
+                            {{'factory.emailAddress' | translate}}
+                        </label>
+                        <input minlength="8" name="companyMail"  #companyMail="ngModel" email  required  [(ngModel)]="company.companyMail" type="email" class="input-form__txt" id="email" placeholder="{{'factory.emailAddress' | translate}}">
+                        <div *ngIf="f.submitted && companyMail.invalid" class="alert alert-danger">
+                            <div *ngIf="f.submitted && companyMail.errors.required">
+                                {{'newCompany.companyMailIsRequired' | translate}}
+                            </div>
+                            <div *ngIf="f.submitted && companyMail.errors.email">{{'newCompany.companyMailIsWrong' | translate}}</div>
+                        </div>
+                    </div> 
 
-                <!--فاكس-->
-                 <div class="input-form">
-                    <label class="input-form__label" for="fax-number">
-                        {{'factory.fax' | translate}}
-                    </label>
-                    <input type="text" class="input-form__txt" id="fax-number" placeholder="{{'factory.faxNumber' | translate}}">
-                </div> 
+                    <!--اسم مسئول التواصل-->
+                    <div class="input-form">
+                        <label class="input-form__label" for="communication-person-name-arabic">
+                            {{'factory.contactPersonHeader'| translate}}
+                        </label>
+                        <input minlength="3" name="contactPersonNameAr"  #contactPersonNameAr="ngModel"   required  [(ngModel)]="company.contactPersonNameAr" type="text" class="input-form__txt" id="communication-person-name-arabic" placeholder="{{'factory.contactPersonNameArabic'|translate}}">
+                        <div *ngIf=" f.submitted && contactPersonNameAr.invalid " class="alert alert-danger">
+                            <div *ngIf="f.submitted && contactPersonNameAr.errors.required">
+                                {{'newCompany.contactPersonNameArIsRequired' | translate}}
+                            </div>
+                            <div *ngIf="f.submitted && contactPersonNameAr.errors.minlength">
+                                {{'newCompany.contactPersonNameArIsTooShort' | translate}}
+                            </div>
+                        </div>
+                        <input minlength="3" name="contactPersonName"  #contactPersonName="ngModel"   required  [(ngModel)]="company.contactPersonName" type="text" class="input-form__txt" id="communication-person-name-english" placeholder="{{'factory.contactPersonNameEnglish' |translate}}">
+                        <div *ngIf=" f.submitted && contactPersonName.invalid " class="alert alert-danger">
+                            <div *ngIf="f.submitted && contactPersonName.errors.required">
+                                {{'newCompany.contactPersonNameIsRequired' | translate}}
+                            </div>
+                            <div *ngIf="f.submitted && contactPersonName.errors.minlength">
+                                {{'newCompany.contactPersonNameIsTooShort' | translate}}
+                            </div>
+                        </div>
+                    </div> 
 
-                <!--الموقع الالكترونى-->
-                 <div class="input-form">
-                    <label class="input-form__label" for="website">
-                        {{'factory.webSite' | translate}}
-                    </label>
-                    <input type="text" class="input-form__txt" id="website" placeholder="{{'factory.webSite' | translate}}">
-                </div> 
-
-                <!--البريد الالكترونى-->
-                 <div class="input-form">
-                    <label class="input-form__label" for="email">
-                        {{'factory.emailAddress' | translate}}
-                    </label>
-                    <input type="text" class="input-form__txt" id="email" placeholder="{{'factory.emailAddress' | translate}}">
-                </div> 
-
-                <!--اسم مسئول التواصل-->
-                 <div class="input-form">
-                    <label class="input-form__label" for="communication-person-name-arabic">
-                        {{'factory.contactPersonHeader'| translate}}
-                    </label>
-                    <input type="text" class="input-form__txt" id="communication-person-name-arabic" placeholder="{{'factory.contactPersonNameArabic'|translate}}">
-                    <input type="text" class="input-form__txt" id="communication-person-name-english" placeholder="{{'factory.contactPersonNameEnglish' |translate}}">
-                </div> 
-
-                <!--المسمى الوظيفى-->
-                 <div class="input-form">
-                    <label class="input-form__label" for="job-title-arabic">
-                        {{'factory.jobTitle' | translate}}
-                    </label>
-                    <input type="text" class="input-form__txt" id="job-title-arabic" placeholder="{{'factory.arabicJobTitle' | translate}}">
-                    <input type="text" class="input-form__txt" id="job-title-english" placeholder="{{'factory.englishJobTitle' | translate}}">
+                    <!--المسمى الوظيفى-->
+                    <div class="input-form">
+                        <label class="input-form__label" for="job-title-arabic">
+                            {{'factory.jobTitle' | translate}}
+                        </label>
+                        <input minlength="3" name="jobNameAr"  #jobNameAr="ngModel"   required  [(ngModel)]="company.jobNameAr"  type="text" class="input-form__txt" id="job-title-arabic" placeholder="{{'factory.arabicJobTitle' | translate}}">
+                        <div *ngIf=" f.submitted && jobNameAr.invalid " class="alert alert-danger">
+                            <div *ngIf="f.submitted && jobNameAr.errors.required">
+                                {{'newCompany.jobNameArIsRequired' | translate}}
+                            </div>
+                            <div *ngIf="f.submitted && jobNameAr.errors.minlength">
+                                {{'newCompany.jobNameArIsTooShort' | translate}}
+                            </div>
+                        </div>
+                        <input minlength="3" name="jobName"  #jobName="ngModel"   required  [(ngModel)]="company.jobName" type="text" class="input-form__txt" id="job-title-english" placeholder="{{'factory.englishJobTitle' | translate}}">
+                        <div *ngIf=" f.submitted && jobName.invalid " class="alert alert-danger">
+                            <div *ngIf="f.submitted && jobName.errors.required">
+                                {{'newCompany.jobNameIsRequired' | translate}}
+                            </div>
+                            <div *ngIf="f.submitted && jobName.errors.minlength">
+                                {{'newCompany.jobNameIsTooShort' | translate}}
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <div class="submit-btn-container">
-                    <button class="btn--submit btn--trasnparent btn-txt--green btn--lit-rounded p-btn" >{{'AddFactory'|translate}}</button>
+            <div class="row">
+                <div class="col">
+                    <div class="submit-btn-container">
+                        <button class="btn--submit btn--trasnparent btn-txt--green btn--lit-rounded p-btn" >{{'AddFactory'|translate}}</button>
+                    </div>
                 </div>
             </div>
-        </div>
+        </form>
     </div>
 </section> 
 

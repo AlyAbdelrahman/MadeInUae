@@ -74,6 +74,36 @@
         "MessageIsReuierd":" الرساله مطلوبه",
         "MessageTooShort":"الرساله يجب أن تكون علي الاقل 6 احرف",
         "NameTooShort":"الاسم يجب أن يكون علي الاقل 3 احرف"
+    },
+    "newCompany":{
+        "ArabicNameIsRequired":"اسم الشركة / المصنع باللغه العربيه مطلوب",
+        "ArabicNameIsTooShort":"اسم الشركة / المصنع باللغه العربيه يجب ان يكون اكثر من 3 احرف",
+        "EnglishNameIsRequired":"اسم الشركة / المصنع باللغه الانجليزيه مطلوب",
+        "EnglishNameIsTooShort":"اسم الشركة / المصنع باللغه الانجليزيه يجب ان يكون اكثر من 3 احرف",
+        "aboutCompanyArIsRequired":"عن الشركة / المصنع مطلوبه باللغه العربيه مطلوب",
+        "aboutCompanyArIsTooShort":" عن الشركة / المصنع مطلوبه يجب ان يكون اكثر من 4 احرف",
+        "aboutCompanyIsRequired":"عن الشركة / المصنع مطلوبه باللغه الانجليزيه مطلوب",
+        "aboutCompanyIsTooShort":"عن الشركة / المصنع مطلوبه باللغه الانجليزيه يجب ان يكون اكثر من 4 احرف",
+        "addressArIsRequired":"العنوان باللغه العربيه مطلوب",
+        "addressArIsTooShort":"العنوان باللغه العربيه  يجب ان يكون اكثر من 4 احرف",
+        "addressIsRequired":"العنوان باللغه الانجليزيه مطلوب",
+        "addressIsTooShort":"العنوان باللغه الانجليزيه يجب ان يكون اكثر من 4 احرف",
+        "telIsRequired":"الهاتف مطلوب",
+        "telIsTooShort":"الهاتف يجب ان يكون اكثر من 9 أرقام",
+        "faxIsRequired":"الفاكس مطلوب",
+        "faxIsTooShort":"الفاكس يجب ان يكون اكثر من 9 أرقام",
+        "companyWebSiteIsRequired":"الموقع الالكترونى مطلوب",
+        "companyWebSiteIsTooShort":"الموقع الالكترونى يجب ان يكون اكثر من 8 احرف",
+        "companyMailIsRequired":"البريد الالكترونى مطلوب",
+        "companyMailIsWrong":"البريد الالكترونى خطأ",
+        "contactPersonNameArIsRequired":"اسم مسئول التواصل باللغه العربيه مطلوب",
+        "contactPersonNameArIsTooShort":"اسم مسئول التواصل باللغه العربيه يجب ان يكون اكثر من 3 احرف",
+        "contactPersonNameIsRequired":"اسم مسئول التواصل باللغه الانجليزيه مطلوب",
+        "contactPersonNameIsTooShort":"اسم مسئول التواصل باللغه الانجليزيه يجب ان يكون اكثر من 3 احرف",
+        "jobNameArIsRequired":"المسمى الوظيفى باللغه العربيه مطلوب",
+        "jobNameArIsTooShort":"المسمى الوظيفى يجب ان يكون اكثر من 3 احرف",
+        "jobNameIsRequired":"المسمى الوظيفى باللغه الانجليزيه مطلوب",
+        "jobNameIsTooShort":"المسمى الوظيفى باللغه الانجليزيه يجب ان يكون اكثر من 3 احرف"
     }
 
 

@@ -9,8 +9,8 @@
         <div class="carousel-caption centered-caption">
             <h3 class="caption-header">{{getLang()=='ar'?slide.titleAr:slide.title}}</h3>
             <p class="caption-pagraph">{{getLang()=='ar'?slide.descriptionAr:slide.description}}</p>
-                <button  class="btn--trasnparent btn-txt--white btn--lit-rounded btn--main create-factory-btn">
-                    اضف مصنعك الان </button>
+                <button routerLink="/AddFactory"  class="btn--trasnparent btn-txt--white btn--lit-rounded btn--main create-factory-btn">
+                    {{'AddFactory' | translate}} </button>
         </div>
         </ng-template>
 

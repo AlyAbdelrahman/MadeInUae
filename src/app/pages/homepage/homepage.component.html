@@ -7,7 +7,7 @@
   <section class="industrial-sector" *ngIf="Aside" >
     <aside class=" side-menue side-menue--right">
         <div class="side-menue-image-container">
-            <img class="side-menue__image" src="../assets/images/aside-header-bg.jpg" alt="aside-bg">
+            <img class="side-menue__image" [src]="baseImageUrl+Aside[0].image" alt="aside-bg">
         </div>
         <div class="side-menue-details">
             <div class="side-menue-details-header-container">
@@ -15,12 +15,7 @@
                 
             </div>
             <div class="side-menue-details-body">
-                <p class="side-menue__details">لوريم إيبسوم(Lorem Ipsum)
-                     هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى) 
-                     ويُستخدم في صناعات المطابع  ودور النشر.
-                     كان لوريم إيبسوم ولايزال المعيار 
-                     للنص الشكلي منذ القرن الخامس عشر 
-                     عندما قامت مطبعة مجهولة برص مجموعة من </p>
+                <p class="side-menue__details">{{getLang()=='ar'?Aside[0].descriptionAr:Aside[0].description}}</p>
             </div>
         </div>
     </aside>
@@ -35,19 +30,14 @@
 
     <aside class=" side-menue side-menue--left" *ngIf="Aside">
         <div class="side-menue-image-container">
-            <img class="side-menue__image" src="../assets/images/aside-header-bg.jpg" alt="aside-bg">
+            <img class="side-menue__image" [src]="baseImageUrl+Aside[1].image"  alt="aside-bg">
         </div>
         <div class="side-menue-details">
             <div class="side-menue-details-header-container">
                 <h5 class="side-menue__header">{{getLang()=='ar'?Aside[1].companyNameAr:Aside[1].companyName}}</h5>
             </div>
             <div class="side-menue-details-body">
-                <p class="side-menue__details">لوريم إيبسوم(Lorem Ipsum)
-                     هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى) 
-                     ويُستخدم في صناعات المطابع  ودور النشر.
-                     كان لوريم إيبسوم ولايزال المعيار 
-                     للنص الشكلي منذ القرن الخامس عشر 
-                     عندما قامت مطبعة مجهولة برص مجموعة من </p>
+                <p class="side-menue__details">{{getLang()=='ar'?Aside[1].descriptionAr:Aside[1].description}}</p>
             </div>
         </div>
     </aside>
@@ -62,14 +52,14 @@
     <div class="row">
         <div class="col-lg-6 col-md-12 col-sm-12" *ngIf="AboutUs">
             <div class="about-portal-image-container ">
-                <img class="about-portal-image" [src]="baseImageUrl+AboutUs.image" >
+                <img class="about-portal-image" [src]="baseDaleImagelUrl+AboutUs.image" >
             </div>
         </div>
         <div class="col-lg-6 col-md-12 col-sm-12 info-section" *ngIf="AboutUs">
             <div class="section-sub-header-container">
                 <h4 class="sub-header-txt sub-header-txt--black mb-0">{{getLang()=='ar'?AboutUs.nameAr:AboutUs.name}}</h4>
             </div>
-                <p class="section-details section-details--grey" [innerHTML]="getLang()=='ar'?AboutUs.descriptionAr:AboutUs.description|slice:0:500">
+                <p class="section-details section-details--grey" [innerHTML]="getLang()=='ar'?(AboutUs.descriptionAr|slice:0:500):(AboutUs.description|slice:0:500)">
                     
                 </p>
                 <div class="read-more-container">

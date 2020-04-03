@@ -1,214 +1,151 @@
 <layout [FooterSilder]="false">
 
 
- <!---------------------------------------------- Pages Shared Bannrr Details----------------------->
- <banner [imageSrc]="'../assets/images/c1.jpg'" >
-    {{'IndustrialDepartments' | translate}}
-</banner>  
-
- <section class="factories-sectors">
-    <!--filter side-->
-    <aside class="side-menue-filter">
-        <div class="input-form-search">
-            <input type="text" class="input-form-search__txt big-font-placeholder"  placeholder="{{'Company' | translate}}">
-            <span class="icon-Icon-Search "></span>
-        </div>
-
-        <div class="input-form-search">
-            <div class="input-form position-relative mb-1">
-                <select  class="input-form__select" id="city-name" >
-                    <option value="المدينه">{{'city' |translate}}</option>
-                    <option value="دبي">دبي</option>
-                    
-                </select>
-                <span class="icon-Icon-arrow rotate-down black-colored-txt drop-down-arrow small-select-arrow"></span>
-            </div>
-
-            <div class="input-form position-relative mb-1">
-                <select  class="input-form__select" id="Factory-sector" >
-                    <option value="القطاع">{{'sector' |translate}}</option>
-                    <option value="الصناعي">الصناعي</option>
-                </select>
-                <span class="icon-Icon-arrow rotate-down black-colored-txt drop-down-arrow small-select-arrow"></span>
-            </div>
-        </div>
-
-        <div class="submit-btn-container w-100  ">
-            <button class="btn--search btn--trasnparent btn-txt--black btn--lit-rounded btn-border--black w-100 p-btn" >{{'search' | translate}}</button>
-        </div>
-
-        <div class="filter-accordion">
-            <div class="card">
-              <div class="search-accordion-card-header" id="headingOne">
-                  <button class="search-accordion-card-header__btn" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                   {{'IndustrialSector' |translate}}
-                  </button>
-                  <span class="icon-Icon-arrow  drop-down-arrow"></span>
-              </div>
-          
-              <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent=".filter-accordion">
-                <div class="card-body">
-                    <ul class="search-options-list">
-                        <li class="search-option">الصناعات الخشبية والاثاث</li>
-                        <li class="search-option">الصناعات الخشبية والاثاث</li>
-                        <li class="search-option">الصناعات الخشبية والاثاث</li>
-                        <li class="search-option">الصناعات الخشبية والاثاث</li>
-                        <li class="search-option">الصناعات الخشبية والاثاث</li>
-                    </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-    </aside>
-
-
-    <div class="search-results-container">
-        <div class="search-result-card search-result-card--sm">
-            <div class="search-result-card-image-container shadow">
-                <img class="search-result-card__img" src="../assets/images/c1.jpg" alt="card-img">
-            </div>
-            <div class="search-result-card-info">
-                <div class="search-result-card-header-container">
-                    <h3 class="search-result-card__header">شركة قطر للمواد الاولية</h3>
-                </div>
-                <div class="search-result-card-details-container">
-                    <p class="search-result-card-details__txt">
-                        تأسست شركة قطر للمواد الأولية بناء على تعليمات من الحكومة القطرية في العام 2006 من أجل ضمان إمدادات مواد البناء في السوق المحلية تمتلك الشركة و تشغّل احتياطيات استراتيجية من المواد الأولية داخل دولة قطر، كما توفر حلولا متكاملة في مجالات عدة منها : إدارة الموانئ , العمليات اللوجستية و الإمداد , التخزين و توزيع المواد الأولية الرئيسية لتلبية 
+    <!---------------------------------------------- Pages Shared Bannrr Details----------------------->
+    <banner [imageSrc]="'../assets/images/c1.jpg'" >
+       {{'IndustrialDepartments' | translate}}
+   </banner>  
+   
+    <section class="factories-sectors">
+       <!--filter side-->
+       <aside class="side-menue-filter">
+           <div class="input-form-search">
+               <input type="text" class="input-form-search__txt big-font-placeholder"  placeholder="{{'Company' | translate}}">
+               <span class="icon-Icon-Search "></span>
+           </div>
+   
+           <!-- <div class="input-form-search">
+               <div class="input-form position-relative mb-1">
+                   <select  class="input-form__select" id="city-name" >
+                       <option value="المدينه">{{'city' |translate}}</option>
+                       <option value="دبي">دبي</option>
                        
-                    </p>
-                </div>
-                <div class="search-result-card-contacts-container">
-                    <ul class="search-card-contacts-list">
-                        <li class="search-card-contact ">974-44479411<span class="icon-Icon-telephone contact-icon "></span>+</li>
-                        <li class="search-card-contact">info@qpmc.qa <span class="icon-Icon-email contact-icon "></span></li>
-                        <li class="search-card-contact">974-44479422<span class="icon-Icon-print contact-icon "></span>+</li>
-                        <li class="search-card-contact">www.qpmc.qa<span class="icon-Icon-globe contact-icon "></span></li>
-    
-                        
-                    </ul>
-                </div>
-                <div class="search-reult-card-actions-container">
-                    <ul class="search-result-card-actions-list">
-                        <li class="search-result-card-action">
-                            <button class="action-btn btn--trasnparent btn-txt--black btn--lit-rounded ">
-                               {{'share'|translate}}
-                            </button>
-                        </li>
-                        <li class="search-result-card-action"><button class="action-btn btn--trasnparent btn-txt--black btn--lit-rounded ">{{'more'|translate}}</button></li>
-                    </ul>
-                </div>
-            </div>
+                   </select>
+                   <span class="icon-Icon-arrow rotate-down black-colored-txt drop-down-arrow small-select-arrow"></span>
+               </div>
+   
+               <div class="input-form position-relative mb-1">
+                   <select  class="input-form__select" id="Factory-sector" >
+                       <option value="القطاع">{{'sector' |translate}}</option>
+                       <option value="الصناعي">الصناعي</option>
+                   </select>
+                   <span class="icon-Icon-arrow rotate-down black-colored-txt drop-down-arrow small-select-arrow"></span>
+               </div>
+           </div>
+    -->
+           <div class="submit-btn-container w-100  ">
+               <button class="btn--search btn--trasnparent btn-txt--black btn--lit-rounded btn-border--black w-100 p-btn" >{{'search' | translate}}</button>
+           </div>
+   
+           <div class="filter-accordion">
+               <div class="card">
+                 <div class="search-accordion-card-header" id="headingOne">
+                     <button class="search-accordion-card-header__btn" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      {{'IndustrialSector' |translate}}
+                     </button>
+                     <span class="icon-Icon-arrow  drop-down-arrow"></span>
+                 </div>
+             
+                 <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent=".filter-accordion">
+                   <div class="card-body">
+                       <ul class="search-options-list">
+                           <li class="search-option">الصناعات الخشبية والاثاث</li>
+                           <li class="search-option">الصناعات الخشبية والاثاث</li>
+                           <li class="search-option">الصناعات الخشبية والاثاث</li>
+                           <li class="search-option">الصناعات الخشبية والاثاث</li>
+                           <li class="search-option">الصناعات الخشبية والاثاث</li>
+                       </ul>
+                   </div>
+                 </div>
+               </div>
+             </div>
+   
+       </aside>
+   
 
-        </div>
-
-        <div class="search-result-card search-result-card--sm">
-            <div class="search-result-card-image-container shadow">
-                <img class="search-result-card__img" src="../assets/images/c1.jpg" alt="card-img">
-            </div>
-            <div class="search-result-card-info">
-                <div class="search-result-card-header-container">
-                    <h3 class="search-result-card__header">شركة قطر للمواد الاولية</h3>
-                </div>
-                <div class="search-result-card-details-container">
-                    <p class="search-result-card-details__txt">
-                        تأسست شركة قطر للمواد الأولية بناء على تعليمات من الحكومة القطرية في العام 2006 من أجل ضمان إمدادات مواد البناء في السوق المحلية تمتلك الشركة و تشغّل احتياطيات استراتيجية من المواد الأولية داخل دولة قطر، كما توفر حلولا متكاملة في مجالات عدة منها : إدارة الموانئ , العمليات اللوجستية و الإمداد , التخزين و توزيع المواد الأولية الرئيسية لتلبية 
-                       
-                    </p>
-                </div>
-                <div class="search-result-card-contacts-container">
-                    <ul class="search-card-contacts-list">
-                        <li class="search-card-contact ">974-44479411<span class="icon-Icon-telephone contact-icon "></span>+</li>
-                        <li class="search-card-contact">info@qpmc.qa <span class="icon-Icon-email contact-icon "></span></li>
-                        <li class="search-card-contact">974-44479422<span class="icon-Icon-print contact-icon "></span>+</li>
-                        <li class="search-card-contact">www.qpmc.qa<span class="icon-Icon-globe contact-icon "></span></li>
-    
-                        
-                    </ul>
-                </div>
-                <div class="search-reult-card-actions-container">
-                    <ul class="search-result-card-actions-list">
-                        <li class="search-result-card-action">
-                            <button class="action-btn btn--trasnparent btn-txt--black btn--lit-rounded ">
-                                {{'share'|translate}} 
-                            </button>
-                        </li>
-                        <li class="search-result-card-action"><button class="action-btn btn--trasnparent btn-txt--black btn--lit-rounded ">المزيد</button></li>
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="search-result-card search-result-card--sm">
-            <div class="search-result-card-image-container shadow">
-                <img class="search-result-card__img" src="../assets/images/c1.jpg" alt="card-img">
-            </div>
-            <div class="search-result-card-info">
-                <div class="search-result-card-header-container">
-                    <h3 class="search-result-card__header">شركة قطر للمواد الاولية</h3>
-                </div>
-                <div class="search-result-card-details-container">
-                    <p class="search-result-card-details__txt">
-                        تأسست شركة قطر للمواد الأولية بناء على تعليمات من الحكومة القطرية في العام 2006 من أجل ضمان إمدادات مواد البناء في السوق المحلية تمتلك الشركة و تشغّل احتياطيات استراتيجية من المواد الأولية داخل دولة قطر، كما توفر حلولا متكاملة في مجالات عدة منها : إدارة الموانئ , العمليات اللوجستية و الإمداد , التخزين و توزيع المواد الأولية الرئيسية لتلبية 
-                       
-                    </p>
-                </div>
-                <div class="search-result-card-contacts-container">
-                    <ul class="search-card-contacts-list">
-                        <li class="search-card-contact ">974-44479411<span class="icon-Icon-telephone contact-icon "></span>+</li>
-                        <li class="search-card-contact">info@qpmc.qa <span class="icon-Icon-email contact-icon "></span></li>
-                        <li class="search-card-contact">974-44479422<span class="icon-Icon-print contact-icon "></span>+</li>
-                        <li class="search-card-contact">www.qpmc.qa<span class="icon-Icon-globe contact-icon "></span></li>
-    
-                        
-                    </ul>
-                </div>
-                <div class="search-reult-card-actions-container">
-                    <ul class="search-result-card-actions-list">
-                        <li class="search-result-card-action">
-                            <button class="action-btn btn--trasnparent btn-txt--black btn--lit-rounded ">
-                                {{'share'|translate}} 
-                            </button>
-                        </li>
-                        <li class="search-result-card-action"><button class="action-btn btn--trasnparent btn-txt--black btn--lit-rounded ">المزيد</button></li>
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="pagination-container">
-            <ul class="pagination-list">
-                <li class="page-number active"><a class="page-numer__txt" href="#">1</a></li>
-                <li class="page-number"><a class="page-numer__txt" href="#">2</a></li>
-                <li class="page-number  "><a class="page-numer__txt " href="#">3</a></li>
-                <li class="last-page"><a class="page-numer__txt" href="#"><span class="icon-Icon-long-arrow"></span></a></li>
-
-            </ul>
-        </div>
-    </div>
-
-    <aside class=" side-menue side-menue--left">
+     
+   
+       <div class="search-results-container" *ngIf="SearchedCompaniesResults">
+           <div class="search-result-card search-result-card--sm" *ngFor="let companyInfo of SearchedCompaniesResults.items">
+               <div class="search-result-card-image-container shadow">
+                   <img class="search-result-card__img" [src]="baseCompanyImageUrl+companyInfo.image" alt="card-img">
+               </div>
+               <div class="search-result-card-info">
+                   <div class="search-result-card-header-container">
+                       <h3 class="search-result-card__header">{{getLang()=='ar'?companyInfo.nameAr:companyInfo.name}}</h3>
+                   </div>
+                   <div class="search-result-card-details-container">
+                       <p class="search-result-card-details__txt">
+                           {{getLang()=='ar'? (companyInfo.descriptionAr|slice:0:313) : (companyInfo.description|slice:0:313)}}
+                       </p>
+                   </div>
+                   <div class="search-result-card-contacts-container">
+                       <ul class="search-card-contacts-list">
+                           <li class="search-card-contact ">{{companyInfo.phone}}<span class="icon-Icon-telephone contact-icon "></span></li>
+                           <li class="search-card-contact" title="{{companyInfo.email}}">{{companyInfo.email|slice:0:19}}<span class="icon-Icon-email contact-icon "></span></li>
+                           <li class="search-card-contact">{{companyInfo.fax}}<span class="icon-Icon-print contact-icon "></span></li>
+                           <li class="search-card-contact" >{{companyInfo.website}}<span class="icon-Icon-globe contact-icon "></span></li>
+                       </ul>
+                   </div>
+                   <div class="search-reult-card-actions-container">
+                       <ul class="search-result-card-actions-list">
+                           <li class="search-result-card-action">
+                               <!-- <button class="action-btn btn--trasnparent btn-txt--black btn--lit-rounded ">
+                                  {{'share'|translate}}
+                               </button> -->
+                           </li>
+                           <li class="search-result-card-action"><button routerLink="/FactoryDetails/{{companyInfo.id}}" class="action-btn btn--trasnparent btn-txt--black btn--lit-rounded ">{{'more'|translate}}</button></li>
+                       </ul>
+                   </div>
+               </div>
+   
+           </div>
+   
+         
+   <!-- 
+           <div class="pagination-container">
+               <ul class="pagination-list">
+                   <li class="page-number active"><a class="page-numer__txt" href="#">1</a></li>
+                   <li class="page-number"><a class="page-numer__txt" href="#">2</a></li>
+                   <li class="page-number  "><a class="page-numer__txt " href="#">3</a></li>
+                   <li class="last-page"><a class="page-numer__txt" href="#"><span class="icon-Icon-long-arrow"></span></a></li>
+   
+               </ul>
+           </div> -->
+       </div>
+   
+       <!-- <aside class=" side-menue side-menue--left">
+           <div class="side-menue-image-container">
+               <img class="side-menue__image" src="../assets/images/aside-header-bg.jpg" alt="aside-bg">
+           </div>
+           <div class="side-menue-details">
+               <div class="side-menue-details-header-container">
+                   <h5 class="side-menue__header">القطاعات الصناعيه</h5>
+               </div>
+               <div class="side-menue-details-body">
+                   <p class="side-menue__details">لوريم إيبسوم(Lorem Ipsum)
+                        هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى) 
+                        ويُستخدم في صناعات المطابع  ودور النشر.
+                        كان لوريم إيبسوم ولايزال المعيار 
+                        للنص الشكلي منذ القرن الخامس عشر 
+                        عندما قامت مطبعة مجهولة برص مجموعة من </p>
+               </div>
+           </div>
+       </aside> -->
+       <aside class=" side-menue side-menue--left" *ngIf="Aside">
         <div class="side-menue-image-container">
-            <img class="side-menue__image" src="../assets/images/aside-header-bg.jpg" alt="aside-bg">
+            <img class="side-menue__image" [src]="baseImageUrl+Aside[1].image"  alt="aside-bg">
         </div>
         <div class="side-menue-details">
             <div class="side-menue-details-header-container">
-                <h5 class="side-menue__header">القطاعات الصناعيه</h5>
+                <h5 class="side-menue__header">{{getLang()=='ar'?Aside[1].companyNameAr:Aside[1].companyName}}</h5>
             </div>
             <div class="side-menue-details-body">
-                <p class="side-menue__details">لوريم إيبسوم(Lorem Ipsum)
-                     هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى) 
-                     ويُستخدم في صناعات المطابع  ودور النشر.
-                     كان لوريم إيبسوم ولايزال المعيار 
-                     للنص الشكلي منذ القرن الخامس عشر 
-                     عندما قامت مطبعة مجهولة برص مجموعة من </p>
+                <p class="side-menue__details">{{getLang()=='ar'?Aside[1].descriptionAr:Aside[1].description}}</p>
             </div>
         </div>
     </aside>
-
-
-</section> 
-
-</layout>
+   
+   </section> 
+   
+   </layout>

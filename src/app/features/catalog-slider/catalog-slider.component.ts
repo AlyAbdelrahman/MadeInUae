@@ -55,16 +55,16 @@ export class CatalogSliderComponent implements OnInit {
             type: 'bullets',
             clickable: true,
           },
+          centeredSlides: true,
           observer: true, 
           observeParents: true,
           slidesPerView: sliderView,
           spaceBetween: 50,
           loop: true,
-          // loopedSlides: 3,
+           loopedSlides: 1,
           speed: 500,
-         // autoplay: true,
-          autoplayDisableOnInteraction: true,
-          centeredSlides: true,
+        //  autoplay: true,
+          // autoplayDisableOnInteraction: true,
         
         });
     

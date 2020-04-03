@@ -6,12 +6,12 @@
  </banner>  
 <!-----------------------------------------sixth page Factory Details sector------------------------>
 <section class="factory-details">
-    <div class="container">
+    <div class="container" *ngIf="company">
     <div class="row">
         <div class="col">
           <div class="search-result-card search-result-card--md">
             <div class="search-result-card-image-container shadow">
-                <img class="search-result-card__img" src="../assets/images/c1.jpg" alt="card-img">
+                <img class="search-result-card__img" [src]='baseImageurl+company.image' alt="card-img">
             </div>
             <div class="search-result-card-info" *ngIf="company">
                 <div class="search-result-card-header-container" >
@@ -25,9 +25,9 @@
                 <div class="search-result-card-contacts-container">
                     <ul class="search-card-contacts-list">
                         <li class="search-card-contact ">{{company.phone}}<span class="icon-Icon-telephone contact-icon "></span></li>
-                        <li class="search-card-contact">{{company.email}}<span class="icon-Icon-email contact-icon "></span></li>
+                        <li class="search-card-contact" title={{company.email}}>{{company.email|slice:0:19}}<span class="icon-Icon-email contact-icon "></span></li>
                         <li class="search-card-contact">{{company.fax}}<span class="icon-Icon-print contact-icon "></span></li>
-                        <li class="search-card-contact">{{company.website}}<span class="icon-Icon-globe contact-icon "></span></li>
+                        <li class="search-card-contact" title="{{company.website}}">{{company.website|slice:0:19}}<span class="icon-Icon-globe contact-icon "></span></li>
     
                         
                     </ul>
@@ -98,31 +98,21 @@
                     <div class="branch-txt-container">
                         <h3 class="branch__txt"> {{'branches'|translate}}</h3>
                     </div>
-                    <ul class="branches-info-container">
+                    <ul class="branches-info-container" *ngIf="company.branches.length>0">
 
-                        <li class="branch-info">
+                        <li class="branch-info" *ngFor="let branchInfo of company.branches">
                             <div class="branch-name-container">
-                                <h3 class="branch__name">مصنع الدوحة للكابلات</h3>
+                                <h3 class="branch__name">{{getLang()=='ar'?branchInfo.nameAr:branchInfo.name}}</h3>
                             </div>
                             <div class="branch-address-container">
-                                <h4 class="branch__address">مجمع ام اى سى</h4>
+                                <h4 class="branch__address">{{getLang()=='ar'?branchInfo.addressAr:branchInfo.name}}</h4>
                             </div>
                             <div class="branch-contact-number-container">
-                                <h4 class="branch__number"><span class="icon-Icon-phone-alt"></span> +974-40339503</h4>
+                                <h4 class="branch__number"><span class="icon-Icon-phone-alt"></span> {{branchInfo.phone}}</h4>
                             </div>
                         </li>
                         
-                        <li class="branch-info">
-                            <div class="branch-name-container">
-                                <h3 class="branch__name">مصنع الدوحة للكابلات</h3>
-                            </div>
-                            <div class="branch-address-container">
-                                <h4 class="branch__address">مجمع ام اى سى</h4>
-                            </div>
-                            <div class="branch-contact-number-container">
-                                <h4 class="branch__number"><span class="icon-Icon-phone-alt"></span> +974-40339503</h4>
-                            </div>
-                        </li>
+                        
                     </ul>
                   </div>
               </div>
@@ -131,38 +121,39 @@
                   <div class="product-catalog-header-container">
                       <h3 class="product-catalog-header__txt">{{'productsCatalog' | translate}}</h3>
                     </div>
-                    <catalog-slider></catalog-slider>
-                     <div class="category-details-container">
-                        <div class="category-details">
-                            <h4 class="category-details__txt">
-                                كابلات الطاقة:الكابلات المرنة،الاسلاك المستخدمة فى المبانى،الاسلاك الارضية، كابلات الطاقة ذات الجهد المنخفض، كابلات طاقة متوسطة وكبيرة وعالية الجهد
+                    <catalog-slider *ngIf="company.products.length>0"></catalog-slider>
+                     <div class="category-details-container" *ngIf="company.companyProductNames">
+                        <div class="category-details" *ngFor="let product of company.companyProductNames">
+                            <h4 class="category-details__txt" >
+                                {{getLang()=='ar'?product.nameAr:product.name}}
                             </h4>
                         </div>
-                        <div class="category-details">
-                            <h4 class="category-details__txt">
-                                كابلات التحكم
-                            </h4>
-                        </div>
-                        <div class="category-details">
-                            <h4 class="category-details__txt">
-                                كابلات الطاقة للتطبيقات الخاصة LSHF أسلاك وكابلات ، كابلات مقاومة للحريق
-                            </h4>
-                        </div>
-                        <div class="category-details">
-                            <h4 class="category-details__txt">
-                                كابلات الالياف الضوئية: ذات النوع الاحادى والالياف ذات الالياف المتعددة
-                            </h4>
-                        </div>
+
                     </div>  
               </div> 
           </div>
   <br> 
 <br>
-          <div class="video-container" style="height: 35vw;">
-            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/pGqPjYALB50"
-             frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<div class="video-container" style="height: 35vw; " *ngIf="company.youTubeVideoUrl">
+    <div  [innerHtml]="youTubeVideo"></div>
+</div>
+<div class="video-container" style="height: 35vw; " *ngIf="company.mapFrameUrl">
+    <div  [innerHtml]="mapIfram"> </div>
+</div>
+
+
+          <!-- <div class="video-container" style="height: 35vw;" *ngIf="company.youTubeVideoUrl">
             
-          </div> 
+             <iframe width="100%" height="100%" [src]="getSantizeUrl('https://www.youtube.com/embed/yg8116aeD7E')"
+             frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+             
+
+             
+          </div> -->
+
+          <!-- <div class="video" >
+            </div> -->
         </div>  
     </div>     
     </div>

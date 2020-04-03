@@ -12,8 +12,8 @@ import {aboutUs} from '../../models/aboutSection'
 export class HomepageComponent implements OnInit {
   Aside:homeSponser[];
   AboutUs:aboutUs;
-  baseImageUrl:string ='http://mbesher-002-site4.dtempurl.com/Dalel/';
-  
+  baseImageUrl:string ='http://mbesher-002-site4.dtempurl.com/sponsors/';
+  baseDaleImagelUrl:String='http://mbesher-002-site4.dtempurl.com/Dalel/';
 
   constructor(private AsideData:HomeSponserAsidesService ,private AboutUsData : AboutUsService, public Currentlang: LanguageService) { }
 

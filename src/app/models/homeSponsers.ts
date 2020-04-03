@@ -3,5 +3,10 @@ export interface homeSponser{
 "companyId": number,
 "companyName":string,
 "companyNameAr": string,
-"image":string
+"image":string,
+"sectorId":number,
+"sectorName":string,
+"sectorNameAr":string,
+"descriptionAr":string,
+"description":string
 }

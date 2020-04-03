@@ -42,15 +42,16 @@
         .search-card-contacts-list{
             display: flex;
             margin: 0;
+            padding-#{$default-float}:0;
         }
         .search-card-contact{
-            font-size: .75rem;
+            font-size: .7rem;
             font-family: $font-family-base;
             line-height: 0.938rem;
-           margin-#{$opposite-float}: .4rem;
+           margin-#{$opposite-float}: .1rem;
             &:before{
                 content: ' |';
-                font-size: .75rem;
+                font-size: .7rem;
                 font-family: $font-family-base;
                 line-height: 0.938rem;
             }

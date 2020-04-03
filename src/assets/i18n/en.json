@@ -76,6 +76,36 @@
         "MessageTooShort":"Message must be at least 6 characters long",
         "NameTooShort":"Name must be at least 3 charaters long"
 
+    },
+    "newCompany":{
+        "ArabicNameIsRequired":"Company / Factory arabic name is required",
+        "ArabicNameIsTooShort":"Company / Factory arabic name must be at least 3 characters long",
+        "EnglishNameIsRequired":"Company / Factory english name is too short",
+        "EnglishNameIsTooShort":"Company / Factory english name must be at least 3 characters long",
+        "aboutCompanyArIsRequired":"About Company / Factory arabic name is required",
+        "aboutCompanyArIsTooShort":"About Company / Factory arabic name must be at least 4 characters long",
+        "aboutCompanyIsRequired":"About Company / Factory english name is required",
+        "aboutCompanyIsTooShort":"About Company / Factory english name must be at least 4 characters long",
+        "addressArIsRequired":"Company / Factory arabic address is required ",
+        "addressArIsTooShort":"Company / Factory arabic address must be at least 4 characters long",
+        "addressIsRequired":"Company / Factory english address is required",
+        "addressIsTooShort":"Company / Factory enlgish address must be at least 4 characters long",
+        "telIsRequired":"telephone is required",
+        "telIsTooShort":"telephone must be at least 9 numbers long ",
+        "faxIsRequired":"fax is required",
+        "faxIsTooShort":"fax must be at least 9 characters long",
+        "companyWebSiteIsRequired":"Company website is required",
+        "companyWebSiteIsTooShort":"Company website must be at least 8 characters long",
+        "companyMailIsRequired":"Email is required",
+        "companyMailIsWrong":"Email is wrong",
+        "contactPersonNameArIsRequired":"contact person arabic name is required",
+        "contactPersonNameArIsTooShort":"contact person arabic name must be at least 3 characters long",
+        "contactPersonNameIsRequired":"contact person english name is required",
+        "contactPersonNameIsTooShort":"contact person arabic name must be at least 3 characters long",
+        "jobNameArIsRequired":"Arabic Job title  is required",
+        "jobNameArIsTooShort":"Arabic Job title must be at least 3 characters long",
+        "jobNameIsRequired":"English Job title  is required",
+        "jobNameIsTooShort":"English Job title must be at least 3 characters long"
     }
 
 

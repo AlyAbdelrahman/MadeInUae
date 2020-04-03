@@ -7146,16 +7146,17 @@ body {
       line-height: 1.5rem;
       font-family: "NeoSansArabic"; }
     .search-result-card--sm .search-card-contacts-list {
+      padding-left:0;
       display: flex;
       margin: 0; }
     .search-result-card--sm .search-card-contact {
-      font-size: .75rem;
+      font-size: .7rem;
       font-family: "NeoSansArabic";
       line-height: 0.938rem;
-      margin-right: .4rem; }
+      margin-right: .1rem; }
       .search-result-card--sm .search-card-contact:before {
         content: ' |';
-        font-size: .75rem;
+        font-size: .7rem;
         font-family: "NeoSansArabic";
         line-height: 0.938rem; }
       .search-result-card--sm .search-card-contact:first-child::before {
@@ -8268,3 +8269,8 @@ footer {
     width: 107vw; }
   .page-banner__header {
     font-size: 2.5rem; } }
+iframe {
+    WIDTH: 100%;
+    HEIGHT: 34VW;
+}
+
