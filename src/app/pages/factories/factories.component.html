@@ -102,16 +102,16 @@
            </div>
    
          
-   <!-- 
+   
            <div class="pagination-container">
                <ul class="pagination-list">
                    <li class="page-number active"><a class="page-numer__txt" href="#">1</a></li>
                    <li class="page-number"><a class="page-numer__txt" href="#">2</a></li>
                    <li class="page-number  "><a class="page-numer__txt " href="#">3</a></li>
-                   <li class="last-page"><a class="page-numer__txt" href="#"><span class="icon-Icon-long-arrow"></span></a></li>
+                   <li class="last-page" *ngIf="SearchedCompaniesResults.items.length>3" (click)="fn()"><span class="page-numer__txt" ><span class="icon-Icon-long-arrow"></span></span></li>
    
                </ul>
-           </div> -->
+           </div>
        </div>
    
        <!-- <aside class=" side-menue side-menue--left">
