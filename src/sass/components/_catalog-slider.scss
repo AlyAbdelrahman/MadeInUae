@@ -119,7 +119,7 @@
   .swiper-btns-wrapperr{
     position: absolute;
     #{$opposite-float}: 0;
-    top: -7%;
+    top: -3%;
     // @if($lang==en){
     // top:-9%
     // }
@@ -128,13 +128,13 @@
   .Ca-swiper-button-next{
     margin-#{$opposite-float}: 43.5rem;
     @if($lang==en){
-    left: -2rem;
+    left: -3rem;
     }
 
   }
   .Ca-swiper-button-prev{
     @if($lang==en){
-      left: -49rem;
+      left: -48.5rem;
       }
   }
   .Ca-swiper-button-next,.Ca-swiper-button-prev{

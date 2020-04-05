@@ -7180,6 +7180,14 @@ body {
       .search-result-card--sm .action-btn:hover {
         background-color: #0E930E;
         color: #fff; }
+        @supports (height: fit-content) {
+          .search-result-card--md {
+            height: fit-content !important;
+            padding: 0.75rem;
+            border-radius: .5rem;
+            width: 102%; }
+
+        }
   .search-result-card--md {
     height: 20.896rem;
     padding: 0.75rem;
@@ -7529,14 +7537,14 @@ body {
 .swiper-btns-wrapperr {
   position: absolute;
   right: 0;
-  top: -7%; }
+  top: -3%; }
 
 .Ca-swiper-button-next {
   margin-right: 43.5rem;
-  left: -2rem; }
+  left: -3rem; }
 
 .Ca-swiper-button-prev {
-  left: -49rem; }
+  left: -48.5rem; }
 
 .Ca-swiper-button-next, .Ca-swiper-button-prev {
   background-color: black !important;
@@ -7979,7 +7987,8 @@ li {
   .search-result-card--md .search-result-card-image-container {
     width: 100%; }
   .search-result-card--md .search-card-contacts-list {
-    width: auto; }
+    width: auto; 
+    height: 8.938rem;}
   .search-result-card--md .social-container .address-header {
     margin-right: 0.5rem; }
   .personal-details-container {
@@ -8058,7 +8067,7 @@ li {
   align-items: center;
   margin-bottom: 0; }
   .nav-tabs-container .nav-tab {
-    margin-right: 1.5rem; }
+    margin-right: 2.5rem; }
     .nav-tabs-container .nav-tab a {
       font-size: 1.25rem;
       line-height: 1.5rem;

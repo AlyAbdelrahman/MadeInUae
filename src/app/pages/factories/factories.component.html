@@ -9,10 +9,18 @@
     <section class="factories-sectors">
        <!--filter side-->
        <aside class="side-menue-filter">
+        <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm"  novalidate>
            <div class="input-form-search">
-               <input type="text" class="input-form-search__txt big-font-placeholder"  placeholder="{{'Company' | translate}}">
+               <input name="subject"  #subject="ngModel"   required  [(ngModel)]="searchTxt" type="text" class="input-form-search__txt big-font-placeholder"  placeholder="{{'Company' | translate}}">
+               
                <span class="icon-Icon-Search "></span>
            </div>
+           <div *ngIf="f.submitted && f.submitted  && subject.invalid" class="alert alert-danger">
+            <div *ngIf="f.submitted && subject.errors.required">
+                {{'searchArea.searchTxtRequired' | translate}}
+            </div>
+           
+        </div>
    
            <!-- <div class="input-form-search">
                <div class="input-form position-relative mb-1">
@@ -36,7 +44,7 @@
            <div class="submit-btn-container w-100  ">
                <button class="btn--search btn--trasnparent btn-txt--black btn--lit-rounded btn-border--black w-100 p-btn" >{{'search' | translate}}</button>
            </div>
-   
+   </form>
            <div class="filter-accordion">
                <div class="card">
                  <div class="search-accordion-card-header" id="headingOne">
@@ -49,11 +57,7 @@
                  <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent=".filter-accordion">
                    <div class="card-body">
                        <ul class="search-options-list">
-                           <li class="search-option">الصناعات الخشبية والاثاث</li>
-                           <li class="search-option">الصناعات الخشبية والاثاث</li>
-                           <li class="search-option">الصناعات الخشبية والاثاث</li>
-                           <li class="search-option">الصناعات الخشبية والاثاث</li>
-                           <li class="search-option">الصناعات الخشبية والاثاث</li>
+                           <li class="search-option" (click)="onSectorSelect($event)"  *ngFor="let sector of sectorsData">{{getLang()=='ar'?sector.nameAr:sector.name}}</li>
                        </ul>
                    </div>
                  </div>
@@ -103,7 +107,7 @@
    
          
    
-           <div class="pagination-container">
+           <!-- <div class="pagination-container">
                <ul class="pagination-list">
                    <li class="page-number active"><a class="page-numer__txt" href="#">1</a></li>
                    <li class="page-number"><a class="page-numer__txt" href="#">2</a></li>
@@ -111,7 +115,7 @@
                    <li class="last-page" *ngIf="SearchedCompaniesResults.items.length>3" (click)="fn()"><span class="page-numer__txt" ><span class="icon-Icon-long-arrow"></span></span></li>
    
                </ul>
-           </div>
+           </div> -->
        </div>
    
        <!-- <aside class=" side-menue side-menue--left">

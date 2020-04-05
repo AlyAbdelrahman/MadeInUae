@@ -106,7 +106,10 @@
         "jobNameArIsTooShort":"Arabic Job title must be at least 3 characters long",
         "jobNameIsRequired":"English Job title  is required",
         "jobNameIsTooShort":"English Job title must be at least 3 characters long"
-    }
+    },
+    "searchArea":{
+        "searchTxtRequired":"factory / company name required"
+    } 
 
 
 }

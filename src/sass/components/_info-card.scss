@@ -89,6 +89,10 @@
     }
 
     &--md{
+        @supports (height: fit-content) {
+            height: fit-content !important;
+        }
+
         height: 20.896rem;
         padding: 0.75rem;
         border-radius: .5rem;

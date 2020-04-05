@@ -5,6 +5,8 @@ import {CompaniesInfo} from '../../models/CompaniesInfo';
 import {CompanyiesResults} from '../../models/companies'
 import {homeSponser} from '../../models/homeSponsers'
 import {HomeSponserAsidesService} from '../../services/homeSponserAsides/home-sponser-asides.service';
+import {SectorsService} from '../../services/sectors/sectors.service';
+import {sector} from '../../models/sector';
 
 
 @Component({
@@ -17,25 +19,31 @@ export class FactoriesComponent implements OnInit {
   SearchedCompaniesResults:any;
   pages:any;
 
+  searchTxt:any;
+
   startPgNumber:number=0;
   endPgNumber:number=3;
 
   paggerNumbers:number[]=[];
   CurrentPagePaggerNumbers:number[];
-  constructor(private AsideData:HomeSponserAsidesService,private GetCompanies:CompaniesService,public Currentlang: LanguageService) { }
+  constructor(private sectors:SectorsService ,private AsideData:HomeSponserAsidesService,private GetCompanies:CompaniesService,public Currentlang: LanguageService) { }
   baseImageUrl:string ='http://mbesher-002-site4.dtempurl.com/sponsors/';
   baseCompanyImageUrl='http://mbesher-002-site4.dtempurl.com/Campany/';
  
    SearchedCompanies :CompaniesInfo  ={
       sectorId: 0,
       name: "",
-      size: 3,
+      size:12,
       pageNumber: 0
     };
+
+    sectorsData:sector[];
+
 
   ngOnInit(): void {
    this.GetCompanies.getCompanyies(this.SearchedCompanies).subscribe(info=>{this.SearchedCompaniesResults=info,this.setPages(this.SearchedCompaniesResults.totalItems)});
    this.AsideData.getAsideData().subscribe(info=>this.Aside=info);
+   this.sectors.getSectors().subscribe(Sector=>{this.sectorsData=Sector,console.log(this.sectorsData)});
 
   }
   getLang(){
@@ -62,13 +70,33 @@ fn(){
   // return [4,5,6]
 }
 
+onSubmit() {
+  const SearchedCompaniesTxt :any  ={
+    name: this.searchTxt,
+    size: 12,
+    pageNumber: 0
+  };
+  this.GetCompanies.getCompanyies(SearchedCompaniesTxt).subscribe(info=>{this.SearchedCompaniesResults=info,this.setPages(this.SearchedCompaniesResults.totalItems)});
+
+}
+onSectorSelect(e){
+  // console.log()
+ 
+  const SearchedCompaniesTxt :any  ={
+    name:  e.target.innerText,
+    size: 12,
+    pageNumber: 0
+  };
+  console.log(SearchedCompaniesTxt)
+  this.GetCompanies.getCompanyies(SearchedCompaniesTxt).subscribe(info=>{this.SearchedCompaniesResults=info,this.setPages(this.SearchedCompaniesResults.totalItems)});
 
 
-  // setPaggerNumbers(StartPaggerNumber=0){
-  //   let PaggingNumbers=[];
-  //   for (let s=StartPaggerNumber;s<3;s++){
-  //     PaggingNumbers.push(s)
-  //   }
+}
 
-  // }
+getSectorType(company ){
+  const companySector:any= this.sectorsData?this.sectorsData.filter(el=>el.name==company||el.nameAr==company?el.id:0):'';
+  const companySectorId:any=companySector[0].id;
+ return companySectorId;
+ }
+
 }
