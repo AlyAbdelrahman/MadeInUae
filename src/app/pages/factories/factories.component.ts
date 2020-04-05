@@ -80,10 +80,9 @@ onSubmit() {
 
 }
 onSectorSelect(e){
-  // console.log()
- 
   const SearchedCompaniesTxt :any  ={
-    name:  e.target.innerText,
+    sectorId: this.getSectorType( e.target.innerText),
+    name: '',
     size: 12,
     pageNumber: 0
   };

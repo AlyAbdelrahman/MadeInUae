@@ -21,7 +21,8 @@
     "companyAddress":"العنوان",
     "communicationLinks":"مواقع التواصل",
     "copyRights":"© جميع الحقوق محفوظة 2019",
-
+    "noRes":"لا يوجد نتائج",
+    
     "factory":{
         "nameHeader":" اسم الشركة / المصنع",
         "arabicName":"اسم الشركة / المصنع باللغة العربية",
