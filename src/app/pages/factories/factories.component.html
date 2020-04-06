@@ -107,15 +107,14 @@
    
          
    
-           <!-- <div class="pagination-container">
-               <ul class="pagination-list">
-                   <li class="page-number active"><a class="page-numer__txt" href="#">1</a></li>
-                   <li class="page-number"><a class="page-numer__txt" href="#">2</a></li>
-                   <li class="page-number  "><a class="page-numer__txt " href="#">3</a></li>
-                   <li class="last-page" *ngIf="SearchedCompaniesResults.items.length>3" (click)="fn()"><span class="page-numer__txt" ><span class="icon-Icon-long-arrow"></span></span></li>
-   
+         <!-- <div class="pagination-container"  *ngIf="SearchedCompaniesResults && !loading && !NoRes">
+               <ul class="pagination-list" >
+                   <li class="page-number active"><span clspanss="pspange-numer__txt" (click)="getPagedata(startPgNumber)">{{startPgNumber+1}}</span></li>
+                   <li class="page-number"><span class="page-numer__txt" (click)="getPagedata(endPgNumber)">{{endPgNumber+1}}</span></li> -->
+                   <!-- <li class="page-number  "><a class="page-numer__txt " href="#">3</a></li> -->
+                   <!-- <li class="last-page" *ngIf="SearchedCompaniesResults.items.length>=2&& SearchedCompaniesResults.items.lenght==endPgNumber"  (click)="fn()"><span class="page-numer__txt" ><span class="icon-Icon-long-arrow"></span></span></li>
                </ul>
-           </div> -->
+           </div>  -->
        </div>
 
        <!-- {{'noRes' | translate}} -->

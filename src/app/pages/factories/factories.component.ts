@@ -22,7 +22,7 @@ export class FactoriesComponent implements OnInit {
   searchTxt:any;
 
   startPgNumber:number=0;
-  endPgNumber:number=3;
+  endPgNumber:number=1;
 
   paggerNumbers:number[]=[];
   CurrentPagePaggerNumbers:number[];
@@ -33,7 +33,7 @@ export class FactoriesComponent implements OnInit {
    SearchedCompanies :CompaniesInfo  ={
       sectorId: 0,
       name: "",
-      size:12,
+      size:1,
       pageNumber: 0
     };
 
@@ -47,14 +47,15 @@ export class FactoriesComponent implements OnInit {
    this.GetCompanies.getCompanyies(this.SearchedCompanies).subscribe(info=>
    {
      this.loading=true,
-     console.log(this.loading), 
+     
      this.SearchedCompaniesResults=info,
     this.setPages(this.SearchedCompaniesResults.totalItems),
-    this.loading=false
+    this.loading=false,
+    console.log(this.SearchedCompaniesResults)
   })
 
    this.AsideData.getAsideData().subscribe(info=>this.Aside=info);
-   this.sectors.getSectors().subscribe(Sector=>{this.sectorsData=Sector,console.log(this.sectorsData)});
+   this.sectors.getSectors().subscribe(Sector=>{this.sectorsData=Sector});
 
   }
 
@@ -65,20 +66,20 @@ export class FactoriesComponent implements OnInit {
   setPages(itemsNumber){
     this.pages =Math.ceil(itemsNumber/this.SearchedCompanies.size);
     console.log(this.pages)
-     for(let s=0;s<this.pages;s++){
-      this.paggerNumbers.push(s)
-    }
-    console.log('all',this.paggerNumbers)
+      for(let s=0;s<=this.pages;s++){
+       this.paggerNumbers.push(s)
+      }
+    console.log('pages number',this.paggerNumbers)
   }
 
   
 
 fn(){
-  
-  this.endPgNumber+=3
-  this.startPgNumber+=3
+  this.startPgNumber+=2
+  this.endPgNumber=this.startPgNumber+1;
+  console.log(this.startPgNumber,this.endPgNumber);
   this.CurrentPagePaggerNumbers=this.paggerNumbers.slice(this.startPgNumber,this.endPgNumber)
-  console.log(this.CurrentPagePaggerNumbers)
+  console.log('next paggination numbers ',this.CurrentPagePaggerNumbers)
   // return [4,5,6]
 }
 
@@ -102,7 +103,6 @@ onSectorSelect(e){
     size: 12,
     pageNumber: 0
   };
-  console.log(SearchedCompaniesTxt)
   this.GetCompanies.getCompanyies(SearchedCompaniesTxt).subscribe(info=>{this.SearchedCompaniesResults=info,this.setPages(this.SearchedCompaniesResults.totalItems),this.loading=false},err=>console.log(err),()=>this.SearchedCompaniesResults.items.length>0?this.NoRes=false:this.NoRes=true);
 
 
@@ -114,4 +114,15 @@ getSectorType(company ){
  return companySectorId;
  }
 
+
+ getPagedata(pageNumber){
+  const SearchedCompaniesTxt :any  ={
+  
+    name: '',
+    size: 2,
+    pageNumber: pageNumber
+  };
+  this.GetCompanies.getCompanyies(SearchedCompaniesTxt).subscribe(info=>{this.SearchedCompaniesResults=info,this.loading=false},err=>console.log(err),()=>this.SearchedCompaniesResults.items.length>0?this.NoRes=false:this.NoRes=true);
+
+ }
 }
