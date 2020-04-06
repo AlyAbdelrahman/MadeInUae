@@ -69,7 +69,7 @@
 
      
    
-       <div class="search-results-container" *ngIf="SearchedCompaniesResults">
+       <div class="search-results-container" *ngIf="SearchedCompaniesResults && !loading && !NoRes">
            <div class="search-result-card search-result-card--sm" *ngFor="let companyInfo of SearchedCompaniesResults.items">
                <div class="search-result-card-image-container shadow">
                    <img class="search-result-card__img" [src]="baseCompanyImageUrl+companyInfo.image" alt="card-img">
@@ -117,8 +117,16 @@
                </ul>
            </div> -->
        </div>
+
+       <!-- {{'noRes' | translate}} -->
        <!-- ; else elseBlock -->
-       <!-- <ng-template #elseBlock>{{'noRes' | translate}}</ng-template> -->
+     <div class="search-results-container loader-spinner" *ngIf="loading  " style="display: flex;justify-content: center;height: 20rem;">
+         <img src="../../../assets/images/spinner/spinner.gif" alt="spinner">
+     </div> 
+
+     <div class="search-results-container noRes"  *ngIf="NoRes && !loading">
+        {{'noRes' | translate}}
+     </div>
        <!-- <aside class=" side-menue side-menue--left">
            <div class="side-menue-image-container">
                <img class="side-menue__image" src="../assets/images/aside-header-bg.jpg" alt="aside-bg">
@@ -137,7 +145,7 @@
                </div>
            </div>
        </aside> -->
-       <aside class=" side-menue side-menue--left" *ngIf="Aside">
+       <aside class=" side-menue side-menue--left" *ngIf="Aside ">
         <div class="side-menue-image-container">
             <img class="side-menue__image" [src]="baseImageUrl+Aside[1].image"  alt="aside-bg">
         </div>

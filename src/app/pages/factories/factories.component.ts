@@ -37,15 +37,27 @@ export class FactoriesComponent implements OnInit {
       pageNumber: 0
     };
 
+    loading:boolean=false;
+    NoRes:boolean=false;
     sectorsData:sector[];
 
 
   ngOnInit(): void {
-   this.GetCompanies.getCompanyies(this.SearchedCompanies).subscribe(info=>{this.SearchedCompaniesResults=info,this.setPages(this.SearchedCompaniesResults.totalItems)});
+   this.loading=true;
+   this.GetCompanies.getCompanyies(this.SearchedCompanies).subscribe(info=>
+   {
+     this.loading=true,
+     console.log(this.loading), 
+     this.SearchedCompaniesResults=info,
+    this.setPages(this.SearchedCompaniesResults.totalItems),
+    this.loading=false
+  })
+
    this.AsideData.getAsideData().subscribe(info=>this.Aside=info);
    this.sectors.getSectors().subscribe(Sector=>{this.sectorsData=Sector,console.log(this.sectorsData)});
 
   }
+
   getLang(){
     return this.Currentlang.lang;
   }
@@ -71,15 +83,19 @@ fn(){
 }
 
 onSubmit() {
+  this.loading=true;
+
   const SearchedCompaniesTxt :any  ={
     name: this.searchTxt,
     size: 12,
     pageNumber: 0
   };
-  this.GetCompanies.getCompanyies(SearchedCompaniesTxt).subscribe(info=>{this.SearchedCompaniesResults=info,this.setPages(this.SearchedCompaniesResults.totalItems)});
+  this.GetCompanies.getCompanyies(SearchedCompaniesTxt).subscribe(info=>{this.SearchedCompaniesResults=info,this.setPages(this.SearchedCompaniesResults.totalItems),this.loading=false},err=>console.log(err),()=>this.SearchedCompaniesResults.items.length>0?this.NoRes=false:this.NoRes=true);
 
 }
 onSectorSelect(e){
+  this.loading=true;
+
   const SearchedCompaniesTxt :any  ={
     sectorId: this.getSectorType( e.target.innerText),
     name: '',
@@ -87,7 +103,7 @@ onSectorSelect(e){
     pageNumber: 0
   };
   console.log(SearchedCompaniesTxt)
-  this.GetCompanies.getCompanyies(SearchedCompaniesTxt).subscribe(info=>{this.SearchedCompaniesResults=info,this.setPages(this.SearchedCompaniesResults.totalItems)});
+  this.GetCompanies.getCompanyies(SearchedCompaniesTxt).subscribe(info=>{this.SearchedCompaniesResults=info,this.setPages(this.SearchedCompaniesResults.totalItems),this.loading=false},err=>console.log(err),()=>this.SearchedCompaniesResults.items.length>0?this.NoRes=false:this.NoRes=true);
 
 
 }
