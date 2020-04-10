@@ -33,7 +33,7 @@ export class FactoriesComponent implements OnInit {
    SearchedCompanies :CompaniesInfo  ={
       sectorId: 0,
       name: "",
-      size:1,
+      size:2,
       pageNumber: 0
     };
 
@@ -41,15 +41,21 @@ export class FactoriesComponent implements OnInit {
     NoRes:boolean=false;
     sectorsData:sector[];
 
-
+    pageNumber:number=0;
+    isSearching:boolean=false;
+    searchingObj:any;
+    LastPage:number;
   ngOnInit(): void {
    this.loading=true;
+   this.pageNumber=0;
    this.GetCompanies.getCompanyies(this.SearchedCompanies).subscribe(info=>
    {
      this.loading=true,
      
      this.SearchedCompaniesResults=info,
-    this.setPages(this.SearchedCompaniesResults.totalItems),
+     this.LastPage= Math.ceil(this.SearchedCompaniesResults.totalItems/2),
+     console.log('>>>>',this.LastPage)
+    // this.setPages(this.SearchedCompaniesResults.totalItems),
     this.loading=false,
     console.log(this.SearchedCompaniesResults)
   })
@@ -63,49 +69,69 @@ export class FactoriesComponent implements OnInit {
     return this.Currentlang.lang;
   }
 
-  setPages(itemsNumber){
-    this.pages =Math.ceil(itemsNumber/this.SearchedCompanies.size);
-    console.log(this.pages)
-      for(let s=0;s<=this.pages;s++){
-       this.paggerNumbers.push(s)
-      }
-    console.log('pages number',this.paggerNumbers)
+
+nxt(){
+  this.loading=true;
+  if(!this.isSearching){
+  this.SearchedCompanies.pageNumber+=1;
+  this.GetCompanies.getCompanyies(this.SearchedCompanies).subscribe(info=>
+    {
+      this.SearchedCompaniesResults=info,
+      this.loading=false
+    })
+  console.log(this.pageNumber)
   }
+  else{
+    this.SearchedCompanies.pageNumber+=1;
+    this.searchingObj.pageNumber=this.SearchedCompanies;
+    this.GetCompanies.getCompanyies(this.searchingObj).subscribe(info=>{this.SearchedCompaniesResults=info,this.loading=false},err=>console.log(err),()=>this.SearchedCompaniesResults.items.length>0?this.NoRes=false:this.NoRes=true);
 
-  
-
-fn(){
-  this.startPgNumber+=2
-  this.endPgNumber=this.startPgNumber+1;
-  console.log(this.startPgNumber,this.endPgNumber);
-  this.CurrentPagePaggerNumbers=this.paggerNumbers.slice(this.startPgNumber,this.endPgNumber)
-  console.log('next paggination numbers ',this.CurrentPagePaggerNumbers)
-  // return [4,5,6]
+  }
 }
 
+
+prev(){
+  this.loading=true;
+  if(!this.isSearching){
+  this.SearchedCompanies.pageNumber-=1;
+  this.GetCompanies.getCompanyies(this.SearchedCompanies).subscribe(info=>
+    {
+      this.SearchedCompaniesResults=info,
+      this.loading=false
+    })
+  console.log(this.pageNumber)
+  }
+  else{
+    this.SearchedCompanies.pageNumber-=1;
+    this.searchingObj.pageNumber=this.SearchedCompanies;
+    this.GetCompanies.getCompanyies(this.searchingObj).subscribe(info=>{this.SearchedCompaniesResults=info,this.loading=false},err=>console.log(err),()=>this.SearchedCompaniesResults.items.length>0?this.NoRes=false:this.NoRes=true);
+
+  }
+}
 onSubmit() {
   this.loading=true;
-
+  this.pageNumber=0;
   const SearchedCompaniesTxt :any  ={
     name: this.searchTxt,
     size: 12,
-    pageNumber: 0
+    pageNumber: this.pageNumber
   };
-  this.GetCompanies.getCompanyies(SearchedCompaniesTxt).subscribe(info=>{this.SearchedCompaniesResults=info,this.setPages(this.SearchedCompaniesResults.totalItems),this.loading=false},err=>console.log(err),()=>this.SearchedCompaniesResults.items.length>0?this.NoRes=false:this.NoRes=true);
+  this.GetCompanies.getCompanyies(SearchedCompaniesTxt).subscribe(info=>{this.SearchedCompaniesResults=info,
+    this.LastPage= Math.ceil(this.SearchedCompaniesResults.totalItems/2),
+    this.loading=false},err=>console.log(err),()=>this.SearchedCompaniesResults.items.length>0?this.NoRes=false:this.NoRes=true);
 
 }
 onSectorSelect(e){
+  this.isSearching=true;
   this.loading=true;
-
   const SearchedCompaniesTxt :any  ={
     sectorId: this.getSectorType( e.target.innerText),
     name: '',
     size: 12,
     pageNumber: 0
   };
-  this.GetCompanies.getCompanyies(SearchedCompaniesTxt).subscribe(info=>{this.SearchedCompaniesResults=info,this.setPages(this.SearchedCompaniesResults.totalItems),this.loading=false},err=>console.log(err),()=>this.SearchedCompaniesResults.items.length>0?this.NoRes=false:this.NoRes=true);
-
-
+  this.searchingObj=SearchedCompaniesTxt;
+  this.GetCompanies.getCompanyies(this.searchingObj).subscribe(info=>{this.SearchedCompaniesResults=info,this.loading=false},err=>console.log(err),()=>this.SearchedCompaniesResults.items.length>0?this.NoRes=false:this.NoRes=true);
 }
 
 getSectorType(company ){
@@ -115,13 +141,12 @@ getSectorType(company ){
  }
 
 
- getPagedata(pageNumber){
+ getPagedata(){
   const SearchedCompaniesTxt :any  ={
-  
     name: '',
-    size: 2,
-    pageNumber: pageNumber
-  };
+    size: 5,
+    pageNumber: this.pageNumber
+    };
   this.GetCompanies.getCompanyies(SearchedCompaniesTxt).subscribe(info=>{this.SearchedCompaniesResults=info,this.loading=false},err=>console.log(err),()=>this.SearchedCompaniesResults.items.length>0?this.NoRes=false:this.NoRes=true);
 
  }

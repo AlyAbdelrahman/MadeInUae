@@ -71,7 +71,7 @@
    
        <div class="search-results-container" *ngIf="SearchedCompaniesResults && !loading && !NoRes">
            <div class="search-result-card search-result-card--sm" *ngFor="let companyInfo of SearchedCompaniesResults.items">
-               <div class="search-result-card-image-container shadow">
+               <div class="search-result-card-image-container shadow" *ngIf="companyInfo.image">
                    <img class="search-result-card__img" [src]="baseCompanyImageUrl+companyInfo.image" alt="card-img">
                </div>
                <div class="search-result-card-info">
@@ -107,18 +107,19 @@
    
          
    
-         <!-- <div class="pagination-container"  *ngIf="SearchedCompaniesResults && !loading && !NoRes">
+         <div class="pagination-container"  *ngIf="SearchedCompaniesResults.items.length>=2 && !loading && !NoRes">
                <ul class="pagination-list" >
-                   <li class="page-number active"><span clspanss="pspange-numer__txt" (click)="getPagedata(startPgNumber)">{{startPgNumber+1}}</span></li>
-                   <li class="page-number"><span class="page-numer__txt" (click)="getPagedata(endPgNumber)">{{endPgNumber+1}}</span></li> -->
+                <li class="last-page" *ngIf="!(SearchedCompanies.pageNumber==0)"  (click)="prev()" style="transform: rotate(0)" ><span class="page-numer__txt"  ><span class="icon-Icon-long-arrow" ></span></span></li>
+                   <li class="page-number active"><span clspanss="pspange-numer__txt" >{{SearchedCompanies.pageNumber+1}}</span></li>
+                   <!-- <li class="page-number"><span class="page-numer__txt" (click)="getPagedata(endPgNumber)">{{endPgNumber+1}}</span></li> --> 
                    <!-- <li class="page-number  "><a class="page-numer__txt " href="#">3</a></li> -->
-                   <!-- <li class="last-page" *ngIf="SearchedCompaniesResults.items.length>=2&& SearchedCompaniesResults.items.lenght==endPgNumber"  (click)="fn()"><span class="page-numer__txt" ><span class="icon-Icon-long-arrow"></span></span></li>
-               </ul>
-           </div>  -->
+                   <li class="last-page" *ngIf="!(((SearchedCompanies.pageNumber)+1)==LastPage)"  (click)="nxt()"><span class="page-numer__txt" ><span class="icon-Icon-long-arrow"></span></span></li>
+               </ul> 
+           </div>  
        </div>
 
-       <!-- {{'noRes' | translate}} -->
-       <!-- ; else elseBlock -->
+       <!-- {{'noRes' | translate}}
+       ; else elseBlock -->
      <div class="search-results-container loader-spinner" *ngIf="loading  " style="display: flex;justify-content: center;height: 20rem;">
          <img src="../../../assets/images/spinner/spinner.gif" alt="spinner">
      </div> 
@@ -145,7 +146,7 @@
            </div>
        </aside> -->
        <aside class=" side-menue side-menue--left" *ngIf="Aside ">
-        <div class="side-menue-image-container">
+        <div class="side-menue-image-container" *ngIf="Aside[1].image">
             <img class="side-menue__image" [src]="baseImageUrl+Aside[1].image"  alt="aside-bg">
         </div>
         <div class="side-menue-details">
