@@ -5,7 +5,7 @@
 
   <!--industrial-section-->
   <section class="industrial-sector" *ngIf="Aside" >
-    <aside class=" side-menue side-menue--right">
+    <aside class=" side-menue side-menue--right" *ngIf="AsideFound;else AsideOne ">
         <div class="side-menue-image-container">
             <img class="side-menue__image" [src]="baseImageUrl+Aside[0].image" alt="aside-bg">
         </div>
@@ -19,7 +19,10 @@
             </div>
         </div>
     </aside>
-
+    <ng-template class=" side-menue side-menue--left" #AsideOne >
+        <div style="width: 13.313rem;"></div>
+    </ng-template>
+ 
 
     <div class="industrial-sector-details" >
         <div class="industrial-sector-header-container">
@@ -28,7 +31,7 @@
         <muilt-rows-slider></muilt-rows-slider>
     </div>
 
-    <aside class=" side-menue side-menue--left" *ngIf="Aside">
+    <aside class=" side-menue side-menue--left" *ngIf="AsideFound ; else Aside2">
         <div class="side-menue-image-container">
             <img class="side-menue__image" [src]="baseImageUrl+Aside[1].image"  alt="aside-bg">
         </div>
@@ -41,6 +44,9 @@
             </div>
         </div>
     </aside>
+    <ng-template class=" side-menue side-menue--left" #Aside2 >
+        <div style="width: 13.313rem;"></div>
+    </ng-template>
 </section> 
 
 <!--about Section -->

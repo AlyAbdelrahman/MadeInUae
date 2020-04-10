@@ -95,7 +95,7 @@
 
 
 
-                  <div class="branches-box">
+                  <div class="branches-box"*ngIf="company.branches.length>0">
                     <div class="branch-txt-container">
                         <h3 class="branch__txt"> {{'branches'|translate}}</h3>
                     </div>
@@ -122,7 +122,10 @@
                   <div class="product-catalog-header-container">
                       <h3 class="product-catalog-header__txt">{{'productsCatalog' | translate}}</h3>
                     </div>
-                    <catalog-slider *ngIf="company.products.length>0"></catalog-slider>
+                    <catalog-slider *ngIf="company.products.length>0; else elseBlock"></catalog-slider>
+                    <ng-template #elseBlock >
+                        <img src="../../../assets/images/NoData.png" alt="no Data" style="width: 100%;">
+                    </ng-template>
                      <div class="category-details-container" *ngIf="company.companyProductNames">
                         <div class="category-details" *ngFor="let product of company.companyProductNames">
                             <h4 class="category-details__txt" >

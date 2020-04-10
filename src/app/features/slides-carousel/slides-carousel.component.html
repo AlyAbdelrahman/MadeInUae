@@ -18,7 +18,9 @@
     </ngb-carousel>
 
     <div class="search-input">
-        <input type="text" placeholder="{{'search' | translate}}" class="search-input-field">
+        <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm"  novalidate>
+         <input (keydown.enter)="onSubmit()" name="search" [(ngModel)]="SearchTxt" type="text" #name="ngModel" placeholder="{{'search' | translate}}" class="search-input-field">
+        </form>
         <button  class="search-btn"><span class="icon-Icon-Search"></span></button>
     </div>
 </div>

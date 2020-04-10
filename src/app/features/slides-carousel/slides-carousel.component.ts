@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {BackendApiService} from '../../services/slider/backend-api.service';
-import {LanguageService} from '../../services/languages/language.service'
+import {LanguageService} from '../../services/languages/language.service';
+import {Router} from '@angular/router';
 import { Slide } from 'src/app/models/Slide';
 
 
@@ -11,8 +12,9 @@ import { Slide } from 'src/app/models/Slide';
 })
 export class SlidesCarouselComponent implements OnInit {
   Slides:Slide[];
+  SearchTxt:any;
   baseUrl:string ='http://mbesher-002-site4.dtempurl.com/sliders/';
-  constructor(private SlidesData:BackendApiService ,public Currentlang: LanguageService) {
+  constructor(private SlidesData:BackendApiService ,public Currentlang: LanguageService,private router: Router) {
     // console.log(Currentlang.getCurrentLanguage())
 
   }
@@ -23,5 +25,10 @@ export class SlidesCarouselComponent implements OnInit {
   }
   getLang(){
    return this.Currentlang.lang;
+  }
+
+
+  onSubmit(){
+    this.router.navigate(['/Factories/'+this.SearchTxt]);
   }
 }

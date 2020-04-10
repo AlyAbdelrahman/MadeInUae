@@ -2,7 +2,7 @@
 
 
     <!---------------------------------------------- Pages Shared Bannrr Details----------------------->
-    <banner [imageSrc]="'../assets/images/c1.jpg'" >
+    <banner [imageSrc]="'../assets/images/headerBg/Factoriesbg.png'" >
        {{'IndustrialDepartments' | translate}}
    </banner>  
    
@@ -145,10 +145,13 @@
                </div>
            </div>
        </aside> -->
-       <aside class=" side-menue side-menue--left" *ngIf="Aside ">
-        <div class="side-menue-image-container" *ngIf="Aside[1].image">
-            <img class="side-menue__image" [src]="baseImageUrl+Aside[1].image"  alt="aside-bg">
+       <aside class=" side-menue side-menue--left" *ngIf="AsideFound;else elseAside ">
+        <div class="side-menue-image-container" *ngIf="Aside[1].image != undefined ;else elseImage">
+            <img class="side-menue__image"  [src]="baseImageUrl+Aside[1].image"  alt="aside-bg">
         </div>
+        <ng-template class="side-menue-image-container" #elseImage>
+            <img class="side-menue__image" src="../../../assets/images/broken.png" alt="aside-bg">
+        </ng-template>
         <div class="side-menue-details">
             <div class="side-menue-details-header-container">
                 <h5 class="side-menue__header">{{getLang()=='ar'?Aside[1].companyNameAr:Aside[1].companyName}}</h5>
@@ -157,8 +160,13 @@
                 <p class="side-menue__details">{{getLang()=='ar'?Aside[1].descriptionAr:Aside[1].description}}</p>
             </div>
         </div>
-    </aside>
-   
+       </aside>
+       
+       <ng-template class=" side-menue side-menue--left" #elseAside >
+       <div style="width: 10rem;"></div>
+
+       </ng-template>
+
    </section> 
    
    </layout>

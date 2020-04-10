@@ -11,6 +11,7 @@ import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 const routes: Routes = [
   { path: '', component: HomepageComponent },
   { path: 'About', component: AboutComponent },
+  { path: 'Factories/:searchTxt', component: FactoriesComponent },
   { path: 'Factories', component: FactoriesComponent },
   { path: 'FactoryDetails/:id', component: FactoryDetailsComponent },
   { path: 'AddFactory', component: AddFactoryComponent },

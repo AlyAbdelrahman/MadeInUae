@@ -7,7 +7,7 @@ import {homeSponser} from '../../models/homeSponsers'
 import {HomeSponserAsidesService} from '../../services/homeSponserAsides/home-sponser-asides.service';
 import {SectorsService} from '../../services/sectors/sectors.service';
 import {sector} from '../../models/sector';
-
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-factories',
@@ -16,6 +16,7 @@ import {sector} from '../../models/sector';
 })
 export class FactoriesComponent implements OnInit {
   Aside:homeSponser[];
+  AsideFound:boolean;
   SearchedCompaniesResults:any;
   pages:any;
 
@@ -26,7 +27,7 @@ export class FactoriesComponent implements OnInit {
 
   paggerNumbers:number[]=[];
   CurrentPagePaggerNumbers:number[];
-  constructor(private sectors:SectorsService ,private AsideData:HomeSponserAsidesService,private GetCompanies:CompaniesService,public Currentlang: LanguageService) { }
+  constructor(private route: ActivatedRoute,private sectors:SectorsService ,private AsideData:HomeSponserAsidesService,private GetCompanies:CompaniesService,public Currentlang: LanguageService) { }
   baseImageUrl:string ='http://mbesher-002-site4.dtempurl.com/sponsors/';
   baseCompanyImageUrl='http://mbesher-002-site4.dtempurl.com/Campany/';
  
@@ -45,9 +46,13 @@ export class FactoriesComponent implements OnInit {
     isSearching:boolean=false;
     searchingObj:any;
     LastPage:number;
+
   ngOnInit(): void {
    this.loading=true;
    this.pageNumber=0;
+   const paramsSearchTxt = this.route.snapshot.paramMap.get('searchTxt');
+   if(paramsSearchTxt == null){
+   console.log('searched txt',paramsSearchTxt)
    this.GetCompanies.getCompanyies(this.SearchedCompanies).subscribe(info=>
    {
      this.loading=true,
@@ -59,8 +64,21 @@ export class FactoriesComponent implements OnInit {
     this.loading=false,
     console.log(this.SearchedCompaniesResults)
   })
-
-   this.AsideData.getAsideData().subscribe(info=>this.Aside=info);
+   }
+   else{
+    this.pageNumber=0;
+    const SearchedCompaniesTxt :any  ={
+      name: paramsSearchTxt,
+      size: 2,
+      pageNumber: this.pageNumber
+    };
+    console.log('params searched obj',SearchedCompaniesTxt)
+    this.GetCompanies.getCompanyies(SearchedCompaniesTxt).subscribe(info=>{this.SearchedCompaniesResults=info,
+      this.LastPage= Math.ceil(this.SearchedCompaniesResults.totalItems/2),
+      this.loading=false},err=>console.log(err),()=>this.SearchedCompaniesResults.items.length>0?this.NoRes=false:this.NoRes=true);
+  
+   }
+   this.AsideData.getAsideData().subscribe(info=>{this.Aside=info,this.Aside==[]?this.AsideFound=true:this.AsideFound=false});
    this.sectors.getSectors().subscribe(Sector=>{this.sectorsData=Sector});
 
   }
@@ -113,7 +131,7 @@ onSubmit() {
   this.pageNumber=0;
   const SearchedCompaniesTxt :any  ={
     name: this.searchTxt,
-    size: 12,
+    size: 2,
     pageNumber: this.pageNumber
   };
   this.GetCompanies.getCompanyies(SearchedCompaniesTxt).subscribe(info=>{this.SearchedCompaniesResults=info,
