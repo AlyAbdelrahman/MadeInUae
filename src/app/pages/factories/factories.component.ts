@@ -134,7 +134,8 @@ onSubmit() {
     size: 2,
     pageNumber: this.pageNumber
   };
-  this.GetCompanies.getCompanyies(SearchedCompaniesTxt).subscribe(info=>{this.SearchedCompaniesResults=info,
+  this.GetCompanies.getCompanyies(SearchedCompaniesTxt).subscribe(info=>
+    {this.SearchedCompaniesResults=info,
     this.LastPage= Math.ceil(this.SearchedCompaniesResults.totalItems/2),
     this.loading=false},err=>console.log(err),()=>this.SearchedCompaniesResults.items.length>0?this.NoRes=false:this.NoRes=true);
 
@@ -142,14 +143,21 @@ onSubmit() {
 onSectorSelect(e){
   this.isSearching=true;
   this.loading=true;
+  this.pageNumber=0;
+  
   const SearchedCompaniesTxt :any  ={
     sectorId: this.getSectorType( e.target.innerText),
     name: '',
-    size: 12,
+    size: 2,
     pageNumber: 0
   };
   this.searchingObj=SearchedCompaniesTxt;
-  this.GetCompanies.getCompanyies(this.searchingObj).subscribe(info=>{this.SearchedCompaniesResults=info,this.loading=false},err=>console.log(err),()=>this.SearchedCompaniesResults.items.length>0?this.NoRes=false:this.NoRes=true);
+  this.GetCompanies.getCompanyies(this.searchingObj).subscribe(info=>
+    {this.SearchedCompaniesResults=info,this.loading=false,
+      this.LastPage= Math.ceil(this.SearchedCompaniesResults.totalItems/2),
+      this.loading=false},
+    err=>console.log(err),
+    ()=>this.SearchedCompaniesResults.items.length>0?this.NoRes=false:this.NoRes=true);
 }
 
 getSectorType(company ){
