@@ -8,6 +8,8 @@ import {HomeSponserAsidesService} from '../../services/homeSponserAsides/home-sp
 import {SectorsService} from '../../services/sectors/sectors.service';
 import {sector} from '../../models/sector';
 import { ActivatedRoute } from '@angular/router';
+import {CitiesService} from '../../services/cities/cities.service';
+import {City} from '../../models/city'
 
 @Component({
   selector: 'app-factories',
@@ -27,7 +29,7 @@ export class FactoriesComponent implements OnInit {
 
   paggerNumbers:number[]=[];
   CurrentPagePaggerNumbers:number[];
-  constructor(private route: ActivatedRoute,private sectors:SectorsService ,private AsideData:HomeSponserAsidesService,private GetCompanies:CompaniesService,public Currentlang: LanguageService) { }
+  constructor(private CitiesService:CitiesService ,private route: ActivatedRoute,private sectors:SectorsService ,private AsideData:HomeSponserAsidesService,private GetCompanies:CompaniesService,public Currentlang: LanguageService) { }
   baseImageUrl:string ='http://mbesher-002-site4.dtempurl.com/sponsors/';
   baseCompanyImageUrl='http://mbesher-002-site4.dtempurl.com/Campany/';
  
@@ -41,6 +43,8 @@ export class FactoriesComponent implements OnInit {
     loading:boolean=false;
     NoRes:boolean=false;
     sectorsData:sector[];
+    citiesInfo:City[];
+    selectedCities:any="";
 
     pageNumber:number=0;
     isSearching:boolean=false;
@@ -77,16 +81,19 @@ export class FactoriesComponent implements OnInit {
       this.LastPage= Math.ceil(this.SearchedCompaniesResults.totalItems/2),
       this.loading=false},err=>console.log(err),()=>this.SearchedCompaniesResults.items.length>0?this.NoRes=false:this.NoRes=true);
   
-   }
+    }
+    this.CitiesService.getCitiesData().subscribe(cityInfo=>{this.citiesInfo=cityInfo,console.log('**',this.citiesInfo)});
    this.AsideData.getAsideData().subscribe(info=>{this.Aside=info,this.Aside==[]?this.AsideFound=true:this.AsideFound=false});
    this.sectors.getSectors().subscribe(Sector=>{this.sectorsData=Sector});
-
   }
 
   getLang(){
     return this.Currentlang.lang;
   }
-
+  selectName()
+  {
+  alert('asa');
+  }
 
 nxt(){
   this.loading=true;

@@ -22,17 +22,22 @@
            
         </div>
    
-           <!-- <div class="input-form-search">
-               <div class="input-form position-relative mb-1">
-                   <select  class="input-form__select" id="city-name" >
-                       <option value="المدينه">{{'city' |translate}}</option>
-                       <option value="دبي">دبي</option>
-                       
+            <div class="input-form-search" >
+               <div class="input-form position-relative mb-1" style="width: 100%;" >
+                   <select 
+                    class="input-form__select"
+                    id="city-name"  
+                    name="selectedCity"
+                    [(ngModel)]="selectedCities" 
+                    >         
+                    <!-- <option value="">Choose oppo suit</option> -->
+                       <option  value="" >{{'city' |translate}}</option>
+                       <option *ngFor="let city of citiesInfo"  [value]="city.name"  >{{getLang()=='ar'?city.nameAr:city.name}}</option>
                    </select>
                    <span class="icon-Icon-arrow rotate-down black-colored-txt drop-down-arrow small-select-arrow"></span>
                </div>
-   
-               <div class="input-form position-relative mb-1">
+            </div>
+            <!--   <div class="input-form position-relative mb-1">
                    <select  class="input-form__select" id="Factory-sector" >
                        <option value="القطاع">{{'sector' |translate}}</option>
                        <option value="الصناعي">الصناعي</option>
@@ -76,7 +81,7 @@
                </div>
                <div class="search-result-card-info">
                    <div class="search-result-card-header-container">
-                       <h3 class="search-result-card__header">{{getLang()=='ar'?companyInfo.nameAr:companyInfo.name}}</h3>
+                       <h3 class="search-result-card__header" routerLink="/FactoryDetails/{{companyInfo.id}}" style="cursor: pointer;">{{getLang()=='ar'?companyInfo.nameAr:companyInfo.name}}</h3>
                    </div>
                    <div class="search-result-card-details-container">
                        <p class="search-result-card-details__txt">

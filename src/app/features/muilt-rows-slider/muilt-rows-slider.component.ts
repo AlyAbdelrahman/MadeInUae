@@ -16,7 +16,7 @@ export class MuiltRowsSliderComponent implements OnInit  {
   constructor(private elementRef: ElementRef , public SectorsData:MuiltRowSliderService,public Currentlang: LanguageService) { }
 
   ngOnInit(): void {
-    this.SectorsData.getSlides().subscribe(Slide=>this.Slides=Slide);
+    this.SectorsData.getSlides().subscribe(Slide=>{this.Slides=Slide,console.log(this.Slides)});
 
   }
 
