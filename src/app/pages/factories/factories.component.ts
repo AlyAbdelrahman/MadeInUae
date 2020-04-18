@@ -93,23 +93,52 @@ export class FactoriesComponent implements OnInit {
      
     if(this.paramsSectorID){
       this.SearchedCompanies.sectorId=this.paramsSectorID;
-      this.GetCompanies.getCompanyies(this.SearchedCompanies).subscribe(info=>this.searchFunc(info))
-    }
+      this.GetCompanies.getCompanyies(this.SearchedCompanies).subscribe(info=>{
+        this.SearchedCompaniesResults=info,
+        console.log(this.SearchedCompaniesResults)
+        this.LastPage= Math.ceil(this.SearchedCompaniesResults.totalItems/2),
+        this.loading=false},
+        err=>console.log(err),
+        ()=>this.SearchedCompaniesResults.items.length>0?this.NoRes=false:this.NoRes=true);
+  }
+
     else if(this.parmsCityId && this.paramsSearchedText){
       this.SearchedCompaniesWithCity.cityId=this.parmsCityId;
       this.SearchedCompaniesWithCity.name=this.paramsSearchedText;
-      this.GetCompanies.getCompanyies(this.SearchedCompaniesWithCity).subscribe(info=>this.searchFunc(info))
+      this.GetCompanies.getCompanyies(this.SearchedCompaniesWithCity).subscribe(info=>{
+        this.SearchedCompaniesResults=info,
+        console.log(this.SearchedCompaniesResults)
+        this.LastPage= Math.ceil(this.SearchedCompaniesResults.totalItems/2),
+        this.loading=false},
+        err=>console.log(err),
+        ()=>this.SearchedCompaniesResults.items.length>0?this.NoRes=false:this.NoRes=true);
+  }
 
-    }
     else if (this.parmsCityId ){
       this.SearchedCompaniesWithCity.cityId=this.parmsCityId;
-      this.GetCompanies.getCompanyies(this.SearchedCompaniesWithCity).subscribe(info=>this.searchFunc(info))
+      this.GetCompanies.getCompanyies(this.SearchedCompaniesWithCity).subscribe(info=>{
+        this.SearchedCompaniesResults=info,
+        console.log(this.SearchedCompaniesResults)
+        this.LastPage= Math.ceil(this.SearchedCompaniesResults.totalItems/2),
+        this.loading=false},
+        err=>console.log(err),
+        ()=>this.SearchedCompaniesResults.items.length>0?this.NoRes=false:this.NoRes=true);
+  
     }
+    
     else if (this.paramsSearchedText ){
+      console.log('here')
       this.SearchedCompaniesWithName.name=this.paramsSearchedText;
-      this.GetCompanies.getCompanyies(this.SearchedCompaniesWithName).subscribe(info=>this.searchFunc(info))
-
+      this.GetCompanies.getCompanyies(this.SearchedCompaniesWithName).subscribe(info=>
+        {
+          this.SearchedCompaniesResults=info,
+          console.log(this.SearchedCompaniesResults)
+          this.LastPage= Math.ceil(this.SearchedCompaniesResults.totalItems/2),
+          this.loading=false},
+          err=>console.log(err),
+          ()=>this.SearchedCompaniesResults.items.length>0?this.NoRes=false:this.NoRes=true);
     }
+
    else{
     this.pageNumber=0;
     this.paramsSectorID=1;
@@ -212,61 +241,4 @@ onSubmit() {
 
 
 }
-//   if(!this.selectedCityId){
-//     SearchedCompaniesTxt={
-//       name: this.searchTxt,
-//       size: 2,
-//       pageNumber: this.pageNumber
-//     };
-//   }
-//   else{
-//      SearchedCompaniesTxt   ={
-//       name: this.searchTxt,
-//       cityId:this.selectedCityId,
-//       size: 2,
-//       pageNumber: this.pageNumber
-//     };
-//   }
-//   this.GetCompanies.getCompanyies(SearchedCompaniesTxt).subscribe(info=>
-//     {this.SearchedCompaniesResults=info,
-//     this.LastPage= Math.ceil(this.SearchedCompaniesResults.totalItems/2),
-//     this.loading=false},err=>console.log(err),()=>this.SearchedCompaniesResults.items.length>0?this.NoRes=false:this.NoRes=true);
-
-// }
-// onSectorSelect(e){
-//   this.isSearching=true;
-//   this.loading=true;
-//   this.pageNumber=0;
-  
-//   const SearchedCompaniesTxt :any  ={
-//     sectorId: this.getSectorType( e.target.innerText),
-//     name: '',
-//     size: 2,
-//     pageNumber: 0
-//   };
-//   this.searchingObj=SearchedCompaniesTxt;
-//   this.GetCompanies.getCompanyies(this.searchingObj).subscribe(info=>
-//     {this.SearchedCompaniesResults=info,this.loading=false,
-//       this.LastPage= Math.ceil(this.SearchedCompaniesResults.totalItems/2),
-//       this.loading=false},
-//     err=>console.log(err),
-//     ()=>this.SearchedCompaniesResults.items.length>0?this.NoRes=false:this.NoRes=true);
-// }
-
-// getSectorType(company ){
-//   const companySector:any= this.sectorsData?this.sectorsData.filter(el=>el.name==company||el.nameAr==company?el.id:0):'';
-//   const companySectorId:any=companySector[0].id;
-//  return companySectorId;
-//  }
-
-
-//  getPagedata(){
-//   const SearchedCompaniesTxt :any  ={
-//     name: '',
-//     size: 5,
-//     pageNumber: this.pageNumber
-//     };
-//   this.GetCompanies.getCompanyies(SearchedCompaniesTxt).subscribe(info=>{this.SearchedCompaniesResults=info,this.loading=false},err=>console.log(err),()=>this.SearchedCompaniesResults.items.length>0?this.NoRes=false:this.NoRes=true);
-
-//  }
 }

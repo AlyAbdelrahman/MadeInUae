@@ -29,6 +29,7 @@ export class SlidesCarouselComponent implements OnInit {
 
 
   onSubmit(){
-    this.router.navigate(['/Factories/'+this.SearchTxt]);
+    this.router.navigate(['/Factories/Search'], { queryParams: { SearchedText: this.SearchTxt } });
+
   }
 }

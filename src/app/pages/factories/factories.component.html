@@ -113,7 +113,7 @@
    
          
    
-         <div class="pagination-container"  *ngIf="SearchedCompaniesResults.items.length>=2 && !loading && !NoRes">
+         <div class="pagination-container"  *ngIf="LastPage > 0  && !loading && !NoRes">
                <ul class="pagination-list" >
                 <li class="last-page" *ngIf="!(SearchedCompanies.pageNumber==0)"  (click)="prev()" style="transform: rotate(0)" ><span class="page-numer__txt"  ><span class="icon-Icon-long-arrow" ></span></span></li>
                    <li class="page-number active"><span clspanss="pspange-numer__txt" >{{SearchedCompanies.pageNumber+1}}</span></li>
