@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class FooterSliderService {
-  baseSliderUrl:string ='http://mbesher-002-site4.dtempurl.com/api/user/CoSponsors/GetAll/6';
+  baseSliderUrl:string ='http://mbesher-002-site4.dtempurl.com/api/user/CoSponsors/GetAll/100';
 
   constructor(private http:HttpClient) { }
   getFooterSliderData():Observable<footerSlider[]>{

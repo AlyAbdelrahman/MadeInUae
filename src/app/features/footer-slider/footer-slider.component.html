@@ -1,7 +1,7 @@
 <section class="ag-slide-block">
     <div class="footer-swiper-container" dir="rtl">
       <ul class="swiper-wrapper ag-slide_list">
-        <li class="swiper-slide ag-slide_item" data-swiper-autoplay="1500" data-swiper-slide-index="0" *ngFor="let Sponser of footerSliderData">
+        <li style="cursor: pointer;" routerLink="/FactoryDetails/{{Sponser.companyId}}" class="swiper-slide ag-slide_item" data-swiper-autoplay="1500" data-swiper-slide-index="0" *ngFor="let Sponser of footerSliderData">
           <!--data-swiper-autoplay -->
           <div class="ag-slide-item-image-container">
            <img [src] = "baseUrl+Sponser.image"  class="ag-slide_img" alt="sponser">

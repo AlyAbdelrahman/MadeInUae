@@ -24,10 +24,12 @@
     <!--Footer Contact info-->
      <div class="contacts-container" *ngIf="FooterInfo">
         <ul class="contacts-list">
-            <li class="contact-link">{{FooterInfo.addressAr}}<span class="contact-icon icon-Icon-globe"> </span></li>
-            <li class="contact-link">{{FooterInfo.address}}<span class="contact-icon icon-Icon-globe"></span></li>
-            <li class="contact-link">{{FooterInfo.phone}}  <span class="contact-icon icon-Icon-phone-alt"></span></li>
-            <li class="contact-link">{{FooterInfo.email}}<span class="contact-icon icon-Icon-env"></span></li>
+            <li class="contact-link" style="display: flex;align-items: center;justify-content: center;"><span class="contact-icon icon-Icon-globe"></span><span style="direction: ltr">{{getLang()=='ar'?FooterInfo.addressAr:FooterInfo.address}}</span></li>
+            <li class="contact-link" style="display: flex;align-items: center;justify-content: center;"><span class="contact-icon icon-Icon-phone-alt"></span><span style="direction: ltr">{{FooterInfo.phone}} </span> </li>
+            <li class="contact-link" style="display: flex;align-items: center;justify-content: center;"><span class="contact-icon icon-Icon-env"></span><span style="direction: ltr">{{FooterInfo.email}}</span></li>
+            <li class="contact-link" style="display: flex;align-items: center;justify-content: center;"><span class="contact-icon icon-Icon-whatsapp"></span><span style="direction: ltr;">{{FooterInfo.whatsUp}}</span></li>
+
+            
         </ul>
     </div>
     <!--social-media icons-->

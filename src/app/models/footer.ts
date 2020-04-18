@@ -8,5 +8,6 @@ export interface footer
     "instagram":string,
     "youTube": string,
     "address":string,
-    "addressAr":string
+    "addressAr":string,
+    "whatsUp":string
   }

@@ -7148,7 +7148,9 @@ body {
     .search-result-card--sm .search-card-contacts-list {
       padding-left:0;
       display: flex;
-      margin: 0; }
+      margin: 0; 
+            flex-wrap: wrap;
+      }
     .search-result-card--sm .search-card-contact {
       font-size: .7rem;
       font-family: "NeoSansArabic";
@@ -7537,7 +7539,7 @@ body {
 .swiper-btns-wrapperr {
   position: absolute;
   right: 0;
-  top: -3%; }
+  top: -6%; }
 
 .Ca-swiper-button-next {
   margin-right: 43.5rem;

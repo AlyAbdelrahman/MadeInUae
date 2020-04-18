@@ -91,9 +91,9 @@
                    </div>
                    <div class="search-result-card-contacts-container">
                        <ul class="search-card-contacts-list">
-                           <li class="search-card-contact ">{{companyInfo.phone}}<span class="icon-Icon-telephone contact-icon "></span></li>
+                           <li class="search-card-contact " style="display: flex;align-items: center;"><span class="icon-Icon-telephone contact-icon "></span><span style="direction: ltr;">{{companyInfo.phone}}</span></li>
                            <li class="search-card-contact" title="{{companyInfo.email}}">{{companyInfo.email|slice:0:19}}<span class="icon-Icon-email contact-icon "></span></li>
-                           <li class="search-card-contact">{{companyInfo.fax}}<span class="icon-Icon-print contact-icon "></span></li>
+                           <li class="search-card-contact"style="display: flex;align-items: center;"><span class="icon-Icon-print contact-icon "></span><span style="direction: ltr;">{{companyInfo.fax}}</span></li>
                            <li class="search-card-contact" >{{companyInfo.website}}<span class="icon-Icon-globe contact-icon "></span></li>
                        </ul>
                    </div>
