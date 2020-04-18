@@ -9,18 +9,17 @@
     <section class="factories-sectors">
        <!--filter side-->
        <aside class="side-menue-filter">
-        <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm"  novalidate>
+        <form name="form" (ngSubmit)=" onSubmit()" #f="ngForm"  novalidate>
            <div class="input-form-search">
                <input name="subject"  #subject="ngModel"   required  [(ngModel)]="searchTxt" type="text" class="input-form-search__txt big-font-placeholder"  placeholder="{{'Company' | translate}}">
                
                <span class="icon-Icon-Search "></span>
            </div>
-           <div *ngIf="f.submitted && f.submitted  && subject.invalid" class="alert alert-danger">
-            <div *ngIf="f.submitted && subject.errors.required">
-                {{'searchArea.searchTxtRequired' | translate}}
-            </div>
-           
-        </div>
+           <!-- <div *ngIf="f.submitted && f.submitted  && subject.invalid" class="alert alert-danger">
+                <div *ngIf="f.submitted && subject.errors.required">
+                    {{'searchArea.searchTxtRequired' | translate}}
+                </div>
+            </div> -->
    
             <div class="input-form-search" >
                <div class="input-form position-relative mb-1" style="width: 100%;" >
@@ -29,10 +28,11 @@
                     id="city-name"  
                     name="selectedCity"
                     [(ngModel)]="selectedCities" 
+                    (change)="selectCity($event.target.value)"
                     >         
                     <!-- <option value="">Choose oppo suit</option> -->
-                       <option  value="" >{{'city' |translate}}</option>
-                       <option *ngFor="let city of citiesInfo"  [value]="city.name"  >{{getLang()=='ar'?city.nameAr:city.name}}</option>
+                       <option  value="" disabled>{{'city' |translate}}</option>
+                       <option *ngFor="let city of citiesInfo"  [value]="city.id"  >{{getLang()=='ar'?city.nameAr:city.name}}</option>
                    </select>
                    <span class="icon-Icon-arrow rotate-down black-colored-txt drop-down-arrow small-select-arrow"></span>
                </div>
@@ -62,7 +62,8 @@
                  <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent=".filter-accordion">
                    <div class="card-body">
                        <ul class="search-options-list">
-                           <li class="search-option" (click)="onSectorSelect($event)"  *ngFor="let sector of sectorsData">{{getLang()=='ar'?sector.nameAr:sector.name}}</li>
+                        <!-- (click)="onSectorSelect($event)" -->
+                           <li [routerLink]="['/Factories/sector']" [queryParams]="{  SectorId:sector.id}"  [ngClass]="{'selectedItem': paramsSectorID==sector.id , 'search-option': true}"  *ngFor="let sector of sectorsData">{{getLang()=='ar'?sector.nameAr:sector.name}}</li>
                        </ul>
                    </div>
                  </div>

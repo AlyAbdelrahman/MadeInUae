@@ -13,6 +13,7 @@ const routes: Routes = [
   { path: 'About', component: AboutComponent },
   { path: 'Factories/:searchTxt', component: FactoriesComponent },
   { path: 'Factories', component: FactoriesComponent },
+  { path: 'Factories/sector', component: FactoriesComponent },
   { path: 'FactoryDetails/:id', component: FactoryDetailsComponent },
   { path: 'AddFactory', component: AddFactoryComponent },
   { path: 'ContactUs', component: ContactUsComponent },

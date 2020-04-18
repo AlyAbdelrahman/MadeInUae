@@ -8283,3 +8283,7 @@ iframe {
     HEIGHT: 34VW;
 }
 
+.selectedItem{
+    background-color: #0E930E;
+    color: #fff;
+}

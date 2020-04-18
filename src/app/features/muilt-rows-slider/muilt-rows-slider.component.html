@@ -4,7 +4,7 @@
         <div class="swiper-wrapper">
            
         <div class="swiper-slide" *ngFor="let slide of Slides">
-            <div class="swiper-card">
+            <div style="cursor: pointer;" class="swiper-card" [routerLink]="['/Factories/sector']" [queryParams]="{  SectorId:slide.id}">
                 <div class="swiper-card-image-container">
                     <img class="swiper-card__img" src="../../assets/images/test images/s1.png" [src] = "baseUrl+slide.image">
                 </div>
