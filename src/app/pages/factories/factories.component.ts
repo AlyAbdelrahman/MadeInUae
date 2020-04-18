@@ -93,6 +93,7 @@ export class FactoriesComponent implements OnInit {
      
     if(this.paramsSectorID){
       this.SearchedCompanies.sectorId=this.paramsSectorID;
+      this.AsideData.getSectorAside(this.paramsSectorID).subscribe(info=>{this.Aside=info,this.Aside==[]?this.AsideFound=true:this.AsideFound=false});
       this.GetCompanies.getCompanyies(this.SearchedCompanies).subscribe(info=>{
         this.SearchedCompaniesResults=info,
         console.log(this.SearchedCompaniesResults)
@@ -142,6 +143,8 @@ export class FactoriesComponent implements OnInit {
    else{
     this.pageNumber=0;
     this.paramsSectorID=1;
+    this.AsideData.getSectorAside(0).subscribe(info=>{this.Aside=info,this.Aside==[]?this.AsideFound=true:this.AsideFound=false,console.log(this.Aside)});
+
     const SearchedCompaniesTxt :any  ={
       sectorId:this.paramsSectorID,
       name: "",
@@ -157,7 +160,7 @@ export class FactoriesComponent implements OnInit {
 
 
    this.CitiesService.getCitiesData().subscribe(cityInfo=>this.citiesInfo=cityInfo);
-   this.AsideData.getAsideData().subscribe(info=>{this.Aside=info,this.Aside==[]?this.AsideFound=true:this.AsideFound=false});
+  //  this.AsideData.getAsideData().subscribe(info=>{this.Aside=info,this.Aside==[]?this.AsideFound=true:this.AsideFound=false});
    this.sectors.getSectors().subscribe(Sector=>{this.sectorsData=Sector});
   }
 
