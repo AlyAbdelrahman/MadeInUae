@@ -93,7 +93,7 @@ export class FactoriesComponent implements OnInit {
      
     if(this.paramsSectorID){
       this.SearchedCompanies.sectorId=this.paramsSectorID;
-      this.AsideData.getSectorAside(this.paramsSectorID).subscribe(info=>{this.Aside=info,this.Aside==[]?this.AsideFound=true:this.AsideFound=false});
+      this.AsideData.getSectorAside(this.paramsSectorID).subscribe(info=>{this.Aside=info,console.log('***Aside',info),this.Aside==[]?this.AsideFound=true:this.AsideFound=false});
       this.GetCompanies.getCompanyies(this.SearchedCompanies).subscribe(info=>{
         this.SearchedCompaniesResults=info,
         console.log(this.SearchedCompaniesResults)

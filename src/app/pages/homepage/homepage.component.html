@@ -5,17 +5,19 @@
 
   <!--industrial-section-->
   <section class="industrial-sector" *ngIf="Aside" >
-    <aside class=" side-menue side-menue--right" *ngIf="AsideFound;else AsideOne ">
-        <div class="side-menue-image-container">
-            <img class="side-menue__image" [src]="baseImageUrl+Aside[0].image" alt="aside-bg">
+    <aside  style="cursor: pointer;" class=" side-menue side-menue--right" *ngIf="Aside ;else AsideOne "  routerLink="/FactoryDetails/{{Aside[1].companyId}}">
+        <div class="side-menue-image-container" *ngIf="Aside[1].image;else elseImage">
+            <img class="side-menue__image"  [src]="baseImageUrl+Aside[1].image"  alt="aside-bg">
         </div>
+        <ng-template class="side-menue-image-container" #elseImage>
+            <img class="side-menue__image" src="../../../assets/images/broken.png" alt="aside-bg">
+        </ng-template>
         <div class="side-menue-details">
             <div class="side-menue-details-header-container">
-                <h5 class="side-menue__header">{{getLang()=='ar'?Aside[0].companyNameAr:Aside[0].companyName}}</h5>
-                
+                <h5 class="side-menue__header">{{getLang()=='ar'?Aside[1].companyNameAr:Aside[1].companyName}}</h5>
             </div>
             <div class="side-menue-details-body">
-                <p class="side-menue__details">{{getLang()=='ar'?Aside[0].descriptionAr:Aside[0].description}}</p>
+                <p class="side-menue__details">{{getLang()=='ar'?Aside[1].descriptionAr:Aside[1].description}}</p>
             </div>
         </div>
     </aside>
@@ -31,19 +33,22 @@
         <muilt-rows-slider></muilt-rows-slider>
     </div>
 
-    <aside class=" side-menue side-menue--left" *ngIf="AsideFound ; else Aside2">
-        <div class="side-menue-image-container">
-            <img class="side-menue__image" [src]="baseImageUrl+Aside[1].image"  alt="aside-bg">
+    <aside style="cursor: pointer;" class=" side-menue side-menue--left" *ngIf="Aside   ;else Aside2 " routerLink="/FactoryDetails/{{Aside[0].companyId}}">
+        <div class="side-menue-image-container" *ngIf="Aside[0].image;else elseImage">
+            <img class="side-menue__image"  [src]="baseImageUrl+Aside[0].image"  alt="aside-bg">
         </div>
+        <ng-template class="side-menue-image-container" #elseImage>
+            <img class="side-menue__image" src="../../../assets/images/broken.png" alt="aside-bg">
+        </ng-template>
         <div class="side-menue-details">
             <div class="side-menue-details-header-container">
-                <h5 class="side-menue__header">{{getLang()=='ar'?Aside[1].companyNameAr:Aside[1].companyName}}</h5>
+                <h5 class="side-menue__header">{{getLang()=='ar'?Aside[0].companyNameAr:Aside[0].companyName}}</h5>
             </div>
             <div class="side-menue-details-body">
-                <p class="side-menue__details">{{getLang()=='ar'?Aside[1].descriptionAr:Aside[1].description}}</p>
+                <p class="side-menue__details">{{getLang()=='ar'?Aside[0].descriptionAr:Aside[0].description}}</p>
             </div>
         </div>
-    </aside>
+       </aside>
     <ng-template class=" side-menue side-menue--left" #Aside2 >
         <div style="width: 13.313rem;"></div>
     </ng-template>

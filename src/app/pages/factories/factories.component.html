@@ -151,9 +151,10 @@
                </div>
            </div>
        </aside> -->
-       <aside class=" side-menue side-menue--left" *ngIf="Aside !=[]  ;else elseAside ">
-        <div class="side-menue-image-container" *ngIf="Aside[0].image;else elseImage">
-            <img class="side-menue__image"  [src]="baseImageUrl+Aside[0].image"  alt="aside-bg">
+       <div *ngIf=" Aside  ;else elseAside " >
+       <aside *ngIf=" Aside[0] ;else elseAside" style="cursor: pointer;" class=" side-menue side-menue--left" routerLink="/FactoryDetails/{{Aside[0].companyId}}">
+        <div class="side-menue-image-container" >
+            <img class="side-menue__image"   [src]="baseImageUrl+Aside[0].image"  alt="aside-bg">
         </div>
         <ng-template class="side-menue-image-container" #elseImage>
             <img class="side-menue__image" src="../../../assets/images/broken.png" alt="aside-bg">
@@ -167,7 +168,7 @@
             </div>
         </div>
        </aside>
-       
+        </div>
        <ng-template class=" side-menue side-menue--left" #elseAside >
        <div style="width: 10rem;"></div>
 

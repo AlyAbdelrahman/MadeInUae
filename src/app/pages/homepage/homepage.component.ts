@@ -19,7 +19,7 @@ export class HomepageComponent implements OnInit {
   constructor(private AsideData:HomeSponserAsidesService ,private AboutUsData : AboutUsService, public Currentlang: LanguageService) { }
 
   ngOnInit(): void {
-    this.AsideData.getAsideData().subscribe(info=>{this.Aside=info,this.Aside==[]?this.AsideFound=true:this.AsideFound=false});
+    this.AsideData.getAsideData().subscribe(info=>{this.Aside=info,console.log('****Asi',info),this.Aside==[]?this.AsideFound=true:this.AsideFound=false});
     this.AboutUsData.getAboutData().subscribe(info=>this.AboutUs=info);
 
 
