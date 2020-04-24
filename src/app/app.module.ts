@@ -22,7 +22,7 @@ import { FooterComponent } from './core/footer/footer.component';
 import { LayoutComponent } from './core/layout/layout.component';
 import { BannerComponent } from './features/banner/banner.component';
 import { FormsModule } from '@angular/forms';
-
+import { ShareModule } from '@ngx-share/core';
 
 @NgModule({
   declarations: [
@@ -48,6 +48,7 @@ import { FormsModule } from '@angular/forms';
     FormsModule,
     NgbModule,
     HttpClientModule,
+    ShareModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

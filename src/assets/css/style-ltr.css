@@ -8289,3 +8289,7 @@ iframe {
     background-color: #0E930E;
     color: #fff;
 }
+
+.white-icon::before{
+  color:white !important ;
+}

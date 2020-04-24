@@ -10,7 +10,8 @@ import {sector} from '../../models/sector';
 import { ActivatedRoute, Router } from '@angular/router';
 import 'rxjs/add/operator/filter';  
 import {CitiesService} from '../../services/cities/cities.service';
-import {City} from '../../models/city'
+import {City} from '../../models/city';
+import { faFacebookSquare } from '@fortawesome/free-brands-svg-icons/faFacebookSquare';
 
 @Component({
   selector: 'app-factories',
@@ -31,8 +32,12 @@ export class FactoriesComponent implements OnInit {
   paggerNumbers:number[]=[];
   CurrentPagePaggerNumbers:number[];
 
+
   baseImageUrl:string ='http://mbesher-002-site4.dtempurl.com/sponsors/';
   baseCompanyImageUrl='http://mbesher-002-site4.dtempurl.com/Campany/';
+
+
+  fbIcon = faFacebookSquare;
 
   constructor(private router: Router,private CitiesService:CitiesService ,private route: ActivatedRoute,private sectors:SectorsService ,private AsideData:HomeSponserAsidesService,private GetCompanies:CompaniesService,public Currentlang: LanguageService) {
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
@@ -75,6 +80,7 @@ export class FactoriesComponent implements OnInit {
     isSearching:boolean=false;
     searchingObj:any;
     LastPage:number;
+    shareMediaId:number;
 
   ngOnInit(): void {
    this.loading=true;
@@ -243,5 +249,10 @@ onSubmit() {
   }
 
 
+}
+
+shareId(id){
+  this.shareMediaId=id;
+  console.log(id)
 }
 }

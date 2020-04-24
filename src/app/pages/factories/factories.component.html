@@ -100,9 +100,13 @@
                    <div class="search-reult-card-actions-container">
                        <ul class="search-result-card-actions-list">
                            <li class="search-result-card-action">
-                               <!-- <button class="action-btn btn--trasnparent btn-txt--black btn--lit-rounded ">
+                               <button 
+                               class="action-btn btn--trasnparent btn-txt--black btn--lit-rounded "
+                               (click)="shareId(companyInfo.id)"
+                               data-toggle="modal" 
+                               data-target="#exampleModal">
                                   {{'share'|translate}}
-                               </button> -->
+                               </button>
                            </li>
                            <li class="search-result-card-action"><button routerLink="/FactoryDetails/{{companyInfo.id}}" class="action-btn btn--trasnparent btn-txt--black btn--lit-rounded ">{{'more'|translate}}</button></li>
                        </ul>
@@ -175,5 +179,89 @@
        </ng-template>
 
    </section> 
-   
+ 
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header" >
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body" style="display: flex; justify-content: space-around;">
+            <button 
+            mat-fab 
+            style="-webkit-appearance: none;
+            border: none;
+            width: 3rem;
+            border-radius: 50%;
+            cursor: pointer;
+            height: 3rem;
+            background: #4267B2;"
+            theme="circles-dark" 
+            shareButton="facebook"
+            data-toggle="modal" 
+            data-target="#exampleModal"
+            url="http://uaeindustrialgate.ae/FactoryDetails/{{shareMediaId}}">
+               <span class="icon-Icon-facebook white-icon"></span>
+          </button> 
+
+          <button 
+          mat-fab 
+          style="-webkit-appearance: none;
+          border: none;
+          width: 3rem;
+          border-radius: 50%;
+          cursor: pointer;
+          height: 3rem;
+          background: #55ACEE;"
+          theme="circles-dark" 
+          shareButton="twitter"
+          data-toggle="modal" 
+          data-target="#exampleModal"
+          url="http://uaeindustrialgate.ae/FactoryDetails/{{shareMediaId}}">
+             <span class="icon-Icon-twitter white-icon"></span>
+        </button> 
+
+        <button 
+        mat-fab 
+        style="-webkit-appearance: none;
+        border: none;
+        width: 3rem;
+        border-radius: 50%;
+        cursor: pointer;
+        height: 3rem;
+        background: rgb(37, 211, 102)"
+        theme="circles-dark" 
+        shareButton="whatsapp"
+        data-toggle="modal" 
+        data-target="#exampleModal"
+        url="http://uaeindustrialgate.ae/FactoryDetails/{{shareMediaId}}">
+           <span class="icon-Icon-whatsapp white-icon"></span>
+      </button> 
+
+      <button 
+        mat-fab 
+        style="-webkit-appearance: none;
+        border: none;
+        width: 3rem;
+        border-radius: 50%;
+        cursor: pointer;
+        height: 3rem;
+        background: #007bb5"
+        theme="circles-dark" 
+        shareButton="linkedin"
+        data-toggle="modal" 
+        data-target="#exampleModal"
+        url="http://uaeindustrialgate.ae/FactoryDetails/{{shareMediaId}}">
+           <span class="icon-Icon-linkedin white-icon"></span>
+      </button> 
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div> 
    </layout>
