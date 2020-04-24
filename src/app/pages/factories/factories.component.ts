@@ -208,7 +208,9 @@ nxt(){
 
   }
 }
-
+getArrowDir(){
+   return this.getLang()=='ar'?'rotate(0)':'rotate(180deg)'
+}
 
 prev(){
   this.loading=true;
@@ -253,6 +255,5 @@ onSubmit() {
 
 shareId(id){
   this.shareMediaId=id;
-  console.log(id)
 }
 }
