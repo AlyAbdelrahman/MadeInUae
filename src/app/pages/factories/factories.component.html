@@ -82,7 +82,7 @@
                </div>
                <div class="search-result-card-info">
                    <div class="search-result-card-header-container">
-                       <h3 class="search-result-card__header" routerLink="/FactoryDetails/{{companyInfo.id}}" style="cursor: pointer;">{{getLang()=='ar'?companyInfo.nameAr:companyInfo.name}}</h3>
+                       <h3 class="search-result-card__header" routerLink="/FactoryDetails/{{companyInfo.id}} " queryParamsHandling="merge" style="cursor: pointer;">{{getLang()=='ar'?companyInfo.nameAr:companyInfo.name}}</h3>
                    </div>
                    <div class="search-result-card-details-container">
                        <p class="search-result-card-details__txt">

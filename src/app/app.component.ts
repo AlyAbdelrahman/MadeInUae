@@ -1,21 +1,27 @@
 import { Component,OnInit } from '@angular/core';
-
-
+import {LanguageService} from './services/languages/language.service'
+import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit  {
- 
-  constructor( ) {
- 
+  Selectedlang: any; 
+
+  constructor(public lang:LanguageService , private router: Router, private route: ActivatedRoute  ) {
+    this.route.queryParams.subscribe(params => {
+      params.lang=='en'?lang.adjustLang():'';
+
+    })
   }
+    
+  
   ngOnInit() {
 
-    // this.cssUrl= this.sanitizer.bypassSecurityTrustResourceUrl('uae/src/css/style-ltr.css')
+  
   }
 
-  
+
 }
 
