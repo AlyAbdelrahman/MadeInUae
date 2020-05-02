@@ -12,6 +12,8 @@ import 'rxjs/add/operator/filter';
 import {CitiesService} from '../../services/cities/cities.service';
 import {City} from '../../models/city';
 import { faFacebookSquare } from '@fortawesome/free-brands-svg-icons/faFacebookSquare';
+import {Title} from "@angular/platform-browser";
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-factories',
@@ -39,8 +41,14 @@ export class FactoriesComponent implements OnInit {
 
   fbIcon = faFacebookSquare;
 
-  constructor(private router: Router,private CitiesService:CitiesService ,private route: ActivatedRoute,private sectors:SectorsService ,private AsideData:HomeSponserAsidesService,private GetCompanies:CompaniesService,public Currentlang: LanguageService) {
+  constructor(public translate: TranslateService ,private titleService:Title,private router: Router,private CitiesService:CitiesService ,private route: ActivatedRoute,private sectors:SectorsService ,private AsideData:HomeSponserAsidesService,private GetCompanies:CompaniesService,public Currentlang: LanguageService) {
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+    this.titleService.setTitle(this.getLang()=='en'?'Industrial sectors':'الاقسام الصناعيه');
+    translate.onLangChange.subscribe((event: LangChangeEvent) => {
+      translate.get('IndustrialSectors').subscribe((res: string) => {
+        titleService.setTitle(res);
+      });
+    });
    }
 
    

@@ -4,6 +4,8 @@ import {HomeSponserAsidesService} from '../../services/homeSponserAsides/home-sp
 import {AboutUsService} from '../../services/aboutUs/about-us.service'
 import {homeSponser} from '../../models/homeSponsers'
 import {aboutUs} from '../../models/aboutSection'
+import {Title} from "@angular/platform-browser";
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
@@ -16,7 +18,14 @@ export class HomepageComponent implements OnInit {
   baseImageUrl:string ='http://mbesher-002-site4.dtempurl.com/sponsors/';
   baseDaleImagelUrl:String='http://mbesher-002-site4.dtempurl.com/Dalel/';
 
-  constructor(private AsideData:HomeSponserAsidesService ,private AboutUsData : AboutUsService, public Currentlang: LanguageService) { }
+  constructor(public translate: TranslateService,private titleService:Title,private AsideData:HomeSponserAsidesService ,private AboutUsData : AboutUsService, public Currentlang: LanguageService) {
+    this.titleService.setTitle(this.getLang()=='en'?'Home':'الصفحه الرئيسيه');
+    translate.onLangChange.subscribe((event: LangChangeEvent) => {
+      translate.get('homePage').subscribe((res: string) => {
+        titleService.setTitle(res);
+      });
+    });
+   }
 
   ngOnInit(): void {
     this.AsideData.getAsideData().subscribe(info=>{this.Aside=info,console.log('****Asi',info),this.Aside==[]?this.AsideFound=true:this.AsideFound=false});

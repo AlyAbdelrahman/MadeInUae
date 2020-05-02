@@ -5,6 +5,8 @@ import {LanguageService} from '../../services/languages/language.service'
 import {AddingCompanyService} from '../../services/addCompany/adding-company.service'
 import { newCompany } from 'src/app/models/newCompany';
 import {Router} from '@angular/router';
+import {Title} from "@angular/platform-browser";
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 
 
 
@@ -37,7 +39,14 @@ company:any={
 sectorsData:sector[];
 
 
-  constructor(private sectors:SectorsService ,private router: Router,public Currentlang: LanguageService,private newcompany : AddingCompanyService ) { }
+  constructor(public translate: TranslateService ,private titleService:Title,private sectors:SectorsService ,private router: Router,public Currentlang: LanguageService,private newcompany : AddingCompanyService ) { 
+    this.titleService.setTitle(this.getLang()=='en'?'Add Factory':'اضف مصنعك');
+    translate.onLangChange.subscribe((event: LangChangeEvent) => {
+      translate.get('AddFactory').subscribe((res: string) => {
+        titleService.setTitle(res);
+      });
+    });
+  }
 
   ngOnInit(): void {
     this.sectors.getSectors().subscribe(Sector=>this.sectorsData=Sector);
