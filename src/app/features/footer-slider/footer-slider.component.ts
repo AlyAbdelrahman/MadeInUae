@@ -44,7 +44,7 @@ export class FooterSliderComponent implements OnInit {
         var swiper = new Swiper('.footer-swiper-container', {
           slidesPerView: sliderView,
           spaceBetween: 0,
-          loop: true,
+          // loop: true,
           loopedSlides: 16,
           speed: 500,
           autoplay: true,
