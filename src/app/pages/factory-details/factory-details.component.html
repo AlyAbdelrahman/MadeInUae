@@ -71,7 +71,7 @@
           <div class="factory-details-container">
               <div class="personal-details-container">
 
-                  <div class="person-details-box">
+                  <div class="person-details-box" *ngIf="company;else person_Nocontent">
                       <div class="person-contact-header-container">
                           <h3 class="person__contact-header"> {{'CommercialCommunication'| translate}}</h3>
                       </div>
@@ -92,6 +92,7 @@
                     </div>
                     
                   </div>
+                  <ng-template  class="person-details-box"  #person_Nocontent></ng-template>
 
 
 

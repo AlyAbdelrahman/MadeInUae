@@ -12,6 +12,7 @@ import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 })
 export class AboutComponent implements OnInit {
   AboutUs: aboutUs;
+  baseDaleImagelUrl:String='http://mbesher-002-site4.dtempurl.com/Dalel/';
 
   constructor(public translate: TranslateService ,private titleService:Title,private AboutUsData : AboutUsService, public Currentlang: LanguageService) {
     this.titleService.setTitle(this.getLang()=='en'?'About Us':'عن البوابه');
