@@ -62,6 +62,7 @@ export class LanguageService {
     this.router.navigate([location.pathname], { queryParams: { lang: 'en' },queryParamsHandling: 'merge' });
 
   }
+  isSwitchedFromBtn:boolean=false;
   adjustLang(){
     console.log('**adj')
     this.route.queryParams.subscribe(params => {
@@ -69,13 +70,14 @@ export class LanguageService {
      }).unsubscribe()
   }
   switchLang() {
-    
+    this.isSwitchedFromBtn=true
     // var oldlink = document.getElementById("mycss"); // by default rtl
     // var swiperlink =document.getElementById("swipermin");
     // console.log(this.route.snapshot.params.lang)
     this.route.queryParams.subscribe(params => {
-      params.lang=='en'?this.arabic():this.english()
-     }).unsubscribe()
+      params.lang=='en'?this.arabic():this.english();
+    }).unsubscribe()
+    this.isSwitchedFromBtn=false;
     // console.log(this.route.snapshot.paramMap)
     // if(this.route.snapshot.paramMap.get('lang')=='en'){
 

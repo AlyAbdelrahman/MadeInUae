@@ -11,7 +11,7 @@ export class AppComponent implements OnInit  {
 
   constructor(public lang:LanguageService , private router: Router, private route: ActivatedRoute  ) {
     this.route.queryParams.subscribe(params => {
-      params.lang=='en'?lang.adjustLang():'';
+      !this.lang.isSwitchedFromBtn?( params.lang=='en'?lang.adjustLang():''):console.log('***From');
 
     })
   }

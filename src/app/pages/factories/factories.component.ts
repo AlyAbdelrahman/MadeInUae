@@ -42,7 +42,7 @@ export class FactoriesComponent implements OnInit {
   fbIcon = faFacebookSquare;
 
   constructor(public translate: TranslateService ,private titleService:Title,private router: Router,private CitiesService:CitiesService ,private route: ActivatedRoute,private sectors:SectorsService ,private AsideData:HomeSponserAsidesService,private GetCompanies:CompaniesService,public Currentlang: LanguageService) {
-    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+    // this.router.routeReuseStrategy.shouldReuseRoute = () => false;
     this.titleService.setTitle(this.getLang()=='en'?'Industrial sectors':'الاقسام الصناعيه');
     translate.onLangChange.subscribe((event: LangChangeEvent) => {
       translate.get('IndustrialSectors').subscribe((res: string) => {
