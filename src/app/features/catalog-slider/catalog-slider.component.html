@@ -1,10 +1,10 @@
 <section class="Ca-slide-block" >
     <div class="catalog-swiper-container" dir="rtl">
       <ul class="swiper-wrapper Ca-slide_list" >
-        <li *ngFor="let catalog of companyDetails" class="swiper-slide Ca-slide_item" data-swiper-autoplay="1500" data-swiper-slide-index="0">
+        <li  *ngFor="let catalog of companyDetails" class="swiper-slide Ca-slide_item" data-swiper-autoplay="1500" data-swiper-slide-index="0">
           <!--data-swiper-autoplay -->
           <div class="Ca-slide-item-image-container shadow">
-           <img [src]="baseUrl+catalog.image" class="Ca-slide_img" alt="">
+           <img (click)="CatlogPhoto(baseUrl+catalog.image)"  data-toggle="modal" data-target="#exampleModal"[src]="baseUrl+catalog.image" style="cursor: pointer;" class="Ca-slide_img" alt="">
           </div>
         </li>
        
@@ -20,3 +20,15 @@
         <div class="swiper-pagination"></div>
     </div>
   </section>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content" style="background: black;">
+        
+        <!-- <div class="modal-body" style="display: flex; justify-content: space-around;"> -->
+          <img  [src]="catlogPhoto" class="Ca-slide_img" alt="">
+
+        <!-- </div> -->
+      </div>
+    </div>
+  </div> 

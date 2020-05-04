@@ -16,6 +16,7 @@ export class CatalogSliderComponent implements OnInit {
   swiper: any;
   baseUrl:string='http://mbesher-002-site4.dtempurl.com/CompanyProduct/';
   companyDetails:productsDetails[];
+  catlogPhoto:any;
   constructor(private catalogSlides: CatalogSliderService,private route: ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -97,5 +98,9 @@ export class CatalogSliderComponent implements OnInit {
     
       });
     })(jquery);
+   }
+
+   CatlogPhoto(imgUrl){
+     this.catlogPhoto=imgUrl;
    }
 }
