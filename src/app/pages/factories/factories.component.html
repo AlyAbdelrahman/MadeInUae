@@ -119,11 +119,11 @@
    
          <div class="pagination-container"  *ngIf="LastPage > 0  && !loading && !NoRes">
                <ul class="pagination-list" >
-                <li class="last-page" *ngIf="!(SearchedCompanies.pageNumber==0)"  (click)="prev()" [ngStyle]="{transform:getArrowDir()}" ><span class="page-numer__txt"  ><span class="icon-Icon-long-arrow" ></span></span></li>
+                <li class="last-page" *ngIf="!(searchingObj.pageNumber==0)"  (click)="prev()" [ngStyle]="{transform:getArrowDir()}" ><span class="page-numer__txt"  ><span class="icon-Icon-long-arrow" ></span></span></li>
                    <li class="page-number active"><span clspanss="pspange-numer__txt" >{{SearchedCompanies.pageNumber+1}}</span></li>
                    <!-- <li class="page-number"><span class="page-numer__txt" (click)="getPagedata(endPgNumber)">{{endPgNumber+1}}</span></li> --> 
                    <!-- <li class="page-number  "><a class="page-numer__txt " href="#">3</a></li> -->
-                   <li class="last-page" *ngIf="!(((SearchedCompanies.pageNumber)+1)==LastPage)"  (click)="nxt()"><span class="page-numer__txt" ><span class="icon-Icon-long-arrow"></span></span></li>
+                   <li class="last-page" *ngIf="!(((searchingObj.pageNumber)+1)==LastPage)"  (click)="nxt()"><span class="page-numer__txt" ><span class="icon-Icon-long-arrow"></span></span></li>
                </ul> 
            </div>  
        </div>

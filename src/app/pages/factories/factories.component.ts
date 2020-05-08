@@ -105,8 +105,9 @@ export class FactoriesComponent implements OnInit {
     // else if (name & city)
     // paramsSearchTxt = this.route.snapshot.paramMap.get('searchTxt');
      
-    if(this.paramsSectorID){
+    if(this.paramsSectorID && !this.parmsCityId && !this.paramsSearchedText){
       this.SearchedCompanies.sectorId=this.paramsSectorID;
+      this.searchingObj=this.SearchedCompanies;
       this.AsideData.getSectorAside(this.paramsSectorID).subscribe(info=>{this.Aside=info,console.log('***Aside',info),this.Aside==[]?this.AsideFound=true:this.AsideFound=false});
       this.GetCompanies.getCompanyies(this.SearchedCompanies).subscribe(info=>{
         this.SearchedCompaniesResults=info,
@@ -117,9 +118,12 @@ export class FactoriesComponent implements OnInit {
         ()=>this.SearchedCompaniesResults.items.length>0?this.NoRes=false:this.NoRes=true);
   }
 
-    else if(this.parmsCityId && this.paramsSearchedText){
+     else if(this.parmsCityId && this.paramsSearchedText){
       this.SearchedCompaniesWithCity.cityId=this.parmsCityId;
       this.SearchedCompaniesWithCity.name=this.paramsSearchedText;
+      this.SearchedCompaniesWithCity.sectorId=this.paramsSectorID;
+      this.searchingObj=this.SearchedCompaniesWithCity;
+
       this.GetCompanies.getCompanyies(this.SearchedCompaniesWithCity).subscribe(info=>{
         this.SearchedCompaniesResults=info,
         console.log(this.SearchedCompaniesResults)
@@ -130,10 +134,16 @@ export class FactoriesComponent implements OnInit {
   }
 
     else if (this.parmsCityId ){
+      this.route.queryParams.subscribe(params => {
+        this.paramsSectorID=params.SectorId}).unsubscribe();
       this.SearchedCompaniesWithCity.cityId=this.parmsCityId;
+      this.SearchedCompaniesWithCity.sectorId=this.paramsSectorID;
+      this.searchingObj=this.SearchedCompaniesWithCity;
+      
+      console.log('searched iteeem',this.SearchedCompaniesWithCity)
       this.GetCompanies.getCompanyies(this.SearchedCompaniesWithCity).subscribe(info=>{
         this.SearchedCompaniesResults=info,
-        console.log(this.SearchedCompaniesResults)
+        console.log('**here',this.SearchedCompaniesResults)
         this.LastPage= Math.ceil(this.SearchedCompaniesResults.totalItems/2),
         this.loading=false},
         err=>console.log(err),
@@ -142,8 +152,10 @@ export class FactoriesComponent implements OnInit {
     }
     
     else if (this.paramsSearchedText ){
-      console.log('here')
       this.SearchedCompaniesWithName.name=this.paramsSearchedText;
+      this.SearchedCompaniesWithName.sectorId=this.paramsSectorID;
+      this.searchingObj=this.SearchedCompaniesWithName;
+
       this.GetCompanies.getCompanyies(this.SearchedCompaniesWithName).subscribe(info=>
         {
           this.SearchedCompaniesResults=info,
@@ -156,8 +168,10 @@ export class FactoriesComponent implements OnInit {
 
    else{
     this.pageNumber=0;
+    // this.route.queryParams.subscribe(params => {
+    //   this.paramsSectorID=params.SectorId}).unsubscribe();
     this.paramsSectorID=1;
-    this.AsideData.getSectorAside(0).subscribe(info=>{this.Aside=info,this.Aside==[]?this.AsideFound=true:this.AsideFound=false,console.log(this.Aside)});
+    this.AsideData.getSectorAside(0).subscribe(info=>{this.Aside=info,console.log('**AS',this.Aside),this.Aside==[]?this.AsideFound=true:this.AsideFound=false});
 
     const SearchedCompaniesTxt :any  ={
       sectorId:this.paramsSectorID,
@@ -165,6 +179,8 @@ export class FactoriesComponent implements OnInit {
       size: 2,
       pageNumber: this.pageNumber
     };
+    this.searchingObj=SearchedCompaniesTxt;
+
     console.log('params searched obj',SearchedCompaniesTxt)
       this.GetCompanies.getCompanyies(SearchedCompaniesTxt).subscribe(info=>{this.SearchedCompaniesResults=info,
       this.LastPage= Math.ceil(this.SearchedCompaniesResults.totalItems/2),
@@ -201,8 +217,8 @@ export class FactoriesComponent implements OnInit {
 nxt(){
   this.loading=true;
   if(!this.isSearching){
-  this.SearchedCompanies.pageNumber+=1;
-  this.GetCompanies.getCompanyies(this.SearchedCompanies).subscribe(info=>
+  this.searchingObj.pageNumber+=1;
+  this.GetCompanies.getCompanyies(this.searchingObj).subscribe(info=>
     {
       this.SearchedCompaniesResults=info,
       this.loading=false
@@ -210,8 +226,8 @@ nxt(){
   console.log(this.pageNumber)
   }
   else{
-    this.SearchedCompanies.pageNumber+=1;
-    this.searchingObj.pageNumber=this.SearchedCompanies;
+    this.searchingObj.pageNumber+=1;
+    // this.searchingObj.pageNumber=this.SearchedCompanies;
     this.GetCompanies.getCompanyies(this.searchingObj).subscribe(info=>{this.SearchedCompaniesResults=info,this.loading=false},err=>console.log(err),()=>this.SearchedCompaniesResults.items.length>0?this.NoRes=false:this.NoRes=true);
 
   }
@@ -223,8 +239,8 @@ getArrowDir(){
 prev(){
   this.loading=true;
   if(!this.isSearching){
-  this.SearchedCompanies.pageNumber-=1;
-  this.GetCompanies.getCompanyies(this.SearchedCompanies).subscribe(info=>
+  this.searchingObj.pageNumber-=1;
+  this.GetCompanies.getCompanyies(this.searchingObj).subscribe(info=>
     {
       this.SearchedCompaniesResults=info,
       this.loading=false
@@ -232,8 +248,9 @@ prev(){
   console.log(this.pageNumber)
   }
   else{
-    this.SearchedCompanies.pageNumber-=1;
-    this.searchingObj.pageNumber=this.SearchedCompanies;
+    this.searchingObj.pageNumber-=1;
+    console.log('hereee',this.searchingObj)
+    // this.searchingObj.pageNumber=this.SearchedCompanies;
     this.GetCompanies.getCompanyies(this.searchingObj).subscribe(info=>{this.SearchedCompaniesResults=info,this.loading=false},err=>console.log(err),()=>this.SearchedCompaniesResults.items.length>0?this.NoRes=false:this.NoRes=true);
 
   }
@@ -244,14 +261,14 @@ onSubmit() {
   let SearchedCompaniesTxt :any;
   console.log('**Searched',this.searchTxt,this.selectedCityId)
   if(this.searchTxt && this.selectedCityId){
-    this.router.navigate(['/Factories/Search'], { queryParams: { SearchedText: this.searchTxt , CityId:this.selectedCityId} });
+    this.router.navigate(['/Factories/Search'], { queryParams: { SearchedText: this.searchTxt , CityId:this.selectedCityId , SectorId:this.paramsSectorID} , queryParamsHandling: 'preserve'});
   }
   else if (this.searchTxt){
-    this.router.navigate(['/Factories/Search'], { queryParams: { SearchedText: this.searchTxt } });
+    this.router.navigate(['/Factories/Search'], { queryParams: { SearchedText: this.searchTxt , SectorId:this.paramsSectorID } , queryParamsHandling: 'preserve'});
 
   }
   else if (this.selectedCityId){
-    this.router.navigate(['/Factories/Search'], { queryParams: {CityId:this.selectedCityId} });
+    this.router.navigate(['/Factories/Search'], { queryParams: {CityId:this.selectedCityId , SectorId:this.paramsSectorID}, queryParamsHandling: 'preserve'});
 
   }
   else{
