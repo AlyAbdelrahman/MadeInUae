@@ -63,7 +63,7 @@
                    <div class="card-body">
                        <ul class="search-options-list">
                         <!-- (click)="onSectorSelect($event)" -->
-                           <li [routerLink]="['/Factories/sector']" [queryParams]="{  SectorId:sector.id}"  [ngClass]="{'selectedItem': paramsSectorID==sector.id , 'search-option': true}"  *ngFor="let sector of sectorsData">{{getLang()=='ar'?sector.nameAr:sector.name}}</li>
+                           <li [routerLink]="['/Factories']"routerLinkActive="active" [queryParams]="{  SectorId:sector.id,lang:language}" queryParamsHandling="perserve" [ngClass]="{'selectedItem': paramsSectorID==sector.id , 'search-option': true}"  *ngFor="let sector of sectorsData">{{getLang()=='ar'?sector.nameAr:sector.name}}</li>
                        </ul>
                    </div>
                  </div>

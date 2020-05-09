@@ -7,7 +7,7 @@ import {homeSponser} from '../../models/homeSponsers'
 import {HomeSponserAsidesService} from '../../services/homeSponserAsides/home-sponser-asides.service';
 import {SectorsService} from '../../services/sectors/sectors.service';
 import {sector} from '../../models/sector';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 import 'rxjs/add/operator/filter';  
 import {CitiesService} from '../../services/cities/cities.service';
 import {City} from '../../models/city';
@@ -42,14 +42,15 @@ export class FactoriesComponent implements OnInit {
   fbIcon = faFacebookSquare;
 
   constructor(public translate: TranslateService ,private titleService:Title,private router: Router,private CitiesService:CitiesService ,private route: ActivatedRoute,private sectors:SectorsService ,private AsideData:HomeSponserAsidesService,private GetCompanies:CompaniesService,public Currentlang: LanguageService) {
-     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+   
+  this.router.routeReuseStrategy.shouldReuseRoute = () => false
     this.titleService.setTitle(this.getLang()=='en'?'Industrial sectors':'الاقسام الصناعيه');
     translate.onLangChange.subscribe((event: LangChangeEvent) => {
       translate.get('IndustrialSectors').subscribe((res: string) => {
         titleService.setTitle(res);
       });
     });
-   }
+  }
 
    
  
@@ -89,16 +90,20 @@ export class FactoriesComponent implements OnInit {
     searchingObj:any;
     LastPage:number;
     shareMediaId:number;
+    language:string;
+    reload :boolean=true;
 
+  
   ngOnInit(): void {
    this.loading=true;
    this.pageNumber=0;
-
-    
+  
     this.route.queryParams.subscribe(params => {
        this.paramsSectorID=params.SectorId,
        this.parmsCityId=params.CityId,
-       this.paramsSearchedText=params.SearchedText
+       this.paramsSearchedText=params.SearchedText,
+       this.language=params.lang?params.lang:'ar'
+
     })
 
     // else if (name)
@@ -188,7 +193,7 @@ export class FactoriesComponent implements OnInit {
     }
 
 
-
+    
    this.CitiesService.getCitiesData().subscribe(cityInfo=>this.citiesInfo=cityInfo);
   //  this.AsideData.getAsideData().subscribe(info=>{this.Aside=info,this.Aside==[]?this.AsideFound=true:this.AsideFound=false});
    this.sectors.getSectors().subscribe(Sector=>{this.sectorsData=Sector});
@@ -211,6 +216,9 @@ export class FactoriesComponent implements OnInit {
   }
   selectCity(e)
   {
+    
+    // this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+    this.reload=false
     this.selectedCityId=e;
   }
 
@@ -261,14 +269,14 @@ onSubmit() {
   let SearchedCompaniesTxt :any;
   console.log('**Searched',this.searchTxt,this.selectedCityId)
   if(this.searchTxt && this.selectedCityId){
-    this.router.navigate(['/Factories/Search'], { queryParams: { SearchedText: this.searchTxt , CityId:this.selectedCityId , SectorId:this.paramsSectorID} , queryParamsHandling: 'preserve'});
+    this.router.navigate(['/Factories/Search'], { queryParams: { SearchedText: this.searchTxt , CityId:this.selectedCityId , SectorId:this.paramsSectorID ,lang:this.language} , queryParamsHandling: 'preserve'});
   }
   else if (this.searchTxt){
-    this.router.navigate(['/Factories/Search'], { queryParams: { SearchedText: this.searchTxt , SectorId:this.paramsSectorID } , queryParamsHandling: 'preserve'});
+    this.router.navigate(['/Factories/Search'], { queryParams: { SearchedText: this.searchTxt , SectorId:this.paramsSectorID ,lang:this.language} , queryParamsHandling: 'preserve'});
 
   }
   else if (this.selectedCityId){
-    this.router.navigate(['/Factories/Search'], { queryParams: {CityId:this.selectedCityId , SectorId:this.paramsSectorID}, queryParamsHandling: 'preserve'});
+    this.router.navigate(['/Factories/Search'], { queryParams: {CityId:this.selectedCityId , SectorId:this.paramsSectorID,lang:this.language}, queryParamsHandling: 'preserve'});
 
   }
   else{

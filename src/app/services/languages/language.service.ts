@@ -75,6 +75,7 @@ export class LanguageService {
     // var swiperlink =document.getElementById("swipermin");
     // console.log(this.route.snapshot.params.lang)
     this.route.queryParams.subscribe(params => {
+    console.log('from btnnnnnnnnnnnnn',params.lang)
       params.lang=='en'?this.arabic():this.english();
     }).unsubscribe()
     this.isSwitchedFromBtn=false;
