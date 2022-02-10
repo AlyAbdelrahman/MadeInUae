@@ -33,7 +33,7 @@
     "@types/swiper": "3.4.3",
     "bootstrap": "^4.4.1",
     "jquery": "^3.4.1",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "rxjs": "~6.5.4",
     "rxjs-compat": "^6.5.5",
     "swiper": "^5.3.1",
